@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="PricingManagement" Height="300" Width="300">
+        Title="PricingManagement" Height="649" Width="1200">
     <Grid>
-        
+        <Image x:Name="Gym_Background_jpg" Margin="0,0,0,29" Source="Gym Background.jpg" Stretch="Fill" Height="589"/>
+
     </Grid>
 </Window>
