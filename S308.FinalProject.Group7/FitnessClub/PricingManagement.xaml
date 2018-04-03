@@ -1,13 +1,15 @@
-﻿<Window x:Class="FitnessClub.PricingManagement"
+﻿<Window x:Name="winPricingManagement" x:Class="FitnessClub.PricingManagement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="PricingManagement" Height="649" Width="1200">
+        Title="Pricing Management" Height="649" Width="1200" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Image x:Name="Gym_Background_jpg" Margin="0,0,0,29" Source="Gym Background.jpg" Stretch="Fill" Height="589"/>
+        <Image x:Name="imgBackground" Source="Gym Background.jpg" Stretch="Fill"/>
+        <Label x:Name="label_Copy" Content="PRICING MANAGEMENT" HorizontalAlignment="Center" Margin="10,10,798,0" VerticalAlignment="Top" Height="52" Width="386" Foreground="#FFC3B253" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="469" Padding="10" Margin="647,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White" FontFamily="Century Gothic" FontSize="24"/>
 
     </Grid>
 </Window>

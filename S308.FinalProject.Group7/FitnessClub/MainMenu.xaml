@@ -6,5 +6,12 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Window1" Height="796.64" Width="1214.39" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Image x:Name="Fitness_photo_jpg" Margin="0,0,0,-3" Source="Fitness photo.jpg" Stretch="Fill"/>
+    <Grid>
+        <Image x:Name="Fitness_photo_jpg" Margin="0,0,0,-3" Source="Fitness photo.jpg" Stretch="Fill" d:IsLocked="True"/>
+        <Label x:Name="label_Copy" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="160" Width="744" Foreground="#FFC3B253" FontSize="96" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <Button x:Name="button" Content="E X I T" HorizontalAlignment="Left" Margin="1065,688,0,0" VerticalAlignment="Top" Width="111" Height="50" FontFamily="Century Gothic" FontSize="29.333" Background="Black" BorderBrush="White" BorderThickness="5" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="button1" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+        <Button x:Name="button1_Copy" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Margin="33,322,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+        <Button x:Name="button1_Copy1" Content="PRICING MANAGEMENT" HorizontalAlignment="Left" Margin="33,410,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+    </Grid>
 </Window>
