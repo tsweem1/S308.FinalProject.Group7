@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MembershipSales" Height="300" Width="300">
+        Title="MembershipSales" Height="294" Width="380">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="143,48,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblMembershipStart" Content="Membership Start Date:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
