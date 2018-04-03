@@ -12,7 +12,7 @@
             <ColumnDefinition Width="97*"/>
             <ColumnDefinition Width="1806*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="Gym_Background_jpg" Margin="-11,-52,771,99" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="3"/>
+        <Image x:Name="Gym_Background_jpg" Margin="-11,-52,759,99" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="3"/>
         <Label x:Name="lblMemberInformation" Content="EXISTING MEMBER SEARCH" HorizontalAlignment="Left" Margin="29,-24,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFC3B253" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontSize="48"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="617,175,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" Grid.Column="2" FontSize="24" Height="39"/>
         <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="29,66,0,0" VerticalAlignment="Top" FontSize="21.333" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3"/>
