@@ -5,19 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Member Information" Height="316" Width="425">
-    <Grid>
-        <Label x:Name="lblMemberInformation" Content="Existing Member Search" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="209,124,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="18,48,0,0" VerticalAlignment="Top" FontSize="10.667"/>
-        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="209,48,0,0" VerticalAlignment="Top" FontSize="10.667"/>
-        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="18,77,0,0" VerticalAlignment="Top" FontSize="10.667"/>
-        <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Margin="209,78,0,0" VerticalAlignment="Top" FontSize="10.667"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="23,162,0,0" VerticalAlignment="Top" Height="103" Width="366"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="314,124,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="82,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="285,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="101,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"/>
-        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="23" Margin="314,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
+        Title="Member Information" Height="690" Width="1200">
+    <Grid Margin="10,54,-761,-102">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="1806*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Gym_Background_jpg" Margin="-11,-51,771,98" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblMemberInformation" Content="Existing Member Search" HorizontalAlignment="Left" Margin="18,-18,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="93,120,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic" Grid.Column="2"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="18,48,0,0" VerticalAlignment="Top" FontSize="10.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="72,48,0,0" VerticalAlignment="Top" FontSize="10.667" Foreground="White" FontFamily="Century Gothic" Grid.Column="2"/>
+        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="18,77,0,0" VerticalAlignment="Top" FontSize="10.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Margin="72,78,0,0" VerticalAlignment="Top" FontSize="10.667" Foreground="White" FontFamily="Century Gothic" Grid.Column="2"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="39,198,0,0" VerticalAlignment="Top" Height="378" Width="1098" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="3">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.128"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="193,120,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic" Grid.Column="2"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="42,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontFamily="Century Gothic" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="148,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Grid.Column="2"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="61,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="23" Margin="161,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" FontFamily="Century Gothic" Grid.Column="2"/>
     </Grid>
 </Window>
