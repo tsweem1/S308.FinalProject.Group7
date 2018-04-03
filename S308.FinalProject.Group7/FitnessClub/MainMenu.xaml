@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="500">
-    <Grid>
-        <Image x:Name="imgBackground" HorizontalAlignment="Left" Height="244" Margin="10,49,0,0" VerticalAlignment="Top" Width="472"/>
+        Title="Window1" Height="328" Width="500">
+    <Grid Height="328">
+        <Image x:Name="Fitness_photo_jpg" Source="Fitness photo.jpg" Stretch="Fill" Height="328" Width="500"/>
 
     </Grid>
 </Window>
