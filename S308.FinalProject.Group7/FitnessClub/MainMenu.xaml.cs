@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 namespace FitnessClub
 {
+    ///Evelyn Delph, Tyler Sweem, Tiffany Pham
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
