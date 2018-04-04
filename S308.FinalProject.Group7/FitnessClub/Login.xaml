@@ -1,0 +1,17 @@
+﻿<Window x:Name="winLogin" x:Class="FitnessClub.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub"
+        mc:Ignorable="d"
+        Title="Login" Height="796.64" Width="1214.39">
+    <Grid Margin="0,0,0,-31">
+        <Image x:Name="loginPageBackground_jpg" Margin="0,0,10,38" Source="loginPageBackground.jpg" Stretch="Fill"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="45" Margin="464,557,0,0" TextWrapping="Wrap" Text="USERNAME" VerticalAlignment="Top" Width="268" TextAlignment="Center" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Foreground="White" Background="{x:Null}" BorderBrush="White" BorderThickness="5"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="44" Margin="464,622,0,0" TextWrapping="Wrap" Text="PASSWORD" VerticalAlignment="Top" Width="268" TextAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="29.333" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White"/>
+        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="545,700,0,0" VerticalAlignment="Top" Width="106" Height="40" FontFamily="Century Gothic" FontSize="21.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+        <Label x:Name="lblTitle" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="226,0,0,0" VerticalAlignment="Top" Height="160" Width="744" Foreground="#FFC3B253" FontSize="96" FontFamily="Century Gothic" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

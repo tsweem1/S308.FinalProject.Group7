@@ -13,6 +13,6 @@
         <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
         <Button x:Name="btnMembershipSales" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Margin="33,322,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
         <Button x:Name="btnPricingManagement" Content="PRICING MANAGEMENT" HorizontalAlignment="Left" Margin="33,410,0,0" VerticalAlignment="Top" Width="419" Height="60" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
-        <Button x:Name="btnLogIn" Content="LOGIN" HorizontalAlignment="Left" Margin="33,688,0,0" VerticalAlignment="Top" Width="153" Height="50" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+        <Button x:Name="btnLogIn" Content="LOGIN" HorizontalAlignment="Left" Margin="33,688,0,0" VerticalAlignment="Top" Width="153" Height="50" FontFamily="Century Gothic" FontSize="29.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Click="btnLogIn_Click"/>
     </Grid>
 </Window>

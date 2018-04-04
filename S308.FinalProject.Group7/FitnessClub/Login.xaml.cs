@@ -14,16 +14,14 @@ using System.Windows.Shapes;
 
 namespace FitnessClub
 {
-    ///Evelyn Delph, Tyler Sweem, Tiffany Pham
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Login : Window
     {
-        public Window1()
+        public Login()
         {
             InitializeComponent();
         }
-        
     }
 }
