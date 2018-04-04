@@ -6,7 +6,70 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="MembershipSales" Height="294" Width="380">
+        Title="MembershipSales" Height="649
+        " Width="1200">
     <Grid>
+        <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
+        <Grid HorizontalAlignment="Left" Height="267" Margin="427,341,0,0" VerticalAlignment="Top" Width="755">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="334,118,0,0" VerticalAlignment="Top" Width="195" Height="43" RenderTransformOrigin="0.743,0.489"/>
+        <Label x:Name="lblInstructions" Content="Select A Membership Type" HorizontalAlignment="Left" Margin="29,116,0,0" VerticalAlignment="Top" Height="50" Width="299" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="357" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="36" Margin="32,10,0,0" FontWeight="Bold"/>
+        <TextBox x:Name="txtEndDate" HorizontalAlignment="Left" Height="51" Margin="298,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="51" Margin="32,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+        <Label x:Name="lblStartDate" Content="Enter Start Date" HorizontalAlignment="Left" Height="37" Margin="32,209,0,0" VerticalAlignment="Top" Width="181" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblEndDate" Content="Enter End Date" HorizontalAlignment="Left" Height="37" Margin="298,209,0,0" VerticalAlignment="Top" Width="231" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="258,272,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblMembershipFeatures" Content="Select Membership Features" HorizontalAlignment="Left" Margin="28,370,0,0" VerticalAlignment="Top" Height="40" Width="312" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ComboBox x:Name="cboMembershipFeatures" HorizontalAlignment="Left" Margin="32,422,0,0" VerticalAlignment="Top" Width="294" Height="44" RenderTransformOrigin="0.743,0.489" SelectionChanged="cboMembershipFeatures_SelectionChanged"/>
+        <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="32,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnRemove" Content="REMOVE" HorizontalAlignment="Left" Margin="198,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <TextBox x:Name="txtMemberQuotaOutput" HorizontalAlignment="Left" Height="413" Margin="580,182,0,0" Padding="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="584" FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White"/>
+        <Label x:Name="lblInstructions_Copy" Content="Select A Membership Type" HorizontalAlignment="Left" Margin="29,116,0,0" VerticalAlignment="Top" Height="50" Width="299" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="578,119,0,0" VerticalAlignment="Top" Height="49" Width="185" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btnProceedWithCheckOut" Content="CHECKOUT" HorizontalAlignment="Left" Margin="1012,109,0,0" VerticalAlignment="Top" Width="152" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="52" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="1012,17,0,0" VerticalAlignment="Top" Width="154" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="48" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
