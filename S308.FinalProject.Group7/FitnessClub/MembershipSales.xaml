@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MembershipSales" Height="294" Width="380">
         Title="MembershipSales" Height="649
         " Width="1200">
     <Grid>
@@ -43,7 +42,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="cboMembershipFeatures" HorizontalAlignment="Left" Margin="32,422,0,0" VerticalAlignment="Top" Width="294" Height="44" RenderTransformOrigin="0.743,0.489" SelectionChanged="cboMembershipFeatures_SelectionChanged"/>
+        <ComboBox x:Name="cboMembershipFeatures" HorizontalAlignment="Left" Margin="32,422,0,0" VerticalAlignment="Top" Width="294" Height="44" RenderTransformOrigin="0.743,0.489"></ComboBox>
         <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="32,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnRemove" Content="REMOVE" HorizontalAlignment="Left" Margin="198,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <TextBox x:Name="txtMemberQuotaOutput" HorizontalAlignment="Left" Height="413" Margin="580,182,0,0" Padding="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="584" FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White"/>
@@ -67,14 +66,13 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnProceedWithCheckOut" Content="CHECKOUT" HorizontalAlignment="Left" Margin="1012,109,0,0" VerticalAlignment="Top" Width="152" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="52" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="1012,17,0,0" VerticalAlignment="Top" Width="154" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="48" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnProceedWithCheckOut" Content="CHECKOUT" HorizontalAlignment="Left" Margin="404,109,-556,0" VerticalAlignment="Top" Width="152" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="52" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="1"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="404,17,-558,0" VerticalAlignment="Top" Width="154" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="48" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="1"/>
+        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="1018,29,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnPROCEED" Content="PROCEED" HorizontalAlignment="Left" Margin="1018,109,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="143,48,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblMembershipStart" Content="Membership Start Date:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
