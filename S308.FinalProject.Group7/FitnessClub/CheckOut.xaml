@@ -8,8 +8,8 @@
         Title="CheckOut" Height="649" Width="1200">
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
-        <Label x:Name="lblCheckOutTitle" Content="CHECKOUT" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="200" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="36" Margin="10,10,0,0" FontWeight="Bold"/>
-        <Label x:Name="lblName" Content="Name on card:" HorizontalAlignment="Left" Margin="28,162,0,0" VerticalAlignment="Top" Height="42" Width="215" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblCheckOutTitle" Content="CHECKOUT" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="322" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="20,10,0,0" FontWeight="Bold"/>
+        <Label x:Name="lblName" Content="Name on Card:" HorizontalAlignment="Left" Margin="34,162,0,0" VerticalAlignment="Top" Height="42" Width="199" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -20,7 +20,7 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="42" Margin="248,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <Label x:Name="lblCreditCardNum" Content="Card number:" HorizontalAlignment="Left" Margin="28,250,0,0" VerticalAlignment="Top" Height="42" Width="260" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblCreditCardNum" Content="Card Number:" HorizontalAlignment="Left" Margin="34,294,0,0" VerticalAlignment="Top" Height="42" Width="192" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,8 +30,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="40" Margin="248,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <Label x:Name="lblSecurityCode" Content="Security code:" HorizontalAlignment="Left" Margin="31,324,0,0" VerticalAlignment="Top" Height="42" Width="204" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="40" Margin="248,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+        <Label x:Name="lblSecurityCode" Content="Security Code:" HorizontalAlignment="Left" Margin="31,368,0,0" VerticalAlignment="Top" Height="42" Width="204" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -41,8 +41,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="40" Margin="248,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
-        <Label x:Name="lblBillingAddress" Content="Billing Address:" HorizontalAlignment="Left" Margin="622,88,0,0" VerticalAlignment="Top" Height="42" Width="178" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="40" Margin="248,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.692,0.475"/>
+        <Label x:Name="lblBillingAddress" Content="Billing Address:" HorizontalAlignment="Left" Margin="622,88,0,0" VerticalAlignment="Top" Height="42" Width="238" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -52,7 +52,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="txtFirstName" Content="First name:" HorizontalAlignment="Left" Margin="656,159,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="txtFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="656,159,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -62,8 +62,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtFirstName1" HorizontalAlignment="Left" Height="42" Margin="876,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
-        <Label x:Name="lblLastName" Content="Last name:" HorizontalAlignment="Left" Margin="654,224,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtFirstName1" HorizontalAlignment="Left" Height="42" Margin="876,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="654,224,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -73,8 +73,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="42" Margin="876,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
-        <Label x:Name="lblStreet" Content="Street address:" HorizontalAlignment="Left" Margin="654,284,0,0" VerticalAlignment="Top" Height="42" Width="194" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="42" Margin="876,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
+        <Label x:Name="lblStreet" Content="Street Address:" HorizontalAlignment="Left" Margin="654,284,0,0" VerticalAlignment="Top" Height="42" Width="194" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -84,7 +84,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtStreetAddress" HorizontalAlignment="Left" Height="42" Margin="656,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+        <TextBox x:Name="txtStreetAddress" HorizontalAlignment="Left" Height="42" Margin="656,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="460"/>
         <Label x:Name="lblState" Content="State:" HorizontalAlignment="Left" Margin="648,399,0,0" VerticalAlignment="Top" Height="42" Width="86" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -106,8 +106,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtZip" HorizontalAlignment="Left" Height="42" Margin="970,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Label x:Name="lblCreditInfo" Content="Credit Card Information:" HorizontalAlignment="Left" Margin="26,87,0,0" VerticalAlignment="Top" Height="42" Width="311" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="txtZip" HorizontalAlignment="Left" Height="42" Margin="970,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="lblCreditInfo" Content="Credit Card Information:" HorizontalAlignment="Left" Margin="26,87,0,0" VerticalAlignment="Top" Height="42" Width="339" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -117,7 +117,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblPaymentConfirmation" Content="Payment Confirmation:" HorizontalAlignment="Left" Margin="36,422,0,0" VerticalAlignment="Top" Height="42" Width="312" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblPaymentConfirmation" Content="Payment Confirmation:" HorizontalAlignment="Left" Margin="36,438,0,0" VerticalAlignment="Top" Height="42" Width="312" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -127,7 +127,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblEmail" Content="Email address:" HorizontalAlignment="Left" Margin="38,487,0,0" VerticalAlignment="Top" Height="42" Width="216" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="38,509,0,0" VerticalAlignment="Top" Height="42" Width="216" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -137,12 +137,15 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="42" Margin="248,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
-        <Border BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="74" Margin="23,472,0,0" VerticalAlignment="Top" Width="533"/>
-        <Border BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="258" Margin="23,134,0,0" VerticalAlignment="Top" Width="533"/>
-        <Border BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="344" Margin="621,134,0,0" VerticalAlignment="Top" Width="533"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="1008,13,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
-        <Button x:Name="btnConfirmCheckOut" Content="CONFIRM" HorizontalAlignment="Left" Margin="987,531,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="801,531,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="22" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.51,0.509"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="42" Margin="240,511,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288"/>
+        <Border x:Name="brdPaymentConfirm" BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="74" Margin="21,494,0,0" VerticalAlignment="Top" Width="533"/>
+        <Border x:Name="brdCreditCardInfo" BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="294" Margin="23,134,0,0" VerticalAlignment="Top" Width="533">
+            <Label x:Name="lblCardType" Content="Card Type:" FontFamily="Century Gothic" Foreground="White" FontSize="24" FontWeight="Bold" Margin="4,88,344,152"/>
+        </Border>
+        <Border x:Name="brdBillingAddress" BorderBrush="White" BorderThickness="5" HorizontalAlignment="Left" Height="344" Margin="621,134,0,0" VerticalAlignment="Top" Width="533"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="988,13,0,0" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnConfirmCheckOut" Content="CONFIRM" HorizontalAlignment="Left" Margin="987,531,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="801,531,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.51,0.509"/>
+        <ComboBox x:Name="cmbCardType" HorizontalAlignment="Left" Margin="246,227,0,0" VerticalAlignment="Top" Width="200" Height="42"/>
     </Grid>
 </Window>
