@@ -20,7 +20,7 @@
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="456,66,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.Column="2" RenderTransformOrigin="0.528,0.583" FontWeight="Bold"/>
         <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="29,130,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
         <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Margin="456,130,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.Column="2" FontWeight="Bold"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="39,257,0,0" Padding ="10" VerticalAlignment="Top" Height="319" Width="1098" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White">
+        <DataGrid x:Name="dtgMemberResults" HorizontalAlignment="Left" Margin="39,257,0,0" Padding ="10" VerticalAlignment="Top" Height="319" Width="1098" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,11 +30,11 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="36" Margin="101,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" FontFamily="Century Gothic" Grid.Column="2" FontSize="26.667"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="36" Margin="10,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontFamily="Century Gothic" Grid.Column="3" FontSize="26.667"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="36" Margin="101,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" FontFamily="Century Gothic" Grid.Column="2" FontSize="26.667"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="36" Margin="101,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" FontFamily="Arial" Grid.Column="2" FontSize="18.667"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="36" Margin="10,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontFamily="Arial" Grid.Column="3" FontSize="18.667"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="36" Margin="101,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" FontFamily="Arial" Grid.Column="2" FontSize="18.667"/>
         <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="36" Margin="10,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontFamily="Century Gothic" Grid.Column="3" FontSize="26.667"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" Grid.Column="3" HorizontalAlignment="Left" Margin="165,-37,0,0" VerticalAlignment="Top" Width="183" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" Grid.Column="3" HorizontalAlignment="Left" Margin="135,-35,0,0" VerticalAlignment="Top" Width="183" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="160,200,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" Grid.Column="3" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold"/>
     </Grid>
 </Window>
