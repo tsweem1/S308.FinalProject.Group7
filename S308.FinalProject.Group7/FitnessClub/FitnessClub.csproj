@@ -58,6 +58,9 @@
     <Compile Include="CheckOut.xaml.cs">
       <DependentUpon>CheckOut.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FitnessGoals.xaml.cs">
+      <DependentUpon>FitnessGoals.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="CheckOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FitnessGoals.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MembershipSignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Merchandise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +114,9 @@
     </Compile>
     <Compile Include="MembershipSales.xaml.cs">
       <DependentUpon>MembershipSales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipSignUp.xaml.cs">
+      <DependentUpon>MembershipSignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
