@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="FitnessGoals" Height="649" Width="1200">
+        Title="Fitness Goals" Height="649" Width="1200">
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
         <Label x:Name="lblPersonalFitnessGoals" Content="PERSONAL FITNESS GOALS" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="636" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="32,14,0,0" FontWeight="Bold"/>
