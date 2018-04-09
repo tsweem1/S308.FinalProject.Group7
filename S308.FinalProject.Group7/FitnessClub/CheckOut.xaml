@@ -42,7 +42,7 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="40" Margin="248,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.692,0.475" FontFamily="Arial" FontSize="18.667"/>
-        <Label x:Name="lblTotal" Content="Total:" HorizontalAlignment="Left" Margin="601,480,0,0" VerticalAlignment="Top" Height="42" Width="84" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblTotal" Content="Total:" HorizontalAlignment="Left" Margin="807,468,0,0" VerticalAlignment="Top" Height="42" Width="84" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -52,7 +52,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtTotalCost" HorizontalAlignment="Left" Height="42" Margin="705,476,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontFamily="Arial" FontSize="18.667"/>
+        <TextBox x:Name="txtTotalCost" HorizontalAlignment="Left" Height="42" Margin="915,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontFamily="Arial" FontSize="18.667"/>
         <Label x:Name="lblCreditInfo" Content="Credit Card Information:" HorizontalAlignment="Left" Margin="26,87,0,0" VerticalAlignment="Top" Height="42" Width="339" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -63,7 +63,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblPaymentConfirmation" Content="Payment Confirmation:" HorizontalAlignment="Left" Margin="36,438,0,0" VerticalAlignment="Top" Height="42" Width="312" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblPaymentConfirmation" Content="Payment Confirmation:" HorizontalAlignment="Left" Margin="26,438,0,0" VerticalAlignment="Top" Height="42" Width="312" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -92,7 +92,6 @@
         <Button x:Name="btnConfirmCheckOut" Content="CONFIRM" HorizontalAlignment="Left" Margin="838,538,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="1015,538,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.51,0.509"/>
         <ComboBox x:Name="cmbCardType" HorizontalAlignment="Left" Margin="246,227,0,0" VerticalAlignment="Top" Width="200" Height="42" FontFamily="Arial" FontSize="18.667" Background="White"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="598,160,0,0" VerticalAlignment="Top" Height="296" Width="558"/>
         <Label x:Name="lblShoppingCart" Content="Shopping Cart:" HorizontalAlignment="Left" Margin="598,105,0,0" VerticalAlignment="Top" Height="42" Width="218" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -103,5 +102,16 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <Button x:Name="btnMerchandise" Content="MERCHANDISE" HorizontalAlignment="Left" Margin="942,87,0,0" VerticalAlignment="Top" Width="214" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <DataGrid x:Name="dtgMemberResults" HorizontalAlignment="Left" Margin="621,160,0,0" Padding ="10" VerticalAlignment="Top" Height="271" Width="536" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.128"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
     </Grid>
 </Window>
