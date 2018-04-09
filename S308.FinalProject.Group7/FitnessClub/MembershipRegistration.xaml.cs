@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for MembershipSignUp.xaml
+    /// User gets to the Membership Registration page after entering in information in the Membership Sales Page. Can navigate back to the Membership Sales and Main Menu pages.
     /// </summary>
     public partial class MembershipSignUp : Window
     {
