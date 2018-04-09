@@ -60,6 +60,7 @@
         <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="404,17,-558,0" VerticalAlignment="Top" Width="154" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="48" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="1"/>
         <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="994,29,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnPROCEED" Content="PROCEED" HorizontalAlignment="Left" Margin="996,109,0,0" VerticalAlignment="Top" Width="168" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="370,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

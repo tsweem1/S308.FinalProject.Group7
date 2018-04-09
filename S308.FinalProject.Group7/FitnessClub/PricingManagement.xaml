@@ -18,10 +18,11 @@
         <TextBox x:Name="txtUpdatePrice" HorizontalAlignment="Left" Height="36" Margin="909,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18.667" FontFamily="Arial"/>
         <Label x:Name="lblUpdateAvailablity" Content="Update Availability:" HorizontalAlignment="Left" Margin="608,432,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
         <ComboBox x:Name="cmbUpdateAvailability" HorizontalAlignment="Left" Margin="909,439,0,0" VerticalAlignment="Top" Width="244" Height="36" Background="White" FontFamily="Arial" FontSize="18.667"/>
-        <Button x:Name="btnUpdateType" Content="UPDATE" HorizontalAlignment="Left" Margin="814,516,0,0" VerticalAlignment="Top" Width="182" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
+        <Button x:Name="btnUpdateType" Content="UPDATE" HorizontalAlignment="Left" Margin="740,530,0,0" VerticalAlignment="Top" Width="182" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
         <ComboBox x:Name="cmbGymFeatures" HorizontalAlignment="Left" Margin="257,235,0,0" VerticalAlignment="Top" Width="283" Height="36" Background="White" FontFamily="Arial" FontSize="18.667"/>
         <Label x:Name="lblGymFeatures" Content="Gym Feature:" HorizontalAlignment="Left" Margin="34,228,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
         <Button x:Name="btnCheckFeatures" Content="CHECK FEATURE" HorizontalAlignment="Left" Margin="683,234,0,0" VerticalAlignment="Top" Width="238" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="964,528,0,0" VerticalAlignment="Top" Width="182" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic"/>
 
     </Grid>
 </Window>
