@@ -51,7 +51,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblSelectAMember_Copy" Content="x lbs to go" HorizontalAlignment="Left" Margin="814,416,0,0" VerticalAlignment="Top" Height="40" Width="154" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblSelectAMember_Copy" Content="x lbs to go" HorizontalAlignment="Left" Margin="814,416,0,0" VerticalAlignment="Top" Height="46" Width="154" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
