@@ -30,7 +30,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="42" Margin="248,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" FontFamily="Arial" FontSize="18.667"/>
+        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="40" Margin="248,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" FontFamily="Arial" FontSize="18.667"/>
         <Label x:Name="lblSecurityCode" Content="Security Code:" HorizontalAlignment="Left" Margin="31,368,0,0" VerticalAlignment="Top" Height="42" Width="204" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -41,7 +41,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="42" Margin="248,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.692,0.475" FontFamily="Arial" FontSize="18.667"/>
+        <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="40" Margin="248,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.692,0.475" FontFamily="Arial" FontSize="18.667"/>
         <Label x:Name="lblTotal" Content="Total:" HorizontalAlignment="Left" Margin="601,480,0,0" VerticalAlignment="Top" Height="42" Width="84" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>

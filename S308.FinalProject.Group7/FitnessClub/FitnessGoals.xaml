@@ -40,7 +40,7 @@
         <Button x:Name="btnEnter" Content="ENTER" HorizontalAlignment="Left" Margin="850,155,0,0" VerticalAlignment="Top" Width="142" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="44" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="998,18,0,0" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="1022,155,0,0" VerticalAlignment="Top" Width="142" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="44" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
-        <ProgressBar x:Name="prgWeightLoss" HorizontalAlignment="Left" Height="44" Margin="808,339,0,0" VerticalAlignment="Top" Width="324"/>
+        <ProgressBar x:Name="prgWeightLoss" HorizontalAlignment="Left" Height="48" Margin="808,339,0,0" VerticalAlignment="Top" Width="324"/>
         <Label x:Name="lblWeightLoss" Content="Weight Loss Goal:" HorizontalAlignment="Left" Margin="814,278,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -71,7 +71,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ProgressBar x:Name="prgDailyCaloriesBurned" HorizontalAlignment="Left" Height="44" Margin="40,339,0,0" VerticalAlignment="Top" Width="324"/>
+        <ProgressBar x:Name="prgDailyCaloriesBurned" HorizontalAlignment="Left" Height="48" Margin="40,339,0,0" VerticalAlignment="Top" Width="324"/>
         <Label x:Name="lblSteps" Content="Daily Steps:" HorizontalAlignment="Left" Margin="38,470,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -82,7 +82,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ProgressBar x:Name="prgDailySteps" HorizontalAlignment="Left" Height="44" Margin="40,527,0,0" VerticalAlignment="Top" Width="324"/>
+        <ProgressBar x:Name="prgDailySteps" HorizontalAlignment="Left" Height="48" Margin="40,527,0,0" VerticalAlignment="Top" Width="324"/>
         <Label x:Name="lblFloorsClimbed" Content="Floors Climbed:" HorizontalAlignment="Left" Margin="426,470,0,0" VerticalAlignment="Top" Height="40" Width="328" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -93,8 +93,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ProgressBar x:Name="prgFloorsClimbed" HorizontalAlignment="Left" Height="44" Margin="424,527,0,0" VerticalAlignment="Top" Width="324"/>
-        <ProgressBar x:Name="prgMiles" HorizontalAlignment="Left" Height="44" Margin="424,339,0,0" VerticalAlignment="Top" Width="324"/>
+        <ProgressBar x:Name="prgFloorsClimbed" HorizontalAlignment="Left" Height="48" Margin="424,527,0,0" VerticalAlignment="Top" Width="324"/>
+        <ProgressBar x:Name="prgMiles" HorizontalAlignment="Left" Height="48" Margin="424,339,0,0" VerticalAlignment="Top" Width="324"/>
         <Label x:Name="lblMiles" Content="Miles:" HorizontalAlignment="Left" Margin="426,278,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
