@@ -24,5 +24,10 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void txtEndDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
