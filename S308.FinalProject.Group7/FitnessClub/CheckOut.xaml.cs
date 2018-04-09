@@ -23,5 +23,10 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnConfirmCheckOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
