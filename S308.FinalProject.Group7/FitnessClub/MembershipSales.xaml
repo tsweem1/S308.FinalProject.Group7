@@ -15,8 +15,8 @@
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="364,116,0,0" VerticalAlignment="Top" Width="195" Height="43" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0"/>
-        <Label x:Name="lblInstructions" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="25,116,0,0" VerticalAlignment="Top" Height="50" Width="333" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="378,116,0,0" VerticalAlignment="Top" Width="205" Height="43" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0"/>
+        <Label x:Name="lblInstructions" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="33,114,0,0" VerticalAlignment="Top" Height="50" Width="333" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -42,22 +42,22 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="cboMembershipFeatures" HorizontalAlignment="Left" Margin="32,422,0,0" VerticalAlignment="Top" Width="368" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="4"></ComboBox>
+        <ComboBox x:Name="cboMembershipFeatures" HorizontalAlignment="Left" Margin="32,422,0,0" VerticalAlignment="Top" Width="548" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="4"></ComboBox>
         <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="32,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontWeight="Bold" FontSize="26.667" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="5"/>
         <Button x:Name="btnRemove" Content="REMOVE" HorizontalAlignment="Left" Margin="198,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="6"/>
-        <TextBox x:Name="txtMemberQuotaOutput" HorizontalAlignment="Left" Height="413" Margin="580,182,0,0" Padding="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="584" FontFamily="Arial" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White" FontSize="18.667"/>
-        <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="578,119,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+        <TextBox x:Name="txtMemberQuotaOutput" HorizontalAlignment="Left" Height="303" Margin="642,178,0,0" Padding="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="524" FontFamily="Arial" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White" FontSize="18.667"/>
+        <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="646,113,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" RenderTransformOrigin="0.519,1.403" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform AngleY="-0.158"/>
                     <RotateTransform/>
-                    <TranslateTransform Y="-0.747"/>
+                    <TranslateTransform Y="-0.759"/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
         <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="994,29,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
-        <Button x:Name="btnPROCEED" Content="PROCEED" HorizontalAlignment="Left" Margin="996,109,0,0" VerticalAlignment="Top" Width="168" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Button x:Name="btnRegistration" Content="PROCEED TO REGISTRATION" HorizontalAlignment="Left" Margin="790,515,0,0" VerticalAlignment="Top" Width="374" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="370,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7"/>
         <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Height="37" Margin="32,182,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="37" Margin="129,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontFamily="Arial" FontSize="18.667" TabIndex="1"/>
