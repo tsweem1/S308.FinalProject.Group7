@@ -15,7 +15,7 @@
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Label x:Name="lblTitle" Content="MERCHANDISE" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="362" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="32,10,0,0" FontWeight="Bold"/>
+        <Label x:Name="lblPurchaseMerchandise" Content="PURCHASE MERCHANDISE" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="630" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="32,10,0,0" FontWeight="Bold"/>
         <Label x:Name="lblSelect" Content="Select An Item" HorizontalAlignment="Left" Margin="28,132,0,0" VerticalAlignment="Top" Height="40" Width="388" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>

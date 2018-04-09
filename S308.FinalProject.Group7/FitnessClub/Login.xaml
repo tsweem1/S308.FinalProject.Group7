@@ -8,9 +8,9 @@
         Title="Login" Height="796.64" Width="1214.39">
     <Grid Margin="0,0,0,-31">
         <Image x:Name="loginPageBackground_jpg" Margin="0,0,10,38" Source="loginPageBackground.jpg" Stretch="Fill" d:IsLocked="True"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="58" Margin="464,551,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="268" FontFamily="Century Gothic" FontSize="26.667" Foreground="#FF837F7F" Background="White" BorderBrush="Black"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="58" Margin="464,608,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="268" FontFamily="Century Gothic" FontSize="26.667" Background="White" BorderBrush="Black" Foreground="#FF837F7F"/>
-        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="545,690,0,0" VerticalAlignment="Top" Width="106" Height="40" FontFamily="Century Gothic" FontSize="21.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="58" Margin="464,551,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="268" FontFamily="Century Gothic" FontSize="26.667" Foreground="#FF837F7F" Background="White" BorderBrush="Black" TabIndex="0"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="58" Margin="464,608,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="268" FontFamily="Century Gothic" FontSize="26.667" Background="White" BorderBrush="Black" Foreground="#FF837F7F" TabIndex="1"/>
+        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="545,690,0,0" VerticalAlignment="Top" Width="106" Height="40" FontFamily="Century Gothic" FontSize="21.333" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2"/>
         <Label x:Name="lblTitle" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="226,0,0,0" VerticalAlignment="Top" Height="160" Width="744" Foreground="#FFC3B253" FontSize="96" FontFamily="Century Gothic" FontWeight="Bold"/>
 
     </Grid>
