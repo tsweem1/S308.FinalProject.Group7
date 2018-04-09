@@ -99,7 +99,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MembershipSignUp.xaml">
+    <Page Include="MembershipRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,8 +122,8 @@
     <Compile Include="MembershipSales.xaml.cs">
       <DependentUpon>MembershipSales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MembershipSignUp.xaml.cs">
-      <DependentUpon>MembershipSignUp.xaml</DependentUpon>
+    <Compile Include="MembershipRegistration.xaml.cs">
+      <DependentUpon>MembershipRegistration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
