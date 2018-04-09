@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for Merchandise.xaml
+    /// User can get to the Merchandise page from the Main Menu to when the user wants to purchase goods at the gym. 
     /// </summary>
     public partial class Merchandise : Window
     {

@@ -16,12 +16,18 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for MembershipSales.xaml
+    /// Users can navigate to the Membership Sales page from the Main Menu. Once the user enters in information, can proceed to the registration page. 
     /// </summary>
     public partial class MembershipSales : Window
     {
         public MembershipSales()
         {
             InitializeComponent();
+        }
+
+        private void txtEndDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

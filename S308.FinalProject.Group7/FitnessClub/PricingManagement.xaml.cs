@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for PricingManagement.xaml
+    /// User can get to the Pricing Management page from the Main Menu.
     /// </summary>
     public partial class PricingManagement : Window
     {

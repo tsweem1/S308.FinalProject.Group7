@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for Login.xaml
+    /// Before accessing the other pages, user must enter in login information. once logged in, the user will be taken to the main menu page
     /// </summary>
     public partial class Login : Window
     {

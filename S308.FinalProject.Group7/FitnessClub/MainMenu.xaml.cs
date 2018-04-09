@@ -17,6 +17,7 @@ namespace FitnessClub
     ///Evelyn Delph, Tyler Sweem, Tiffany Pham
     /// <summary>
     /// Interaction logic for Window1.xaml
+    /// Main Menu is first window, takes user to login, membership information, membership sales, pricing management, and merchandise pages
     /// </summary>
     public partial class Window1 : Window
     {

@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     /// <summary>
     /// Interaction logic for FitnessGoals.xaml
+    /// User can get to Fitness Goals page from the Membership Information page. Can navigate back to the Membership Information and Main Menu pages.
     /// </summary>
     public partial class FitnessGoals : Window
     {

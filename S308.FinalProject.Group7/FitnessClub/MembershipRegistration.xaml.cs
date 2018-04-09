@@ -15,18 +15,14 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
-    /// Interaction logic for CheckOut.xaml
+    /// Interaction logic for MembershipSignUp.xaml
+    /// User gets to the Membership Registration page after entering in information in the Membership Sales Page. Can navigate back to the Membership Sales and Main Menu pages.
     /// </summary>
-    public partial class CheckOut : Window
+    public partial class MembershipSignUp : Window
     {
-        public CheckOut()
+        public MembershipSignUp()
         {
             InitializeComponent();
-        }
-
-        private void btnConfirmCheckOut_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

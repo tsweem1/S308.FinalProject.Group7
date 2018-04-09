@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Member Purchase History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MembershipInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,7 +99,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MembershipSignUp.xaml">
+    <Page Include="MembershipRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,14 +113,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Member Purchase History.xaml.cs">
+      <DependentUpon>Member Purchase History.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MembershipInformation.xaml.cs">
       <DependentUpon>MembershipInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="MembershipSales.xaml.cs">
       <DependentUpon>MembershipSales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MembershipSignUp.xaml.cs">
-      <DependentUpon>MembershipSignUp.xaml</DependentUpon>
+    <Compile Include="MembershipRegistration.xaml.cs">
+      <DependentUpon>MembershipRegistration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
