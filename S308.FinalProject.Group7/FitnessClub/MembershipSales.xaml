@@ -27,11 +27,11 @@
             </Label.RenderTransform>
         </Label>
         <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="489" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="32,10,0,0" FontWeight="Bold"/>
-        <TextBox x:Name="txtEndDate" HorizontalAlignment="Left" Height="51" Margin="340,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Arial" FontSize="18.667"/>
-        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="51" Margin="32,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Arial" FontSize="18.667"/>
-        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="32,209,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
-        <Label x:Name="lblEndDate" Content="Enter End Date:" HorizontalAlignment="Left" Height="37" Margin="340,209,0,0" VerticalAlignment="Top" Width="231" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
-        <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="274,266,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
+        <TextBox x:Name="txtEndDate" HorizontalAlignment="Left" Height="51" Margin="305,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Arial" FontSize="18.667"/>
+        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="51" Margin="32,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Arial" FontSize="18.667"/>
+        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="32,243,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
+        <Label x:Name="lblEndDate" Content="Enter End Date:" HorizontalAlignment="Left" Height="37" Margin="305,243,0,0" VerticalAlignment="Top" Width="231" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
+        <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="260,285,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
         <Label x:Name="lblMembershipFeatures" Content="Select Membership Features:" HorizontalAlignment="Left" Margin="28,370,0,0" VerticalAlignment="Top" Height="40" Width="388" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -56,11 +56,11 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnProceedWithCheckOut" Content="CHECKOUT" HorizontalAlignment="Left" Margin="404,109,-556,0" VerticalAlignment="Top" Width="152" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="52" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="1"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="404,17,-558,0" VerticalAlignment="Top" Width="154" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="48" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="1"/>
         <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="994,29,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnPROCEED" Content="PROCEED" HorizontalAlignment="Left" Margin="996,109,0,0" VerticalAlignment="Top" Width="168" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="370,512,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White"/>
+        <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Height="37" Margin="32,182,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="37" Margin="129,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontFamily="Arial" FontSize="18.667"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
