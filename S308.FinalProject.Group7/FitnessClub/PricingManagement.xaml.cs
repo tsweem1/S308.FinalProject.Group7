@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
+    /// image source: http://www.truegritness.com/wp-content/uploads/2014/12/TG-BKG-IRON-GYM-SM-DARK.jpg
     /// Interaction logic for PricingManagement.xaml
     /// User can get to the Pricing Management page from the Main Menu.
     /// </summary>

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
+    /// image source: http://www.truegritness.com/wp-content/uploads/2014/12/TG-BKG-IRON-GYM-SM-DARK.jpg
     /// Interaction logic for MembershipSignUp.xaml
     /// User gets to the Membership Registration page after entering in information in the Membership Sales Page. Can navigate back to the Membership Sales and Main Menu pages.
     /// </summary>

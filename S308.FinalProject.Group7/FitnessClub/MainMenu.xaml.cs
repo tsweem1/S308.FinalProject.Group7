@@ -16,6 +16,7 @@ namespace FitnessClub
 {
     ///Evelyn Delph, Tyler Sweem, Tiffany Pham
     /// <summary>
+    /// image source: https://naotw-pd.s3.amazonaws.com/images/goldsgym-calvario.jpg
     /// Interaction logic for Window1.xaml
     /// Main Menu is first window, takes user to login, membership information, membership sales, pricing management, and merchandise pages
     /// </summary>

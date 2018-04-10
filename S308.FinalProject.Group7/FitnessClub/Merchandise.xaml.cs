@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
+    /// image source: http://www.truegritness.com/wp-content/uploads/2014/12/TG-BKG-IRON-GYM-SM-DARK.jpg
     /// Interaction logic for Merchandise.xaml
     /// User can get to the Merchandise page from the Main Menu to when the user wants to purchase goods at the gym. 
     /// </summary>

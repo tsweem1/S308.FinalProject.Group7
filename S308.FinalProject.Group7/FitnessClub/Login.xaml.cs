@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
+    /// image source: https://images.springer.com/sgw/books/medium/9781137346612.jpg
     /// Interaction logic for Login.xaml
     /// Before accessing the other pages, user must enter in login information. once logged in, the user will be taken to the main menu page
     /// </summary>
