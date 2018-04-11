@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="CheckOut" Height="649" Width="1200">
+        Title="CheckOut" Height="649" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
         <Label x:Name="lblCheckOutTitle" Content="MERCHANDISE CHECKOUT" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="637" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="21,19,0,0" FontWeight="Bold"/>
@@ -83,8 +83,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="990,17,0,0" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="8"/>
-        <Button x:Name="btnConfirmCheckOut" Content="CONFIRM" HorizontalAlignment="Left" Margin="838,538,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="5" Click="btnConfirmCheckOut_Click"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="990,0,0,547" VerticalAlignment="Bottom" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="8" Click="btnMainMenu_Click"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="1015,538,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.51,0.509" TabIndex="6"/>
         <ComboBox x:Name="cmbCardType" HorizontalAlignment="Left" Margin="246,227,0,0" VerticalAlignment="Top" Width="200" Height="42" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="1"/>
         <Label x:Name="lblShoppingCart" Content="Shopping Cart:" HorizontalAlignment="Left" Margin="598,105,0,0" VerticalAlignment="Top" Height="42" Width="218" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
@@ -97,7 +96,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMerchandise" Content="MERCHANDISE" HorizontalAlignment="Left" Margin="942,87,0,0" VerticalAlignment="Top" Width="214" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7"/>
+        <Button x:Name="btnMerchandise" Content="MERCHANDISE" HorizontalAlignment="Left" Margin="942,87,0,0" VerticalAlignment="Top" Width="214" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7" Click="btnMerchandise_Click"/>
         <DataGrid x:Name="dtgMemberResults" HorizontalAlignment="Left" Margin="621,160,0,0" Padding ="10" VerticalAlignment="Top" Height="271" Width="536" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667">
             <DataGrid.RenderTransform>
                 <TransformGroup>
@@ -109,5 +108,6 @@
             </DataGrid.RenderTransform>
         </DataGrid>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="42" Margin="225,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontFamily="Arial" FontSize="24" TabIndex="4" Text="j.doe@iu.edu"/>
+        <Button x:Name="btnCheckOut" Content="CONFIRM" HorizontalAlignment="Left" Margin="838,538,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.51,0.509" TabIndex="6"/>
     </Grid>
 </Window>

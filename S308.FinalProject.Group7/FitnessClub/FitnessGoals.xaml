@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Fitness Goals" Height="649" Width="1200">
+        Title="Fitness Goals" Height="649" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
         <Label x:Name="lblPersonalFitnessGoals" Content="PERSONAL FITNESS GOALS" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="636" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="48" Margin="32,14,0,0" FontWeight="Bold"/>
@@ -21,7 +21,7 @@
         </Label>
         <ComboBox x:Name="cboMemberID" HorizontalAlignment="Left" Margin="42,221,0,0" VerticalAlignment="Top" Width="318" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0"/>
         <Button x:Name="btnEnter" Content="ENTER" HorizontalAlignment="Left" Margin="836,211,0,0" VerticalAlignment="Top" Width="142" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="44" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="2"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="998,18,0,0" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="5"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="998,18,0,0" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="5" Click="btnMainMenu_Click"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="1018,211,0,0" VerticalAlignment="Top" Width="142" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="44" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="3"/>
         <ProgressBar x:Name="prgWeightLoss" HorizontalAlignment="Left" Height="48" Margin="802,393,0,0" VerticalAlignment="Top" Width="324" Background="White" Foreground="#FFC3B253"/>
         <Label x:Name="lblWeightGoal" Content="Weight Goal:" HorizontalAlignment="Left" Margin="806,328,0,0" VerticalAlignment="Top" Height="50" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
@@ -99,6 +99,6 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="772,91,0,0" VerticalAlignment="Top" Width="394" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4"/>
+        <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="772,91,0,0" VerticalAlignment="Top" Width="394" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4" Click="btnMembershipInformation_Click"/>
     </Grid>
 </Window>

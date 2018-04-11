@@ -26,9 +26,18 @@ namespace FitnessClub
             InitializeComponent();
         }
 
-        private void btnConfirmCheckOut_Click(object sender, RoutedEventArgs e)
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
 
+        private void btnMerchandise_Click(object sender, RoutedEventArgs e)
+        {
+            Merchandise winMerch = new Merchandise();
+            winMerch.Show();
+            this.Close();
         }
     }
 }

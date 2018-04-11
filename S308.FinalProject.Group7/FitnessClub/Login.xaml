@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Login" Height="796.64" Width="1214.39">
+        Title="Login" Height="796.64" Width="1214.39" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-31">
         <Image x:Name="loginPageBackground_jpg" Margin="0,0,10,38" Source="loginPageBackground.jpg" Stretch="Fill" d:IsLocked="True"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="58" Margin="464,551,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="268" FontFamily="Century Gothic" FontSize="26.667" Foreground="#FF837F7F" Background="White" BorderBrush="Black" TabIndex="0"/>
-        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="533,690,0,0" VerticalAlignment="Top" Width="130" Height="48" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2"/>
+        <Button x:Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Margin="533,690,0,0" VerticalAlignment="Top" Width="130" Height="48" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2" Click="btnLogin_Click"/>
         <Label x:Name="lblTitle" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="226,0,0,0" VerticalAlignment="Top" Height="160" Width="744" Foreground="#FFC3B253" FontSize="96" FontFamily="Century Gothic" FontWeight="Bold"/>
         <PasswordBox x:Name="psbPassword" HorizontalAlignment="Left" Margin="464,609,0,0" VerticalAlignment="Top" Height="58" Width="268" TabIndex="1" FontFamily="Century Gothic" FontSize="26.667" Password="PASSWORD"/>
 

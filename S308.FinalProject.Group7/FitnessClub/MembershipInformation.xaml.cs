@@ -25,5 +25,26 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
+        {
+            Member_Purchase_History winPurchHistory = new Member_Purchase_History();
+            winPurchHistory.Show();
+            this.Close();
+        }
+
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
+
+        private void btnFitnessGoals_Click(object sender, RoutedEventArgs e)
+        {
+            FitnessGoals winFitGoals = new FitnessGoals();
+            winFitGoals.Show();
+            this.Close();
+        }
     }
 }

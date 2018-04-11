@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Merchandise" Height="649" Width="1200">
+        Title="Merchandise" Height="649" Width="1200" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill"/>
@@ -44,8 +44,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="991,26,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7"/>
-        <Button x:Name="btnCheckout" Content="PROCEED TO CHECKOUT" HorizontalAlignment="Left" Margin="821,524,0,0" VerticalAlignment="Top" Width="336" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="6"/>
+        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="991,26,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7" Click="btnMainMenu1_Click"/>
+
         <Label x:Name="lblSize" Content="Size:" HorizontalAlignment="Left" Height="37" Margin="32,440,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
         <ComboBox x:Name="cboSize" HorizontalAlignment="Left" Margin="230,440,0,0" VerticalAlignment="Top" Width="162" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="3">
             <ComboBoxItem Content="XS"/>
@@ -57,6 +57,7 @@
             <ComboBoxItem Content="XXXL"/>
         </ComboBox>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="352,523,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.357,0.67" TabIndex="5"/>
+        <Button x:Name="btnProceedCheckOut" Content="PROCEED TO CHECKOUT" HorizontalAlignment="Left" Margin="785,523,0,0" VerticalAlignment="Top" Width="375" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="72" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.357,0.67" TabIndex="5" Click="btnProceedCheckOut_Click"/>
     </Grid>
 
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Membership Registration" Height="649" Width="1200">
+        Title="Membership Registration" Height="649" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
@@ -133,8 +133,8 @@
             </Label.RenderTransform>
         </Label>
         <Button x:Name="btnRegister1" Content="REGISTER" HorizontalAlignment="Left" Margin="320,545,0,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="10" Grid.Column="5"/>
-        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="500,29,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="5" TabIndex="13"/>
-        <Button x:Name="btnMembershipSales" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Margin="420,105,0,0" VerticalAlignment="Top" Width="242" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="5" TabIndex="12"/>
+        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="500,29,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="5" TabIndex="13" Click="btnMainMenu1_Click"/>
+        <Button x:Name="btnMembershipSales" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Margin="420,105,0,0" VerticalAlignment="Top" Width="242" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.Column="5" TabIndex="12" Click="btnMembershipSales_Click"/>
         <TextBox x:Name="txtSecurityCode" HorizontalAlignment="Left" Height="42" Margin="296,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" FontFamily="Arial" FontSize="24" TabIndex="8" Grid.Column="5" Text="057"/>
         <Label x:Name="lblSecurityCode" Content="Security Code:" HorizontalAlignment="Left" Margin="34,372,0,0" VerticalAlignment="Top" Height="42" Width="190" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="5">
             <Label.RenderTransform>
