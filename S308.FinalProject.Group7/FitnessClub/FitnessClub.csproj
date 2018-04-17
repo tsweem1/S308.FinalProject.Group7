@@ -160,6 +160,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CardLogos\" />
     <Folder Include="Photos\" />
   </ItemGroup>
   <ItemGroup>
