@@ -39,5 +39,21 @@ namespace FitnessClub
             winMemberSales.Show();
             this.Close();
         }
+
+        private void btnRegister1_Click(object sender, RoutedEventArgs e)
+        {
+            // Questions
+            // Ask about if you need to validate inputs before you create an instance
+            // Ask about generating a random number for UserID as the user clicks "register"
+                //Random rand = new Random(100);
+                //int ccc = rand.Next(000000000, 999999999);
+                //Member memberNew = new Member(txtUserID.Text,txtFirstName.Text, txtLastName.Text, txtPhone.Text, cboGender.Text,DateTime txtBirthday.Text);
+
+            //Coding needed
+            //1. Validate phone number
+            //2. Valdidate weight as int
+            //3. Validiate email
+            //4. Append data to file
+        }
     }
 }
