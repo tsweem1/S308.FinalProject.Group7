@@ -104,7 +104,7 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="42" Margin="22,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268" FontFamily="Arial" FontSize="24" TabIndex="4" Grid.ColumnSpan="2" Grid.Column="2" Text="150"/>
-        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="20,336,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+        <Label x:Name="lblBirthday" Content="Birthday:" HorizontalAlignment="Left" Margin="20,336,0,0" VerticalAlignment="Top" Height="42" Width="154" FontFamily="Century Gothic" Foreground="#FFF0E9E9" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
