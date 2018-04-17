@@ -16,6 +16,7 @@ namespace FitnessClub
         public string PhoneNumber { get; set; }
         public string Gender { get; set; }
         public DateTime Birthday { get; set; }
+        public int Weight { get; set; }
         public string EmailAddress { get; set; }
         public string CreditCardType { get; set; }
         public string CreditCardNumber { get; set; }
@@ -28,7 +29,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string userID, string firstName, string lastName, string phoneNumber, string gender, DateTime birthday, string email, string creditType, string creditNumber, string securityCode )
+        public Member(string userID, string firstName, string lastName, string phoneNumber, string gender, DateTime birthday, string email, string creditType, string creditNumber, string securityCode, int weight )
         {
             UserId = userID;
             FirstName = firstName;
@@ -40,6 +41,7 @@ namespace FitnessClub
             CreditCardType = creditType;
             CreditCardNumber = creditNumber;
             SecurityCode = securityCode;
+            Weight = weight;
        }
 
         // Output for data grids...probably add more for output
