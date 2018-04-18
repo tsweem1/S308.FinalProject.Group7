@@ -26,10 +26,6 @@ namespace FitnessClub
             InitializeComponent();
 
 
-
-
-
-
         }
 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
@@ -68,10 +64,22 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            //validate input that at least one search field has been filled out
+            //declare input as string
+            string strFirstName;
+            string strLastName;
+            string strEmail;
+            string strPhoneNumber;
 
+            strFirstName = Convert.ToString(txtFirstName.Text);
+            strLastName = Convert.ToString(txtLastName.Text);
+            strEmail = Convert.ToString(txtEmail.Text);
+            strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
-
+            if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
+            {
+                MessageBox.Show("Please enter information in at least one search field.");
+                return;
+            }
 
         }
     }
