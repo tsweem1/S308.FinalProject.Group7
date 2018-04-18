@@ -24,6 +24,12 @@ namespace FitnessClub
         public MembershipInformation()
         {
             InitializeComponent();
+
+
+
+
+
+
         }
 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
@@ -45,6 +51,28 @@ namespace FitnessClub
             FitnessGoals winFitGoals = new FitnessGoals();
             winFitGoals.Show();
             this.Close();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            //clear all user input fields
+
+            txtLastName.Text = "";
+            txtFirstName.Text = "";
+            txtEmail.Text = "";
+            txtPhoneNumber.Text = "";
+
+
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            //validate input that at least one search field has been filled out
+
+
+
+
         }
     }
 }
