@@ -42,18 +42,89 @@ namespace FitnessClub
 
         private void btnRegister1_Click(object sender, RoutedEventArgs e)
         {
-            // Questions
-            // Ask about if you need to validate inputs before you create an instance
-            // Ask about generating a random number for UserID as the user clicks "register"
-                //Random rand = new Random(100);
-                //int ccc = rand.Next(000000000, 999999999);
-                //Member memberNew = new Member(txtUserID.Text,txtFirstName.Text, txtLastName.Text, txtPhone.Text, cboGender.Text,DateTime txtBirthday.Text);
+            // Initalize input variables
+            string strFirstName = txtFirstName.Text;
+            string strLastName = txtLastName.Text;
+            string strGender = cboGender.Text;
+            DateTime? datBirthday = dtDatePicker.SelectedDate;
+            string strEmail = txtEmail.Text;
+            string strPhone = txtPhone.Text;
+            string strGoal = cboFitnessGoals.Text;
+            string strCreditNum = txtCreditCardNum.Text;
+            string strCreditType = txtCreditCardType.Text;
+            string strSecurityCode = txtSecurityCode.Text;
+            string strBillingAddress = txtBillingAddress.Text;
+            string strCity = txtCity.Text;
+            string strState = cboState.Text;
+            string strZip = txtZip.Text;
 
-            //Coding needed
-            //1. Validate phone number
-            //2. Valdidate weight as int
-            //3. Validiate email
-            //4. Append data to file
+
+            //Provide validation for all fields
+
+            //Make sure all fields required are filled out
+            bool isFNameEmpty = txtFirstName.Text.Length == 0;
+            bool isLNameEmpty = txtLastName.Text.Length == 0;
+            bool isCreditCardEmpty = txtCreditCardNum.Text.Length == 0;
+            bool isCreditTypeEmpty = txtCreditCardType.Text.Length == 0;
+            bool isPhoneEmpty = txtPhone.Text.Length == 0;
+            bool isEmailEmpty = txtEmail.Text.Length == 0;
+            bool isBirthdaySelected = dtDatePicker.SelectedDate == null;
+            bool isGenderSelected = cboGender.SelectedIndex == -1;
+           // bool isPhoneNum = Int64.TryParse(strPhone, out long lngPhone);
+
+            #region check if required fields are empty
+            // Display proper error messages for empty values
+            if (isFNameEmpty)
+            {
+                MessageBox.Show("Please enter a first name.");
+                return;
+            }
+            if (isLNameEmpty)
+            {
+                MessageBox.Show("Please enter a last name.");
+                return;
+            }
+            if (isCreditCardEmpty)
+            {
+                MessageBox.Show("Please enter a credit card number.");
+                return;
+            }
+            if (isCreditTypeEmpty)
+            {
+                MessageBox.Show("Please enter a credit card type.");
+                return;
+            }
+            if (isPhoneEmpty)
+            {
+                MessageBox.Show("Please enter a valid phone number.");
+                return;
+            }
+            if (isEmailEmpty)
+            {
+                MessageBox.Show("Please enter an email address");
+                return;
+            }
+            if (isBirthdaySelected)
+            {
+                MessageBox.Show("Please select a date");
+                return;
+            }
+            if (isGenderSelected)
+            {
+                MessageBox.Show("Please select a gender.");
+                return;
+            }
+            #endregion
+            #region Specific validation for fields
+            // Provide valdiation for fields that require more validation
+            //Phone number
+
+            //Weight
+            //Credit Card
+            //Security code
+            //Expiration date
+            //Zip code
+            #endregion
         }
     }
 }
