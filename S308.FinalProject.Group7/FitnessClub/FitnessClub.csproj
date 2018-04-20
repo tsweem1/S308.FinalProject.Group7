@@ -108,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PricingManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +133,9 @@
     </Compile>
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.xaml.cs">
+      <DependentUpon>Payment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PricingManagement.xaml.cs">
       <DependentUpon>PricingManagement.xaml</DependentUpon>

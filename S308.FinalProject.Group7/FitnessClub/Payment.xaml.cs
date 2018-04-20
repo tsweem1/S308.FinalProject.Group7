@@ -15,28 +15,36 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
-    /// image source: http://www.truegritness.com/wp-content/uploads/2014/12/TG-BKG-IRON-GYM-SM-DARK.jpg
-    /// Interaction logic for MembershipSales.xaml
-    /// Users can navigate to the Membership Sales page from the Main Menu. Once the user enters in information, can proceed to the registration page. 
+    /// Interaction logic for Payment.xaml
     /// </summary>
-    public partial class MembershipSales : Window
+    public partial class Payment : Window
     {
-        public MembershipSales()
+        public Payment()
         {
             InitializeComponent();
         }
 
-        private void txbMemReg_MouseUp(object sender, MouseButtonEventArgs e)
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            MembershipSignUp winMemberReg = new MembershipSignUp();
-            winMemberReg.Show();
-            this.Close();
+
         }
+
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Window1 winMainMenu = new Window1();
             winMainMenu.Show();
             this.Close();
+        }
+        private void txbMemSales_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MembershipSales winMemberSales = new MembershipSales();
+            winMemberSales.Show();
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
