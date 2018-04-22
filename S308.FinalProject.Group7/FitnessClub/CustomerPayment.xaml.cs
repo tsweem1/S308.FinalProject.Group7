@@ -32,7 +32,8 @@ namespace FitnessClub
             //1. Initalize variables and assign it to values in text boxes
             string strCreditCardNumber = txtCreditCardNumber.Text;
             string strCreditCardType = "";
-            string strExpDate = txtExpYear.Text;
+            string strExpYear = cboYear.Text;
+            string strExpMonth = cboMonth.Text;
             string strBillingAddress = txtBillingAddress.Text;
             string strCity = txtCity.Text;
             string strState = cboState.Text;
@@ -41,15 +42,15 @@ namespace FitnessClub
 
             //2. Initialize isNull variables to see if all fields were filled out
             bool isCreditNumEmpty = strCreditCardNumber.Length == 0;
-            //bool isCreditType = strCreditCardType.Length == 0;
-            bool isExpDateEmpty = strExpDate.Length == 0;
+            bool isExpYear = cboYear.SelectedIndex == -1;
+            bool isExpMonth = cboMonth.SelectedIndex == -1;
             bool isAddressEmpty = strBillingAddress.Length == 0;
             bool isCityEmpty = strCity.Length == 0;
             bool isStateSelected = cboState.SelectedIndex == -1;
             bool isZipEmpty = strZipCode.Length == 0;
 
             //3. Test if fields are empty
-            if (isCreditNumEmpty || isExpDateEmpty || isAddressEmpty || isCityEmpty || isStateSelected || isZipEmpty)
+            if (isCreditNumEmpty || isExpYear || isExpMonth || isAddressEmpty || isCityEmpty || isStateSelected || isZipEmpty)
             {
                 MessageBox.Show("Please fill all fields.");
                 return;
@@ -90,15 +91,19 @@ namespace FitnessClub
             }
 
             //4.6 Check if credit card is expired
-            bool isCreditCardExpired = calCardNum.isExpired(strExpDate);
+            int intExpMonth = Convert.ToInt32(strExpMonth);
+            int intExpYear = Convert.ToInt32(strExpYear);
+
+            bool isCreditCardExpired = calCardNum.isExpired(intExpMonth, intExpYear);
 
             if(isCreditCardExpired == false)
             {
-                txtExpYear.Text = "";
+                cboYear.SelectedIndex = -1;
+                cboMonth.SelectedIndex = -1;
                 MessageBox.Show("Expiration date not valid.");
                 return;
             }
-            //4.6 Return card type
+             //4.6 Return card type
             strCreditCardType = calCardNum.CardType(strCreditCardNumber); 
 
             //4.7 Perform logic to display proper credit card image
@@ -128,10 +133,12 @@ namespace FitnessClub
                 imgCard.Visibility = Visibility.Visible;
                 txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
                 lblCreditType.Content = strCreditCardType;
-                MessageBox.Show("Registration was a success!");
                 Clear();
+                MessageBox.Show("Registration was a success!");
+              
         }
-
+        #region Clear Contents
+        //Clear contents function
         private void Clear()
         {
             lblCreditType.Content = "";
@@ -139,9 +146,20 @@ namespace FitnessClub
             txtBillingAddress.Text = "";
             txtCity.Text = "";
             txtCreditCardNumber.Text = "";
-            txtExpYear.Text = "";
+            cboYear.SelectedIndex=-1;
+            cboMonth.SelectedIndex = -1;
+            cboState.SelectedIndex = -1;
             txtZip.Text = "";
         }
+
+        
+        //Clear contents button
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
+        #endregion
+
 
         #region Navigation features
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
@@ -157,10 +175,5 @@ namespace FitnessClub
             this.Close();
         }
         #endregion
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            Clear();
-        }
     }
 }

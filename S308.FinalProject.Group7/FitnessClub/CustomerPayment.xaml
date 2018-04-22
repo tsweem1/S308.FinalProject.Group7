@@ -44,7 +44,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblExpirationDate" Content="ExpirationDate:" HorizontalAlignment="Left" Margin="48,290,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
+        <Label x:Name="lblExpirationDate" Content="ExpirationDate:" HorizontalAlignment="Left" Margin="48,298,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -54,7 +54,6 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtExpYear" HorizontalAlignment="Left" Height="25" Margin="179,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" FontFamily="Arial" FontSize="12" TabIndex="3" RenderTransformOrigin="0.509,-0.08"/>
         <Label x:Name="lblBillingAddress" Content="Billing Address:" HorizontalAlignment="Left" Margin="432,202,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -87,7 +86,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="cboState" HorizontalAlignment="Left" Margin="550,269,0,0" VerticalAlignment="Top" Width="82" Height="25" RenderTransformOrigin="0.524,-0.429" TabIndex="7" FontFamily="Arial">
+        <ComboBox x:Name="cboState" HorizontalAlignment="Left" Margin="550,269,0,0" VerticalAlignment="Top" Width="82" Height="25" RenderTransformOrigin="0.524,-0.429" TabIndex="6" FontFamily="Arial">
             <ComboBoxItem Content="IN"/>
         </ComboBox>
         <Label x:Name="lblZip" Content="Zip:" HorizontalAlignment="Left" Margin="434,305,0,0" VerticalAlignment="Top" Height="26" Width="42" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
@@ -100,11 +99,38 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtZip" HorizontalAlignment="Left" Height="26" Margin="550,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontFamily="Arial" FontSize="12" TabIndex="8" RenderTransformOrigin="0.509,-0.08"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="730,408,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="30" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="10" RenderTransformOrigin="0.537,-1.062" Click="btnClear_Click"/>
-        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="730,332,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="32" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="9" RenderTransformOrigin="0.537,-1.062" Click="btnRegister_Click"/>
+        <TextBox x:Name="txtZip" HorizontalAlignment="Left" Height="26" Margin="550,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontFamily="Arial" FontSize="12" TabIndex="7" RenderTransformOrigin="0.509,-0.08"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="730,408,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="30" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="9" RenderTransformOrigin="0.537,-1.062" Click="btnClear_Click"/>
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="730,332,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="32" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="8" RenderTransformOrigin="0.537,-1.062" Click="btnRegister_Click"/>
         <ComboBox x:Name="cboExistingMember" HorizontalAlignment="Left" Margin="174,124,0,0" VerticalAlignment="Top" Width="160" Height="25" RenderTransformOrigin="0.524,-0.429" TabIndex="0"/>
         <Image x:Name="imgCard" Margin="300,249,552,188" Source="mastercard_logo.png" Stretch="Fill" RenderTransformOrigin="1.338,0.614"/>
         <Label x:Name="lblCreditType"  FontSize="12" HorizontalAlignment="Left" Margin="179,249,0,0" VerticalAlignment="Top" Width="116" Height="25" FontFamily="Arial"/>
+        <ComboBox x:Name="cboMonth" HorizontalAlignment="Left" Height="25" Margin="184,297,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="-0.871,-1.12" TabIndex="2">
+            <ComboBoxItem Content="01" FontFamily="Arial"/>
+            <ComboBoxItem Content="02" FontFamily="Arial"/>
+            <ComboBoxItem Content="03" FontFamily="Arial"/>
+            <ComboBoxItem Content="04" FontFamily="Arial"/>
+            <ComboBoxItem Content="05" FontFamily="Arial"/>
+            <ComboBoxItem Content="06" FontFamily="Arial"/>
+            <ComboBoxItem Content="07" FontFamily="Arial"/>
+            <ComboBoxItem Content="08" FontFamily="Arial"/>
+            <ComboBoxItem Content="09" FontFamily="Arial"/>
+            <ComboBoxItem Content="10" FontFamily="Arial"/>
+            <ComboBoxItem Content="11" FontFamily="Arial"/>
+            <ComboBoxItem Content="12" FontFamily="Arial"/>
+        </ComboBox>
+        <ComboBox x:Name="cboYear" HorizontalAlignment="Left" Height="25" Margin="254,297,0,0" VerticalAlignment="Top" Width="82" RenderTransformOrigin="-0.871,-1.12" TabIndex="3">
+            <ComboBoxItem Content="2018" FontFamily="Arial"/>
+            <ComboBoxItem Content="2019" FontFamily="Arial"/>
+            <ComboBoxItem Content="2020" FontFamily="Arial"/>
+            <ComboBoxItem Content="2021" FontFamily="Arial"/>
+            <ComboBoxItem Content="2022" FontFamily="Arial"/>
+            <ComboBoxItem Content="2023" FontFamily="Arial"/>
+            <ComboBoxItem Content="2024" FontFamily="Arial"/>
+            <ComboBoxItem Content="2025" FontFamily="Arial"/>
+            <ComboBoxItem Content="2026" FontFamily="Arial"/>
+        </ComboBox>
+        <Label x:Name="lblMM" Content="MM" HorizontalAlignment="Left" Height="32" Margin="195,324,0,0" VerticalAlignment="Top" Width="44" FontFamily="Arial" FontSize="11" FontWeight="Bold"/>
+        <Label x:Name="lblYear" Content="YYYY" HorizontalAlignment="Left" Height="32" Margin="271,326,0,0" VerticalAlignment="Top" Width="44" FontFamily="Arial" FontSize="11" FontWeight="Bold"/>
     </Grid>
 </Window>

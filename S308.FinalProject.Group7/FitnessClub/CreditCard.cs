@@ -79,19 +79,29 @@ namespace FitnessClub
             if (intSum % 10 == 0) { return true; } else { return false; }
             }
 
-       public bool isExpired(string dateString)
+       public bool isExpired(int mm, int yyyy)
         {
-            DateTime dateValue;//1/1/0001
-
-    
-            if (DateTime.TryParse(dateString, out dateValue))
-                if (dateValue > DateTime.Today)
-                    //dateValue == 2/22/2018
-                    return true;
+            int todayMonth = DateTime.Today.Month;
+            int todayYear = DateTime.Today.Year;
+            bool isValid = false;
+            
+            if(yyyy == todayYear)
+            {
+                if(mm < todayMonth)
+                {
+                    isValid = false;
+                }
                 else
-                    return false;
-            else
-                return false;
+                {
+                    isValid = true;
+                }
+            }
+            if(yyyy > todayYear)
+            {
+                isValid = true;
+            }
+            return isValid;
+            
         }
     }  
  }
