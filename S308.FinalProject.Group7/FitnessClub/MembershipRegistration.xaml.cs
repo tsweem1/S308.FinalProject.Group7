@@ -107,6 +107,8 @@ namespace FitnessClub
             //5 Check if phone number is valid
             //5.1 check if number is formatted correctly
             bool hasTwoHyphens = (strPhoneNumber.IndexOf("-") == 3) && (strPhoneNumber.LastIndexOf("-") == 7);
+            
+            if (hasTwoHyphens)
             {
                 int intAreaCode, intMiddleNum, intLastNum;
                 int intFirstHyphen = strPhoneNumber.IndexOf("-");
@@ -125,6 +127,7 @@ namespace FitnessClub
                     MessageBox.Show("Please enter a valid phone number.");
                     return;
                 }
+   
             }
             else
             {
