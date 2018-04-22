@@ -21,11 +21,11 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
-        public MembershipSales()
+      public MembershipSales()
         {
             InitializeComponent();
         }
-
+        #region navigating between windows
         private void txbMemReg_MouseUp(object sender, MouseButtonEventArgs e)
         {
             MembershipSignUp winMemberReg = new MembershipSignUp();
@@ -38,5 +38,11 @@ namespace FitnessClub
             winMainMenu.Show();
             this.Close();
         }
+        #endregion
+        private void btnSaveQuota_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -135,7 +135,7 @@
         </ComboBox>
         <Label x:Name="lblEmailExample" Content="ex:jdoe@sol.com" HorizontalAlignment="Left" Height="22" Margin="158,371,0,0" VerticalAlignment="Top" Width="104" FontFamily="Arial" FontSize="11"/>
         <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="772,51,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" RenderTransformOrigin="0.494,2.05" MouseUp="txbMainMenu_MouseUp"/>
-        <TextBlock x:Name="txbPaymentInfo" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="547,15,0,0" TextWrapping="Wrap" Text="Payment Information" VerticalAlignment="Top" Height="20" Width="152" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbPaymentInfo_MouseUp"/>
-        <TextBlock x:Name="txbMemberShipSales" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="715,15,0,0" TextWrapping="Wrap" Text="Membership Sales" VerticalAlignment="Top" Height="20" Width="137" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbMemSales_MouseUp"/>
+        <TextBlock x:Name="txbPaymentInfo" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="549,15,0,0" TextWrapping="Wrap" Text="Payment Information" VerticalAlignment="Top" Height="20" Width="152" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbPaymentInfo_MouseUp"/>
+        <TextBlock x:Name="txbMemberShipSales" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="719,15,0,0" TextWrapping="Wrap" Text="Membership Sales" VerticalAlignment="Top" Height="20" Width="137" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbMemSales_MouseUp"/>
     </Grid>
 </Window>

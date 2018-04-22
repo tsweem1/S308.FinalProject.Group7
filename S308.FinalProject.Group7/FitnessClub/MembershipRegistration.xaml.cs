@@ -34,8 +34,8 @@ namespace FitnessClub
         }
         private void txbPaymentInfo_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Payment winPayment = new Payment();
-            winPayment.Show();
+            CustomerPayment winCustomerPayment = new CustomerPayment();
+            winCustomerPayment.Show();
             this.Close();
         }
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)

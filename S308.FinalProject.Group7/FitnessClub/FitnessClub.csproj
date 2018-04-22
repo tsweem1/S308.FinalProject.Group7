@@ -59,6 +59,10 @@
       <DependentUpon>CheckOut.xaml</DependentUpon>
     </Compile>
     <Compile Include="CreditCard.cs" />
+    <Compile Include="CustomerPayment.xaml.cs">
+      <DependentUpon>CustomerPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPaymentInfo.cs" />
     <Compile Include="FitnessGoals.xaml.cs">
       <DependentUpon>FitnessGoals.xaml</DependentUpon>
     </Compile>
@@ -73,6 +77,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="CheckOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerPayment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,10 +116,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Payment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PricingManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,9 +137,6 @@
     </Compile>
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Payment.xaml.cs">
-      <DependentUpon>Payment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PricingManagement.xaml.cs">
       <DependentUpon>PricingManagement.xaml</DependentUpon>
@@ -167,7 +168,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CardLogos\" />
     <Folder Include="Photos\" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +178,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="loginPageBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mastercard_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CardLogos\american_express_logo.png" />
+    <Resource Include="CardLogos\discover_logo.png" />
+    <Resource Include="CardLogos\mastercard_logo.png" />
+    <Resource Include="CardLogos\visa_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

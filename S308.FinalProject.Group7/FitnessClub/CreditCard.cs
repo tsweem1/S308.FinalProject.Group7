@@ -18,25 +18,30 @@ namespace FitnessClub
 {
     class CreditCard : Member
     {
+        public string CreditCardNumber { get; set; }
+        public string CreditCardType { get; set; }
+        public string ExpirationDate { get; set; }
+        public string BillingAddress { get; set; }
+        public string City { get; set; }
+        public string Zip { get; set; }
+
+
         private long lngNum;
         private int intDigits;
         private int intSum;
-        public object imgCard;
 
         //Check for validity
-        public bool CardNumValid(bool isValid)
+        public bool CardNumValid(string CreditCardNumber)
         {
-            if (!Int64.TryParse(CreditCardNumber, out lngNum)) { isValid = false; }
-            else { isValid = true; }
-            return isValid;
+            if (!Int64.TryParse(CreditCardNumber, out lngNum))
+            { return false; } else { return true; } 
         }
 
         //Check for length
-        public bool CheckCreditLength(bool isValid)
+        public bool CheckCreditLength(string CreditCardNumber)
         {
             if (CreditCardNumber.Length != 13 && CreditCardNumber.Length != 15 && CreditCardNumber.Length != 16)
-            { isValid = false; } else { isValid = true; }
-            return isValid;
+            { return false; } else { return true; } 
         }
 
         //Check card type
@@ -57,9 +62,9 @@ namespace FitnessClub
         }
 
         // Luhn algorthim
-        public bool Luhn(bool isValid)
+        public bool Luhn(string strCard)
         {
-            string strCard = ReverseString(CreditCardNumber);
+            strCard = ReverseString(strCard);
             for (int i = 0; i < strCard.Length; i++)
             {
                 intDigits = Convert.ToInt32(strCard.Substring(i, 1));
@@ -71,10 +76,23 @@ namespace FitnessClub
                 }
                 intSum += intDigits;
                 }
-            if(intSum % 10 == 0) { isValid = true; } else { isValid = false; }
-            return isValid;
+            if (intSum % 10 == 0) { return true; } else { return false; }
             }
 
-     }  
+       public bool isExpired(string dateString)
+        {
+            DateTime dateValue;//1/1/0001
+
+    
+            if (DateTime.TryParse(dateString, out dateValue))
+                if (dateValue > DateTime.Today)
+                    //dateValue == 2/22/2018
+                    return true;
+                else
+                    return false;
+            else
+                return false;
+        }
+    }  
  }
 
