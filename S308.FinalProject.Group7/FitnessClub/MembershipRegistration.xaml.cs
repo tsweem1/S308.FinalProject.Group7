@@ -106,8 +106,7 @@ namespace FitnessClub
 
             //5 Check if phone number is valid
             //5.1 check if number is formatted correctly
-            bool hasHyphens = strPhoneNumber.Contains("-");
-            if (hasHyphens)
+            bool hasTwoHyphens = (strPhoneNumber.IndexOf("-") == 3) && (strPhoneNumber.LastIndexOf("-") == 7);
             {
                 int intAreaCode, intMiddleNum, intLastNum;
                 int intFirstHyphen = strPhoneNumber.IndexOf("-");
@@ -120,38 +119,19 @@ namespace FitnessClub
                 bool isMiddleNum = Int32.TryParse(strMiddleNum, out intMiddleNum);
                 bool isLastNum = Int32.TryParse(strLastNum, out intLastNum);
 
-                if (strAreaCode.Length != 3 || strMiddleNum.Length != 3 || strLastNum.Length != 4 || !isAreaCodeNum || !isMiddleNum || !isLastNum || strPhoneNumber.Length != 12)
-                {
-                    txtPhone.Text = "";
-                    MessageBox.Show("Please enter a valid phone number.");
-                    return;
-                }
-                else
+                if (strAreaCode.Length != 3 || strMiddleNum.Length != 3 || strLastNum.Length != 4 || strPhoneNumber.Length != 12 || !isAreaCodeNum || !isMiddleNum || !isLastNum)
                 {
                     txtPhone.Text = "";
                     MessageBox.Show("Please enter a valid phone number.");
                     return;
                 }
             }
-            //try
-            //{
-            //    strPhoneNumber = strPhoneNumber.Replace("-", "");
-            //}
-            //catch 
-            //{
-            //    txtPhone.Text = "";
-            //    MessageBox.Show("Please enter a valid phone number.");
-            //    return;
-            //}
-           
-            //long lngPhone;
-            //bool isLong = Int64.TryParse(strPhoneNumber, out lngPhone);
-
-            //if (!isLong)
-            //{
-            //    MessageBox.Show("Please enter a valid phone number.");
-            //    return;
-            //}
+            else
+            {
+                txtPhone.Text = "";
+                MessageBox.Show("Please enter a valid phone number.");
+                return;
+            }
         }
 
         #region Navigation controls
