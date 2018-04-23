@@ -25,6 +25,19 @@ namespace FitnessClub
         public string City { get; set; }
         public string Zip { get; set; }
 
+        public CreditCard()
+        {
+
+        }
+        public CreditCard(string strCreditCardNumber, string strCreditCardType, string strExpirationDate, string strBillingAddress, string strCity, string strZip)
+        {
+            CreditCardNumber = strCreditCardNumber;
+            CreditCardType = strCreditCardType;
+            ExpirationDate = strExpirationDate;
+            BillingAddress = strBillingAddress;
+            City = strCity;
+            Zip = strZip;
+        }
 
         private long lngNum;
         private int intDigits;

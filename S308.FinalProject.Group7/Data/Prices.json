@@ -1,0 +1,14 @@
+[{
+    "Membership": "Individual 1 Month",
+    "Price": "9.99"},
+    { "Membership": "Individual 12 Month",
+    "Price": "100.00"},
+    {"Membership": "Two Person 1 Month",
+    "Price": "14.99"},
+    {"Membership": "Two Person 12 Month",
+    "Price": "150.00"},
+    {"Membership": "Family 1 Month",
+    "Price": "19.99"},
+    {"Membership": "Family 12 Month",
+    "Price": "200.00"}
+ ]

@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+using static FitnessClub.PriceInformation;
 
 namespace FitnessClub
 {
@@ -21,9 +24,34 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
+      List<PriceInformation> priceList;
       public MembershipSales()
         {
             InitializeComponent();
+            //1. Initialize list
+            priceList = new List<PriceInformation>();
+            Files calFiles = new Files();
+
+            //2. Set file location and timestamp for method
+            string strFileLocation = @"..\..\..\Data\Prices";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
+
+            //4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //5. Deseralize it to a list
+            priceList = JsonConvert.DeserializeObject<List<PriceInformation>>(jsonData);
+            
+            //6. Add membership to the combo box
+            foreach (var i in priceList)
+            {
+                cboMembershipType.Items.Add(i.Membership);
+            }
         }
         #region navigating between windows
         private void txbMemReg_MouseUp(object sender, MouseButtonEventArgs e)
@@ -41,7 +69,16 @@ namespace FitnessClub
         #endregion
         private void btnSaveQuota_Click(object sender, RoutedEventArgs e)
         {
+            var priceQuery =
+                from p in priceList
+                where (p.Membership.Trim() == cboMembershipType.Text.Trim())
+                select p.Price;
 
+            MessageBox.Show(priceQuery.ToString());
+
+            //MessageBox.Show(output);
+            //DatePicker help = dtStart;
+            // MessageBox.Show(help.ToString());
         }
 
     }
