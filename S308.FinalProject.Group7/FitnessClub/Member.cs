@@ -9,7 +9,7 @@ namespace FitnessClub
    //Add class for member
     public class Member
     {
-
+        public long MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -18,6 +18,11 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
+        public int CaloriesBurned { get; set; }
+        public int Miles { get; set; }
+        public int WeightGoal { get; set; }
+        public int DailySteps { get; set; }
+        public int FloorsClimbed { get; set; }
 
         public Member()
         {
@@ -25,8 +30,9 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal )
+        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int dailySteps, int floorsClimbed)
         {
+            MemberID = memberid;
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
@@ -35,6 +41,14 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
+            CaloriesBurned = caloriesBurned;
+            Miles = miles;
+            WeightGoal = weightGoal;
+            DailySteps = dailySteps;
+            FloorsClimbed = floorsClimbed;
+
+
+
        }
     }
 }
