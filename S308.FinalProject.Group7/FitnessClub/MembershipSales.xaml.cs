@@ -71,7 +71,6 @@ namespace FitnessClub
 
             //7. Initalize variables that must be prefaced before further validation
             DatePicker dtStartDate = dtStart;
-            int SubCost = GetAdditionalFeatureCost(lstFeatures, cboMembershipType);
             
             //8. Validate that a combobox item was selected
             if (cboMembershipType.SelectedIndex == -1)
@@ -124,19 +123,35 @@ namespace FitnessClub
             //11. Convert list to string
             string strMembershipPrice = String.Join(",", priceQuery);
 
-            //12. Set price text output equal to string
+            //13. Convert price to double for subtotal calculation
+            double dblMembershipPrice = Convert.ToDouble(strMembershipPrice);
+            double dblSubCost = GetAdditionalFeatureCost(lstFeatures, cboMembershipType);
+            double dblTotalCost = dblSubCost + dblMembershipPrice;
+
+            //14. String formula for output text box
+            string strOutput = Environment.NewLine+"Membership Price:".PadRight(30) + dblMembershipPrice.ToString("C2") + Environment.NewLine + Environment.NewLine + "Addtional Feature Costs:".PadRight(30) + dblSubCost.ToString("C2") + Environment.NewLine + "________________________________________"+ Environment.NewLine + "Total Cost:".PadRight(30) + dblTotalCost.ToString("C2");
+
+            //15. Split datetime for enddate
+            string strConvertedEndDate = dtConvertedEndDate.ToString();
+            int strSpace = strConvertedEndDate.IndexOf(" ");
+            string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
+
+            //16. Set output to corresponding text boxes
             txtPrice.Text = strMembershipPrice;
+            txtMemberQuotaOutput.Text = strOutput;
+            txtEndDate.Text = strSubConvertedEndDate;
+            txtMemberQuotaOutput.Text = strOutput;
         }
         
         //Function that adds Prices.json data to combo-box
         public void AddComboItems() { foreach (var i in priceList) cboMembershipType.Items.Add(i.Membership.ToString()); }
 
         //Calculates additional features (locker/personal training)
-        public int GetAdditionalFeatureCost(ListBox lstbox, ComboBox cbo2)
+        public double GetAdditionalFeatureCost(ListBox lstbox, ComboBox cbo2)
         {
-            int personalTraining = 5;
-            int lockerRental = 1;
-            int totalPrice = 0;
+            double personalTraining = 5;
+            double lockerRental = 1;
+            double totalPrice = 0;
             byte totalMonths = 0;
 
             if (lstbox.SelectedIndex != -1)
@@ -211,6 +226,7 @@ namespace FitnessClub
                 
             return isSelected;
         }
+
     }
 }
     
