@@ -37,7 +37,10 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ListBox x:Name="listBox" Grid.Column="1" HorizontalAlignment="Left" Height="92" Margin="34,328,0,0" VerticalAlignment="Top" Width="343"/>
+        <ListBox x:Name="lstFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="92" Margin="34,328,0,0" VerticalAlignment="Top" Width="343" SelectionMode="Multiple">
+            <ListBoxItem Content="Personal Training Plan - $5.00 per month " FontFamily="Arial"/>
+            <ListBoxItem Content="Locker Rental - $1.00 per month " FontFamily="Arial"/>
+        </ListBox>
         <Label x:Name="lblListBox" Content="Select Additional Features:" HorizontalAlignment="Left" Height="31" Margin="32,297,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <TextBox x:Name="txtMemberQuotaOutput" Grid.Column="1" HorizontalAlignment="Left" Height="270" Margin="522,150,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="464" FontFamily="Arial" FontSize="12"/>
         <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="892,25,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" Grid.Column="1"/>
