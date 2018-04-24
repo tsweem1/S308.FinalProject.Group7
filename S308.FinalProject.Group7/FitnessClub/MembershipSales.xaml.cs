@@ -69,12 +69,10 @@ namespace FitnessClub
         public void btnSaveQuota_Click(object sender, RoutedEventArgs e)
         {
 
-            //7. Initalize variables
+            //7. Initalize variables that must be prefaced before further validation
             DatePicker dtStartDate = dtStart;
-            DatePicker dtEndDate = dtEnd;
             int SubCost = GetAdditionalFeatureCost(lstFeatures, cboMembershipType);
-            int TimeFrame;
-
+            
             //8. Validate that a combobox item was selected
             if (cboMembershipType.SelectedIndex == -1)
             {
@@ -82,36 +80,37 @@ namespace FitnessClub
                 return;
             }
 
-            int dateDifference = GetDateDifference(dtStartDate, dtEndDate);
-            if ((dtStartDate == dtEndDate) || dateDifference < 0)
+            //9. Grab the boolean to see if a date has been selected
+            bool isDateNull = isStartDateSelect(dtStartDate);
+            
+            //10. Check if a date has been select
+            if (isDateNull == false)
             {
-                MessageBox.Show("Please select a month or year date range."+"  "+dateDifference.ToString());
+                MessageBox.Show("Please select a valid start date.");
                 return;
             }
-            else if ((cboMembershipType.SelectedIndex == 0 || cboMembershipType.SelectedIndex == 2 || cboMembershipType.SelectedIndex == 4)&& dateDifference < 27)
+
+            //11. Once date is selected, declare variables that will calculate the end date
+            DateTime dtToday = DateTime.Today;
+            DateTime dtConvertStartDate = ConvertPickerToDate(dtStartDate);
+            DateTime dtConvertedEndDate = dtToday;
+
+            //12. Determine if a user picked an date in the past
+            if (dtConvertStartDate < dtToday)
             {
-                MessageBox.Show("For a month's membership, please select a valid date range." + "  " + dateDifference.ToString());
+                MessageBox.Show("Please select a valid start date.");
                 return;
             }
-            else if((cboMembershipType.SelectedIndex == 1 || cboMembershipType.SelectedIndex == 3|| cboMembershipType.SelectedIndex == 5) && dateDifference != 0)
+
+            //13. Determine the end date based on the drop down selected
+            if ((cboMembershipType.SelectedIndex == 1 || cboMembershipType.SelectedIndex == 3 || cboMembershipType.SelectedIndex == 5))
             {
-                MessageBox.Show("For a year's membership, please select a valid date range." + "  " + dateDifference.ToString());
-                return;
+                dtConvertedEndDate = dtConvertStartDate.AddYears(1);
             }
             else
             {
-                if((dateDifference == 31 || dateDifference == 30 || dateDifference == 29) && (cboMembershipType.SelectedIndex == 0 || cboMembershipType.SelectedIndex == 2 || cboMembershipType.SelectedIndex == 4))
-                {
-                    MessageBox.Show(dateDifference.ToString());
-                    TimeFrame = 1;
-                }
-                if((cboMembershipType.SelectedIndex == 1 || cboMembershipType.SelectedIndex == 3 || cboMembershipType.SelectedIndex == 5) && dateDifference == 0)
-                {
-                    MessageBox.Show(dateDifference.ToString());
-                    TimeFrame = 12;
-                }
+                dtConvertedEndDate = dtConvertStartDate.AddMonths(1);
             }
-
 
             //9. Set selected item to string for query
             string strMembershipSelection = cboMembershipType.SelectedItem.ToString();
@@ -172,12 +171,11 @@ namespace FitnessClub
             return totalPrice;
         }
 
-        public int GetDateDifference(DatePicker dStart, DatePicker dEnd)
+        public DateTime ConvertPickerToDate(DatePicker dStart)
         {
             string start = Convert.ToString(dStart);
-            string end = Convert.ToString(dEnd);
-            int StartMonth, StartDay, StartYear, EndMonth, EndDay, EndYear, StartFirstSlash, StartSecondSlash, EndFirstSlash, EndSecondSlash;
-            string strStartMonth, strStartDay, strStartYear, strEndMonth, strEndDay, strEndYear;
+            int StartMonth, StartDay, StartYear, StartFirstSlash, StartSecondSlash;
+            string strStartMonth, strStartDay, strStartYear;
 
             // Parse strings to prepare for date calculations
             StartFirstSlash = start.IndexOf("/");
@@ -187,30 +185,31 @@ namespace FitnessClub
             strStartDay = start.Substring(StartFirstSlash + 1, StartSecondSlash - 2);
             strStartYear = start.Substring(StartSecondSlash + 1, 4);
 
-            EndFirstSlash = start.IndexOf("/");
-            EndSecondSlash = start.LastIndexOf("/");
-
-            strEndMonth = end.Substring(0, EndFirstSlash);
-            strEndDay = end.Substring(EndFirstSlash + 1, EndSecondSlash - 2);
-            strEndYear = start.Substring(EndSecondSlash + 1, 4);
-
             //Convert parsed dates to int for further calculations
             Int32.TryParse(strStartMonth, out StartMonth);
             Int32.TryParse(strStartDay, out StartDay);
             Int32.TryParse(strStartYear, out StartYear);
 
-            Int32.TryParse(strEndMonth, out EndMonth);
-            Int32.TryParse(strEndDay, out EndDay);
-            Int32.TryParse(strEndYear, out EndYear);
-
             //Put parsed integers back into dates
             DateTime datConvertedStart = new DateTime(StartYear, StartMonth, StartDay);
-            DateTime datConvertedEnd = new DateTime(EndYear, EndMonth, EndDay);
-            TimeSpan tspInterval5 = datConvertedEnd.Subtract(datConvertedStart);
 
-            int convert = int.Parse(tspInterval5.Days.ToString());
+            return datConvertedStart;
+        }
 
-            return convert;
+        bool isStartDateSelect(DatePicker dStart)
+        {
+            bool isSelected = false;
+            string strStart = Convert.ToString(dStart);
+            if (strStart.Length == 0)
+            {
+                isSelected = false;
+            }
+            else
+            {
+                isSelected = true;
+            }
+                
+            return isSelected;
         }
     }
 }

@@ -10,8 +10,7 @@
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="201,128,0,0" VerticalAlignment="Top" Width="205" Height="22" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" Background="White" TabIndex="0" Grid.Column="1"/>
         <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="263" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="24" Margin="32,32,0,0" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="32,230,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="lblEndDate" Content="Enter End Date:" HorizontalAlignment="Left" Height="37" Margin="258,228,0,0" VerticalAlignment="Top" Width="117" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="34,230,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="366,-220,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Height="37" Width="123" FontFamily="Arial" Foreground="White" FontSize="12" RenderTransformOrigin="0.519,1.403" FontWeight="Bold" Grid.Column="1">
             <Label.RenderTransform>
@@ -24,8 +23,7 @@
             </Label.RenderTransform>
         </Label>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="898,438,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7" Grid.Column="1"/>
-        <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="32,250,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952"/>
-        <DatePicker x:Name="dtEnd" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="258,250,0,0" VerticalAlignment="Top" Width="210"/>
+        <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="36,250,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952"/>
         <Label x:Name="lblInstructions" Content="Fill  out the fields and proceed to Member Registration. Press &quot;SAVE&quot; to save the quota information." HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="615" Foreground="White" FontFamily="Arial" FontSize="12" Margin="32,78,0,0" Grid.Column="1" />
         <Label x:Name="lblSelect" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="31,128,0,0" VerticalAlignment="Top" Height="34" Width="183" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
