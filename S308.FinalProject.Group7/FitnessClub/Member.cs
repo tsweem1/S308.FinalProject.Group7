@@ -21,7 +21,7 @@ namespace FitnessClub
         public int CaloriesBurned { get; set; }
         public int Miles { get; set; }
         public int WeightGoal { get; set; }
-        public int DailySteps { get; set; }
+        public int Steps { get; set; }
         public int FloorsClimbed { get; set; }
 
         public Member()
@@ -30,7 +30,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int dailySteps, int floorsClimbed)
+        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed)
         {
             MemberID = memberid;
             FirstName = firstName;
@@ -44,11 +44,31 @@ namespace FitnessClub
             CaloriesBurned = caloriesBurned;
             Miles = miles;
             WeightGoal = weightGoal;
-            DailySteps = dailySteps;
+            Steps = steps;
             FloorsClimbed = floorsClimbed;
 
-
-
        }
+
+        public override string ToString()
+        {
+            return
+                 "MemberID: " + MemberID + Environment.NewLine
+                + "First Name: " +FirstName + Environment.NewLine
+                + "Last Name: " + LastName + Environment.NewLine
+                + "Gender: " + Gender + Environment.NewLine
+                + "Phone Number: " + PhoneNumber + Environment.NewLine
+                + "Email Address: " + EmailAddress + Environment.NewLine
+                + "Weight: " + Weight + Environment.NewLine
+                + "Age: " + Age + Environment.NewLine
+                + "Fitness Goal: " + FitnessGoal + Environment.NewLine
+                + "Calories Burned: " + CaloriesBurned + Environment.NewLine
+                + "Miles: " + Miles + Environment.NewLine
+                + "WeightGoal: " + WeightGoal + Environment.NewLine
+                + "Steps: " + Steps + Environment.NewLine
+                + "Floors Climbed" + FloorsClimbed + Environment.NewLine
+                 
+        }
+
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +23,12 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignUp : Window
     {
+
+        List<Member> memberlist;
+
         public MembershipSignUp()
         {
+
             InitializeComponent();
             Clear();
         }
@@ -37,6 +43,7 @@ namespace FitnessClub
             string strWeight = txtWeight.Text;
             string strAge = txtAge.Text;
             string strFitnessGoal = cboGender.Text;
+            string strFilePath = @"..\..\..\Data\Members.json";
 
             //2. Check to see if required fields are filled
             bool isFirstNameEmpty = txtFirstName.Text.Length == 0;
@@ -135,6 +142,36 @@ namespace FitnessClub
                 MessageBox.Show("Please enter a valid phone number.");
                 return;
             }
+
+
+            //6.instantiate a new member from the input and add it to the list
+            Member memberNew = new Member(txtFirstName.Text, txtLastName.Text, cboGender.Text, txtEmail.Text, txtPhone.Text, txtAge.Text, txtWeight.Text, cboFitnessGoals.Text);
+            memberlist.Add(memberNew);
+
+            try
+            {
+                //7. serialize the new list customers to json format
+                string jsonData = JsonConvert.SerializeObject(memberlist);
+
+                //8. use System.IU.File to write over the file with the json data
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+
+                MessageBox.Show(memberlist.Count + " Members have been exported.");
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process: " + ex.Message);
+            }
+
+            MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
+
+            
+
+
+
+
         }
 
         #region Navigation controls

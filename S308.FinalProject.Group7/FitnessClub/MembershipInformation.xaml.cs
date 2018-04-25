@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +23,61 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipInformation : Window
     {
+        List<Member> memberlist;
+
         public MembershipInformation()
         {
             InitializeComponent();
 
+            //instantiate list to hold all customers
+            memberlist = new List<Member>();
+
+            //call method to local the customeer information and display
+            ImportMemberData();
+        }
+
+        private void ImportMemberData()
+        {
+            string strFilePath = @"..\..\..\Data\Members.json";
+
+            try
+
+            {
+                //use system.oi.file to read the entire data file
+                StreamReader reader = new StreamReader(strFilePath);
+                string jsonData = reader.ReadToEnd();
+                reader.Close();
+
+                //serialize the json data to a list of customers
+                memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+
+                if (memberlist.Count >= 0)
+                    MessageBox.Show(memberlist.Count + "Members have been imported.");
+                else
+                    MessageBox.Show("No members have been imported. Please check your file.");
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+
+            //set the source of the datagrid and refresh
+            dtgMemberResults.ItemsSource = memberlist;
+            dtgMemberResults.Items.Refresh();
+
+
 
         }
+
+
+
+
+
+
+
+
 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
@@ -64,17 +115,22 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            //declare input as string
+            //declare variables
             string strFirstName;
             string strLastName;
             string strEmail;
             string strPhoneNumber;
 
+            //convert input fields
             strFirstName = Convert.ToString(txtFirstName.Text);
             strLastName = Convert.ToString(txtLastName.Text);
             strEmail = Convert.ToString(txtEmail.Text);
             strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
+
+            //validate user input
+
+            //user must enter at least one search field
             if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
             {
                 MessageBox.Show("Please enter information in at least one search field.");
