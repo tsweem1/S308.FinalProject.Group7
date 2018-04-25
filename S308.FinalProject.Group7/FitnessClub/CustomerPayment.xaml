@@ -11,8 +11,8 @@
         <Label x:Name="lblTitle" Content="Customer Payment Information" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="389" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="24" Margin="31,27,0,0" FontWeight="Bold"/>
         <Label x:Name="lblInstructions" Content="For a new member, fill out all of the fields below. To confirm membership sales, press &quot;Register&quot;. &#xA;To clear contents, press &quot;Clear&quot;." HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="655" Foreground="White" FontFamily="Arial" FontSize="12" Margin="34,68,0,0" />
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="209" Margin="31,172,0,0" Stroke="Black" VerticalAlignment="Top" Width="824"/>
-        <TextBlock x:Name="txbMemberShipSales" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="587,13,0,0" TextWrapping="Wrap" Text="Membership Sales" VerticalAlignment="Top" Height="20" Width="137" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbMemSales_MouseUp"/>
-        <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="748,12,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FF0004FF" FontSize="16" MouseUp="txbMainMenu_MouseUp"/>
+        <TextBlock x:Name="txbMemberShipSales" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="587,13,0,0" TextWrapping="Wrap" Text="Membership Sales" VerticalAlignment="Top" Height="20" Width="137" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" MouseUp="txbMemSales_MouseUp"/>
+        <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="748,12,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" MouseUp="txbMainMenu_MouseUp"/>
         <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="25" Margin="179,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontFamily="Arial" Background="White" TabIndex="1" />
         <Label x:Name="lblCreditCardNum" Content="Credit Card Number:" HorizontalAlignment="Left" Margin="48,207,0,0" VerticalAlignment="Top" Height="29" Width="138" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
@@ -87,7 +87,56 @@
             </Label.RenderTransform>
         </Label>
         <ComboBox x:Name="cboState" HorizontalAlignment="Left" Margin="550,269,0,0" VerticalAlignment="Top" Width="82" Height="25" RenderTransformOrigin="0.524,-0.429" TabIndex="6" FontFamily="Arial">
+            <ComboBoxItem Content="AL"/>
+            <ComboBoxItem Content="AK"/>
+            <ComboBoxItem Content="AZ"/>
+            <ComboBoxItem Content="AR"/>
+            <ComboBoxItem Content="CA"/>
+            <ComboBoxItem Content="CO"/>
+            <ComboBoxItem Content="CT"/>
+            <ComboBoxItem Content="DE"/>
+            <ComboBoxItem Content="FL"/>
+            <ComboBoxItem Content="GA"/>
+            <ComboBoxItem Content="HI"/>
+            <ComboBoxItem Content="ID"/>
+            <ComboBoxItem Content="IL"/>
             <ComboBoxItem Content="IN"/>
+            <ComboBoxItem Content="IA"/>
+            <ComboBoxItem Content="KS"/>
+            <ComboBoxItem Content="KY"/>
+            <ComboBoxItem Content="LA"/>
+            <ComboBoxItem Content="ME"/>
+            <ComboBoxItem Content="MD"/>
+            <ComboBoxItem Content="MA"/>
+            <ComboBoxItem Content="MI"/>
+            <ComboBoxItem Content="MN"/>
+            <ComboBoxItem Content="MS"/>
+            <ComboBoxItem Content="MO"/>
+            <ComboBoxItem Content="MT"/>
+            <ComboBoxItem Content="NE"/>
+            <ComboBoxItem Content="NV"/>
+            <ComboBoxItem Content="NH"/>
+            <ComboBoxItem Content="NJ"/>
+            <ComboBoxItem Content="NM"/>
+            <ComboBoxItem Content="NY"/>
+            <ComboBoxItem Content="NC"/>
+            <ComboBoxItem Content="ND"/>
+            <ComboBoxItem Content="OH"/>
+            <ComboBoxItem Content="OK"/>
+            <ComboBoxItem Content="OR"/>
+            <ComboBoxItem Content="PA"/>
+            <ComboBoxItem Content="RI"/>
+            <ComboBoxItem Content="SC"/>
+            <ComboBoxItem Content="SD"/>
+            <ComboBoxItem Content="TN"/>
+            <ComboBoxItem Content="TX"/>
+            <ComboBoxItem Content="UT"/>
+            <ComboBoxItem Content="VT"/>
+            <ComboBoxItem Content="VA"/>
+            <ComboBoxItem Content="WA"/>
+            <ComboBoxItem Content="WV"/>
+            <ComboBoxItem Content="WI"/>
+            <ComboBoxItem Content="WY"/>
         </ComboBox>
         <Label x:Name="lblZip" Content="Zip:" HorizontalAlignment="Left" Margin="434,305,0,0" VerticalAlignment="Top" Height="26" Width="42" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>

@@ -39,6 +39,7 @@ namespace FitnessClub
             string strState = cboState.Text;
             string strZipCode = txtZip.Text;
             string strExistUser = cboExistingMember.Text;
+            int intZipCode = 0;
 
             //2. Initialize isNull variables to see if all fields were filled out
             bool isCreditNumEmpty = strCreditCardNumber.Length == 0;
@@ -48,6 +49,7 @@ namespace FitnessClub
             bool isCityEmpty = strCity.Length == 0;
             bool isStateSelected = cboState.SelectedIndex == -1;
             bool isZipEmpty = strZipCode.Length == 0;
+            bool isZipNum = Int32.TryParse(strZipCode, out intZipCode);
 
             //3. Test if fields are empty
             if (isCreditNumEmpty || isExpYear || isExpMonth || isAddressEmpty || isCityEmpty || isStateSelected || isZipEmpty)
@@ -129,6 +131,13 @@ namespace FitnessClub
                         imgCard.Width = 35;
                         imgCard.Height = 22;
                         break;
+                }
+                //Check is zipcode is valid
+                if (isZipNum == false)
+                {
+                    txtZip.Text = "";
+                    MessageBox.Show("Please enter a valid zipcode.");
+                    return;
                 }
                 imgCard.Visibility = Visibility.Visible;
                 txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
