@@ -126,7 +126,7 @@ namespace FitnessClub
                         imgCard.Width = 40;
                         imgCard.Height = 25;
                         break;
-                    case "VISA":
+                    case "Visa":
                         imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/visa_logo.png", UriKind.Relative));
                         imgCard.Width = 35;
                         imgCard.Height = 22;
@@ -142,7 +142,7 @@ namespace FitnessClub
                 imgCard.Visibility = Visibility.Visible;
                 txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
                 lblCreditType.Content = strCreditCardType;
-                Clear();
+                //Clear();
                 MessageBox.Show("Registration was a success!");
               
         }
