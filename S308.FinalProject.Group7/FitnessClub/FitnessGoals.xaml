@@ -44,7 +44,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblDailyCaloriesBurned" Content="Daily Calories Burned:" HorizontalAlignment="Left" Margin="42,324,0,0" VerticalAlignment="Top" Height="40" Width="328" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblDailyCaloriesBurned" Content="Calories Burned:" HorizontalAlignment="Left" Margin="42,324,0,0" VerticalAlignment="Top" Height="40" Width="328" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,7 +55,7 @@
             </Label.RenderTransform>
         </Label>
         <ProgressBar x:Name="prgDailyCaloriesBurned" HorizontalAlignment="Left" Height="48" Margin="42,395,0,0" VerticalAlignment="Top" Width="324" Background="White" Foreground="#FFC3B253"/>
-        <Label x:Name="lblSteps" Content="Daily Steps:" HorizontalAlignment="Left" Margin="38,470,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lblSteps" Content="Steps:" HorizontalAlignment="Left" Margin="38,470,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -79,17 +79,6 @@
         <ProgressBar x:Name="prgFloorsClimbed" HorizontalAlignment="Left" Height="48" Margin="424,527,0,0" VerticalAlignment="Top" Width="324" Background="White" Foreground="#FFC3B253"/>
         <ProgressBar x:Name="prgMiles" HorizontalAlignment="Left" Height="48" Margin="420,393,0,0" VerticalAlignment="Top" Width="324" Background="White" Foreground="#FFC3B253"/>
         <Label x:Name="lblMiles" Content="Miles:" HorizontalAlignment="Left" Margin="422,324,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.158"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.747"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <DatePicker x:Name="dtpGoalHistory" HorizontalAlignment="Left" Margin="472,217,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="26.667" Height="47" Width="313" FontWeight="Bold" IsHitTestVisible="False" TabIndex="1"/>
-        <Label x:Name="lblGoalHistory" Content="Fitness History Date:" HorizontalAlignment="Left" Margin="464,154,0,0" VerticalAlignment="Top" Height="40" Width="272" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +23,37 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipInformation : Window
     {
+        List<Member> memberIndex;
+
         public MembershipInformation()
         {
             InitializeComponent();
 
-
+            //load member list from json file
+            memberIndex = GetDataSetFromFile();
+            
         }
+
+        public List<Member> GetDataSetFromFile()
+        {
+            List<Member> lstMember = new List<Member> ();
+            string strFilePath = @"..\..\..\Data\Members.json";
+
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                lstMember = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error loading Member from file" + ex.Message);
+            }
+            return lstMember;
+        }
+
+
+
 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
@@ -64,17 +91,29 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            //declare input as string
+            List<Member> memberSearch;
+
+
+
+
+
+
+            //declare variables
             string strFirstName;
             string strLastName;
             string strEmail;
             string strPhoneNumber;
 
+            //convert input fields
             strFirstName = Convert.ToString(txtFirstName.Text);
             strLastName = Convert.ToString(txtLastName.Text);
             strEmail = Convert.ToString(txtEmail.Text);
             strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
+
+            //validate user input
+
+            //user must enter at least one search field
             if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
             {
                 MessageBox.Show("Please enter information in at least one search field.");
