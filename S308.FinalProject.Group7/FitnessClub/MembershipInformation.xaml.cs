@@ -23,58 +23,34 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipInformation : Window
     {
-        List<Member> memberlist;
+        List<Member> memberIndex;
 
         public MembershipInformation()
         {
             InitializeComponent();
 
-            //instantiate list to hold all customers
-            memberlist = new List<Member>();
-
-            //call method to local the customeer information and display
-            ImportMemberData();
+            //load member list from json file
+            memberIndex = GetDataSetFromFile();
+            
         }
 
-        private void ImportMemberData()
+        public List<Member> GetDataSetFromFile()
         {
+            List<Member> lstMember = new List<Member> ();
             string strFilePath = @"..\..\..\Data\Members.json";
 
             try
-
             {
-                //use system.oi.file to read the entire data file
-                StreamReader reader = new StreamReader(strFilePath);
-                string jsonData = reader.ReadToEnd();
-                reader.Close();
-
-                //serialize the json data to a list of customers
-                memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-
-                if (memberlist.Count >= 0)
-                    MessageBox.Show(memberlist.Count + "Members have been imported.");
-                else
-                    MessageBox.Show("No members have been imported. Please check your file.");
-
+                string jsonData = File.ReadAllText(strFilePath);
+                lstMember = JsonConvert.DeserializeObject<List<Member>>(jsonData);
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error in import process: " + ex.Message);
+                MessageBox.Show("Error loading Member from file" + ex.Message);
             }
-
-            //set the source of the datagrid and refresh
-            dtgMemberResults.ItemsSource = memberlist;
-            dtgMemberResults.Items.Refresh();
-
-
-
+            return lstMember;
         }
-
-
-
-
-
 
 
 
@@ -114,6 +90,13 @@ namespace FitnessClub
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+
+            List<Member> memberSearch;
+
+
+
+
+
 
             //declare variables
             string strFirstName;
