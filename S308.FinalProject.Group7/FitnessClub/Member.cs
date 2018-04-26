@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FitnessClub
 {
    //Add class for member
-    public class Member
+    public class Member: CustomerPaymentInfo
     {
         public string MemberID { get; set; }
         public string FirstName { get; set; }
@@ -30,7 +30,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed)
+        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment)
         {
             MemberID = memberid;
             FirstName = firstName;
@@ -46,6 +46,8 @@ namespace FitnessClub
             WeightGoal = weightGoal;
             Steps = steps;
             FloorsClimbed = floorsClimbed;
+            MembershipType = payment.MembershipType;
+            StartDate = payment.StartDate;
 
        }
 

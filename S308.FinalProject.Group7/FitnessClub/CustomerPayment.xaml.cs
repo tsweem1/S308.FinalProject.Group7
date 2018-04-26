@@ -150,15 +150,15 @@ namespace FitnessClub
         //Clear contents function
         private void Clear()
         {
-            //lblCreditType.Content = "";
-            //imgCard.Visibility = Visibility.Hidden;
-            //txtBillingAddress.Text = "";
-            //txtCity.Text = "";
-            //txtCreditCardNumber.Text = "";
-            //cboYear.SelectedIndex=-1;
-            //cboMonth.SelectedIndex = -1;
-            //cboState.SelectedIndex = -1;
-            //txtZip.Text = "";
+            lblCreditType.Content = "";
+            imgCard.Visibility = Visibility.Hidden;
+            txtBillingAddress.Text = "";
+            txtCity.Text = "";
+            txtCreditCardNumber.Text = "";
+            cboYear.SelectedIndex=-1;
+            cboMonth.SelectedIndex = -1;
+            cboState.SelectedIndex = -1;
+            txtZip.Text = "";
         }
 
         

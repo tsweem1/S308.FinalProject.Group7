@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-    class CustomerPaymentInfo : Member
+    public class CustomerPaymentInfo
     {
         public string MembershipType { get; set; }
         public DateTime StartDate { get; set; }

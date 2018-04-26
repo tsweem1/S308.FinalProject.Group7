@@ -230,6 +230,14 @@ namespace FitnessClub
             return isSelected;
         }
 
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtEndDate.Text = "";
+            txtMemberQuotaOutput.Text = "";
+            txtPrice.Text = "";
+            cboMembershipType.SelectedIndex = -1;
+            lstFeatures.SelectedIndex = -1;
+        }
     }
 }
     

@@ -91,64 +91,36 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            List<Member> memberSearch;
-
-            //declare variables
-            string strFirstName;
-            string strLastName;
-            string strEmail;
-            string strPhoneNumber;
-            string strMemberID;
-
-            //convert input fields
-            strFirstName = Convert.ToString(txtFirstName.Text);
-            strLastName = Convert.ToString(txtLastName.Text);
-            strEmail = Convert.ToString(txtEmail.Text);
-            strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
+           //List<Member>
 
 
-            //validate user input
 
-            //user must enter at least one search field
-            if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
-            {
-                MessageBox.Show("Please enter information in at least one search field.");
-                return;
-            }
 
-            txtMemberDetails.Text = "";
-            lbxSearchResults.Items.Clear();
 
-            memberSearch = memberIndex.Where(m =>
-                
-                m.LastName.StartsWith(strLastName) &&
-                m.FirstName.StartsWith(strFirstName) &&
-                m.EmailAddress.StartsWith(strEmail) &&
-                m.PhoneNumber.StartsWith(strPhoneNumber) &&
-                ).ToList();
 
-            foreach (Member m in memberSearch)
-            {
-                lbxSearchResults.Items.Add(m.LastName);
-                lbxSearchResults.Items.Add(m.FirstName);
-            }
 
-            lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
+           // //declare variables
+           // string strFirstName;
+           // string strLastName;
+           // string strEmail;
+           // string strPhoneNumber;
+
+           // //convert input fields
+           // strFirstName = Convert.ToString(txtFirstName.Text);
+           // strLastName = Convert.ToString(txtLastName.Text);
+           // strEmail = Convert.ToString(txtEmail.Text);
+           // strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
+
+
+           // //validate user input
+
+           // //user must enter at least one search field
+           // if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
+           // {
+           //     MessageBox.Show("Please enter information in at least one search field.");
+           //     return;
+           // }
+
         }
-
-            private void lbxMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (lbxSearchResults.SelectedIndex > -1)
-            {
-                string strSelectedName = lbxSearchResults.SelectedItem.ToString();
-
-                Member memberSelected = memberIndex.Where(m => m.LastName, m.FirstName == strSelectedName).FirstOrDefault();
-                txtMemberDetails.Text = memberSelected.ToString();
-            }
-        }
-
-
-
-    }
     }
 }
