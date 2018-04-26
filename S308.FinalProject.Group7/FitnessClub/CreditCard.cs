@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 namespace FitnessClub
 {
+    //Registration
     class CreditCard : Member
     {
         public string CreditCardNumber { get; set; }

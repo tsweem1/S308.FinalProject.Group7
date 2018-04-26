@@ -91,7 +91,7 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-           List<Member>
+           //List<Member>
 
 
 
@@ -99,27 +99,27 @@ namespace FitnessClub
 
 
 
-            //declare variables
-            string strFirstName;
-            string strLastName;
-            string strEmail;
-            string strPhoneNumber;
+           // //declare variables
+           // string strFirstName;
+           // string strLastName;
+           // string strEmail;
+           // string strPhoneNumber;
 
-            //convert input fields
-            strFirstName = Convert.ToString(txtFirstName.Text);
-            strLastName = Convert.ToString(txtLastName.Text);
-            strEmail = Convert.ToString(txtEmail.Text);
-            strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
+           // //convert input fields
+           // strFirstName = Convert.ToString(txtFirstName.Text);
+           // strLastName = Convert.ToString(txtLastName.Text);
+           // strEmail = Convert.ToString(txtEmail.Text);
+           // strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
 
-            //validate user input
+           // //validate user input
 
-            //user must enter at least one search field
-            if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
-            {
-                MessageBox.Show("Please enter information in at least one search field.");
-                return;
-            }
+           // //user must enter at least one search field
+           // if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
+           // {
+           //     MessageBox.Show("Please enter information in at least one search field.");
+           //     return;
+           // }
 
         }
     }

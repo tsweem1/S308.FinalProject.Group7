@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Membership Sales" Height="460" Width="883" WindowStartupLocation="CenterScreen">
+        Title="Membership Sales" Height="441" Width="883" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="201,128,0,0" VerticalAlignment="Top" Width="205" Height="22" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" Background="White" TabIndex="0" Grid.Column="1"/>
@@ -22,7 +22,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="734,343,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4" Grid.Column="1"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="734,343,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4" Grid.Column="1" Click="btnClear_Click"/>
         <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="36,250,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952" TabIndex="1"/>
         <Label x:Name="lblInstructions" Content="Fill  out the fields and proceed to Member Registration. Press &quot;SAVE&quot; to save the quota information. &#xD;&#xA;To go to Member Registration, click on the &quot;Member Registration&quot; link above." HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="615" Foreground="White" FontFamily="Arial" FontSize="12" Margin="32,75,0,0" Grid.Column="1" />
         <Label x:Name="lblSelect" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="31,128,0,0" VerticalAlignment="Top" Height="34" Width="183" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">

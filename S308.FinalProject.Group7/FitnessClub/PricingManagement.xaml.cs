@@ -129,13 +129,14 @@ namespace FitnessClub
             }
 
             //4. Validate price is an actual number
-            if (!Double.TryParse(strUpdatePrice, out dblUpdatePrice))
-            {
-                txtUpdatePrice.Text = "";
-                MessageBox.Show("Please enter a valid price.");
-                return;
-            }
-
+            
+                if (!Double.TryParse(strUpdatePrice, out dblUpdatePrice))
+                {
+                    txtUpdatePrice.Text = "";
+                    MessageBox.Show("Please enter a valid price.");
+                    return;
+                }
+            
             //5. Validate the cboUpdateAvailability is selected
             if (isUpdateAvaliability == true)
             {
@@ -195,7 +196,17 @@ namespace FitnessClub
             }
 
             //16. Refresh output in txtMemberData.Text
-            string strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + priceUp.Price.ToString();
+
+            string strOutput = "";
+            if (isUpdatePrice == true)
+            {
+                strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + strPrice.ToString();
+            }
+
+            else
+            {
+                strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + priceUp.Price.ToString();
+            }
 
             //17. Refresh txtMemberData.Text
             txtMemberData.Text = strOutput;
