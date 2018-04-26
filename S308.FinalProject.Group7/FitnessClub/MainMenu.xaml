@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Main Menu" Height="668.763" Width="948.931" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Main Menu" Height="432" Width="886" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,4,6">
         <Image x:Name="imgBackground" Margin="0,0,0,-3" Source="Fitness photo.jpg" Stretch="Fill" d:IsLocked="True"/>
         <Label x:Name="lblTitle" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="51,43,0,0" VerticalAlignment="Top" Height="72" Width="393" Foreground="#FFC3B253" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" RenderTransformOrigin="0.38,0.482"/>

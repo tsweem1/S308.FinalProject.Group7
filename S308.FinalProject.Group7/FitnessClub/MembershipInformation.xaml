@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Member Information" Height="690" Width="1200" WindowStartupLocation="CenterScreen">
-    <Grid Margin="10,54,-761,-102">
+        Title="Member Information" Height="500" Width="886" WindowStartupLocation="CenterScreen">
+    <Grid Margin="12,54,-763,-102">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="97*"/>
@@ -15,24 +15,24 @@
             <ColumnDefinition Width="921*"/>
         </Grid.ColumnDefinitions>
         <Image x:Name="Gym_Background_jpg" Margin="-11,-52,759,99" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="5" d:IsLocked="True"/>
-        <Label x:Name="lblMemberInformation" Content="EXISTING MEMBER SEARCH" HorizontalAlignment="Left" Margin="23,-24,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFC3B253" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontSize="48"/>
-        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="81,277,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="46" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="4" RenderTransformOrigin="0.468,0.842" Click="btnSearch_Click" Grid.Column="2"/>
-        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="29,66,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
-        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="29,118,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" RenderTransformOrigin="0.528,0.583" FontWeight="Bold" Grid.ColumnSpan="3"/>
-        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="29,166,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
-        <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Margin="31,214,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="36" Margin="115,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontFamily="Arial" Grid.Column="2" FontSize="24" TabIndex="0"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="36" Margin="115,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontFamily="Arial" Grid.Column="2" FontSize="24" TabIndex="1"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="36" Margin="115,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontFamily="Arial" Grid.Column="2" FontSize="24" TabIndex="2"/>
-        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="36" Margin="115,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontFamily="Century Gothic" Grid.Column="2" FontSize="24" TabIndex="3"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" Grid.Column="3" HorizontalAlignment="Left" Margin="135,-35,0,692" Width="183" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic" Grid.ColumnSpan="2" TabIndex="8" Height="50" VerticalAlignment="Bottom" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="279,277,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="46" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="5" Grid.Column="2" Click="btnClear_Click"/>
-        <Button x:Name="btnFitnessGoals" Content="FITNESS GOALS" HorizontalAlignment="Left" Margin="588,-35,0,0" VerticalAlignment="Top" Width="205" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="46" FontSize="24" FontWeight="Bold" FontFamily="Century Gothic" Grid.ColumnSpan="2" TabIndex="6" Grid.Column="2" Click="btnFitnessGoals_Click"/>
-        <Button x:Name="btnPurchaseHistory" Content="PURCHASE HISTORY" HorizontalAlignment="Left" Margin="69,21,0,0" VerticalAlignment="Top" Width="251" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="46" FontSize="24" FontWeight="Bold" FontFamily="Century Gothic" Grid.Column="3" TabIndex="7" Grid.ColumnSpan="2" Click="btnPurchaseHistory_Click"/>
-        <ListBox x:Name="lbxSearchResults" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="186" Margin="38,395,0,0" VerticalAlignment="Top" Width="544"/>
-        <TextBox x:Name="txtMemberDetails" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="433" Margin="531,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480"/>
-        <Label x:Name="lblMemberDetails" Content="Selected Member Details:" HorizontalAlignment="Left" Margin="530,92,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="2"/>
-        <Label x:Name="lblSearchResults" Content="Search Results:" HorizontalAlignment="Left" Margin="33,340,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
-        <Label x:Name="lblNumResults" Content="(0)" HorizontalAlignment="Right" Margin="0,340,526,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="lblMemberInformation" Content="EXISTING MEMBER SEARCH" HorizontalAlignment="Left" Margin="23,-24,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFC3B253" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontSize="29.333"/>
+        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="70,211,0,0" VerticalAlignment="Top" Width="130" FontFamily="Century Gothic" FontSize="21.333" Height="35" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="4" RenderTransformOrigin="0.468,0.842" Click="btnSearch_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="29,50,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="29,80,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Century Gothic" RenderTransformOrigin="0.528,0.583" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="29,118,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Margin="31,158,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="71,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Arial" Grid.Column="2" FontSize="16" TabIndex="0"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="71,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Arial" Grid.Column="2" FontSize="16" TabIndex="1"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="71,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Arial" Grid.Column="2" FontSize="16" TabIndex="2"/>
+        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="30" Margin="71,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Century Gothic" Grid.Column="2" FontSize="16" TabIndex="3"/>
+        <Button x:Name="btnMainMenu" Content="MAIN MENU" Grid.Column="3" HorizontalAlignment="Left" Margin="9,-34,0,516" Width="150" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" FontSize="21.333" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="8" Height="35" VerticalAlignment="Bottom" Click="btnMainMenu_Click"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="145,213,0,0" VerticalAlignment="Top" Width="130" FontFamily="Century Gothic" FontSize="21.333" Height="35" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="5" Grid.Column="2" Click="btnClear_Click"/>
+        <Button x:Name="btnFitnessGoals" Content="FITNESS GOALS" HorizontalAlignment="Left" Margin="322,-31,0,0" VerticalAlignment="Top" Width="186" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="35" FontSize="21.333" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="6" Grid.Column="2" Click="btnFitnessGoals_Click"/>
+        <Button x:Name="btnPurchaseHistory" Content="PURCHASE HISTORY" HorizontalAlignment="Left" Margin="508,17,0,0" VerticalAlignment="Top" Width="214" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="35" FontSize="21.333" FontWeight="Bold" FontFamily="Century Gothic" Grid.Column="2" TabIndex="7" Click="btnPurchaseHistory_Click" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="lbxSearchResults" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="82" Margin="26,309,0,0" VerticalAlignment="Top" Width="414"/>
+        <TextBox x:Name="txtMemberDetails" Grid.Column="2" HorizontalAlignment="Left" Height="271" Margin="357,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="356" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblMemberDetails" Content="Selected Member Details:" HorizontalAlignment="Left" Margin="358,64,0,0" VerticalAlignment="Top" FontSize="18.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSearchResults" Content="Search Results:" HorizontalAlignment="Left" Margin="21,270,0,0" VerticalAlignment="Top" FontSize="18.667" Foreground="White" FontFamily="Century Gothic" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <Label x:Name="lblNumResults" Content="(0)" Margin="78,270,456,0" VerticalAlignment="Top" FontSize="18.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold" Grid.Column="2"/>
     </Grid>
 </Window>
