@@ -53,7 +53,7 @@ namespace FitnessClub
         {
             return
                  "MemberID: " + MemberID + Environment.NewLine
-                + "First Name: " +FirstName + Environment.NewLine
+                + "First Name: " + FirstName + Environment.NewLine
                 + "Last Name: " + LastName + Environment.NewLine
                 + "Gender: " + Gender + Environment.NewLine
                 + "Phone Number: " + PhoneNumber + Environment.NewLine
@@ -65,7 +65,7 @@ namespace FitnessClub
                 + "Miles: " + Miles + Environment.NewLine
                 + "WeightGoal: " + WeightGoal + Environment.NewLine
                 + "Steps: " + Steps + Environment.NewLine
-                + "Floors Climbed" + FloorsClimbed + Environment.NewLine
+                + "Floors Climbed" + FloorsClimbed + Environment.NewLine;
                  
         }
 

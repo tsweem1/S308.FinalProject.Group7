@@ -145,8 +145,8 @@ namespace FitnessClub
 
 
             //6.instantiate a new member from the input and add it to the list
-            Member memberNew = new Member(txtFirstName.Text, txtLastName.Text, cboGender.Text, txtEmail.Text, txtPhone.Text, txtAge.Text, txtWeight.Text, cboFitnessGoals.Text);
-            memberlist.Add(memberNew);
+            //Member memberNew = new Member(txtFirstName.Text, txtLastName.Text, cboGender.Text, txtEmail.Text, txtPhone.Text, txtAge.Text, txtWeight.Text, cboFitnessGoals.Text);
+            //memberlist.Add(memberNew);
 
             try
             {
@@ -165,7 +165,7 @@ namespace FitnessClub
                 MessageBox.Show("Error in export process: " + ex.Message);
             }
 
-            MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
+           // MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
 
             
 

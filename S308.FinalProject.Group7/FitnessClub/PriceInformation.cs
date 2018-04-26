@@ -20,16 +20,18 @@ namespace FitnessClub
     {
         public string Membership { get; set; }
         public string Price { get; set; }
+        public string Availability { get; set; }
 
         PriceInformation()
         {
 
         }
 
-        PriceInformation(string membershipType, string membershipPrice)
+        PriceInformation(string membershipType, string membershipPrice, string avaliability)
         {
             Membership = membershipType;
             Price = membershipPrice;
+            Availability = avaliability;
         }
     }
 }
