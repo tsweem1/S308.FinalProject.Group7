@@ -24,7 +24,14 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="cboMemberID" HorizontalAlignment="Left" Margin="42,201,0,0" VerticalAlignment="Top" Width="368" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0"/>
+        <ComboBox x:Name="cboMemberID" HorizontalAlignment="Left" Margin="42,201,0,0" VerticalAlignment="Top" Width="368" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0">
+            <ComboBoxItem Content="12345678"/>
+            <ComboBoxItem Content="28394038"/>
+            <ComboBoxItem Content="34950495"/>
+            <ComboBoxItem Content="49302748"/>
+            <ComboBoxItem Content="39204739"/>
+            <ComboBoxItem/>
+        </ComboBox>
         <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="770,103,0,0" VerticalAlignment="Top" Width="394" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.ColumnSpan="2" TabIndex="3" Click="btnMembershipInformation_Click"/>
         <DataGrid x:Name="dtgPurchaseHistory" HorizontalAlignment="Left" Margin="39,273,0,0" Padding ="10" VerticalAlignment="Top" Height="303" Width="1128" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667" Grid.ColumnSpan="2">
             <DataGrid.RenderTransform>

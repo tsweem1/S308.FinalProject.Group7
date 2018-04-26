@@ -40,7 +40,7 @@ namespace FitnessClub
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
-                lstPokemon = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+                dtgPurchaseHistory = JsonConvert.DeserializeObject<List<Member>>(jsonData);
             }
             catch (Exception ex)
             {
@@ -74,9 +74,15 @@ namespace FitnessClub
             //string strMemberID;
 
             ComboBoxItem cbiMemberID = (ComboBoxItem)cboMemberID.SelectedItem;
-            string strType = cbiMemberID.Content.ToString();
+            string strMemberID = cbiMemberID.Content.ToString();
 
+            purchaseSearch = purchasehistoryIndex.Where(m =>
+            m.MemberID.StartsWith(strMemberID).ToList());
 
+            foreach (Member m in purchaseSearch)
+            {
+                dtgPurchaseHistory.Items.Add(m.MemberID);
+            }
 
         }
     }

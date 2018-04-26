@@ -108,11 +108,11 @@ namespace FitnessClub
             //validate user input
 
             //user must enter at least one search field
-            //if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
-           // {
-              //  MessageBox.Show("Please enter information in at least one search field.");
-               // return;
-           // }
+            if (strFirstName == "" && strLastName == "" && strPhoneNumber == "" && strEmail == "")
+            {
+                MessageBox.Show("Please enter information in at least one search field.");
+               return;
+            }
 
             //search results is cleared when member details is blank
             txtMemberDetails.Text = "";
