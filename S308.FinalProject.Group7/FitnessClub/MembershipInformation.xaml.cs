@@ -53,8 +53,6 @@ namespace FitnessClub
         }
 
 
-
-
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
             Member_Purchase_History winPurchHistory = new Member_Purchase_History();
@@ -94,28 +92,29 @@ namespace FitnessClub
             List<Member> memberSearch;
 
 
-           //declare variables
-           string strFirstName;
-           string strLastName;
-           string strEmail;
-           string strPhoneNumber;
+            //declare variables
+            string strFirstName;
+            string strLastName;
+            string strEmail;
+            string strPhoneNumber;
 
-           //convert input fields
-           strFirstName = Convert.ToString(txtFirstName.Text);
-           strLastName = Convert.ToString(txtLastName.Text);
-           strEmail = Convert.ToString(txtEmail.Text);
-           strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
+            //convert input fields
+            strFirstName = Convert.ToString(txtFirstName.Text);
+            strLastName = Convert.ToString(txtLastName.Text);
+            strEmail = Convert.ToString(txtEmail.Text);
+            strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
 
-           //validate user input
+            //validate user input
 
-           //user must enter at least one search field
-           if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
-            {
-               MessageBox.Show("Please enter information in at least one search field.");
-                return;
-            }
+            //user must enter at least one search field
+            //if (strFirstName == "" || strLastName == "" || strPhoneNumber == "" || strEmail == "")
+           // {
+              //  MessageBox.Show("Please enter information in at least one search field.");
+               // return;
+           // }
 
+            //search results is cleared when member details is blank
             txtMemberDetails.Text = "";
             lbxSearchResults.Items.Clear();
 
@@ -133,15 +132,24 @@ namespace FitnessClub
 
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
 
+            }
+            private void lstMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbxSearchResults.SelectedIndex > -1)
+            {
+                string strSelectedName = lbxSearchResults.SelectedItem.ToString();
 
-
-
-
-
-
-
-
-
+                Member memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).FirstOrDefault();
+                txtMemberDetails.Text = memberSelected.ToString();
+            }
         }
+
+
+
+
+
+
+
     }
-}
+    }
+

@@ -36,7 +36,7 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="2,202,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="1" Grid.Column="1"/>
+        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="2,202,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="1" Grid.Column="1" Click="btnSearch_Click"/>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="198,202,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" Grid.Column="1" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="2"/>
     </Grid>
 </Window>

@@ -21,10 +21,35 @@ namespace FitnessClub
     /// </summary>
     public partial class Member_Purchase_History : Window
     {
+        List<Member> PurchaseHistory;
+
         public Member_Purchase_History()
         {
             InitializeComponent();
+
+            PurchaseHistory = GetDataSetFromFile();
+
         }
+
+        public List<Member> GetDataSetFromFile()
+        {
+            List<Member> lstPokemon = new List<Member>();
+
+            string strFilePath = @"../../../Data/MemberPurchaseHistory.json";
+
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                lstPokemon = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading Member Purchase History from file: " + ex.Message);
+            }
+
+            return lstPokemon;
+        }
+
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +63,21 @@ namespace FitnessClub
             MembershipInformation winMemberInfo = new MembershipInformation();
             winMemberInfo.Show();
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            List<Member> purchaseSearch;
+            
+            //declare MemberId field
+            //string strMemberID;
+
+            ComboBoxItem cbiMemberID = (ComboBoxItem)cboMemberID.SelectedItem;
+            string strType = cbiMemberID.Content.ToString();
+
+
+
         }
     }
 }
