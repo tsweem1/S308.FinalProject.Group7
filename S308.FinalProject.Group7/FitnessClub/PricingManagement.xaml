@@ -5,23 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Pricing Management" Height="649" Width="1200" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Pricing Management" Height="436" Width="882" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="imgBackground" Source="Gym Background.jpg" Stretch="Fill" d:IsLocked="True"/>
-        <Label x:Name="lblPricingManagement" Content="PRICING MANAGEMENT" HorizontalAlignment="Center" Margin="34,31,596,0" VerticalAlignment="Top" Height="76" Width="564" Foreground="#FFC3B253" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <TextBox x:Name="txtPricingMgmt" HorizontalAlignment="Left" Height="263" Padding="10" Margin="34,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White" FontFamily="Century Gothic" FontSize="24" IsReadOnly="True" Text="Membership Type: Individual 1 Month&#xD;&#xA;&#xD;&#xA;Price: $9.99&#xD;&#xA;&#xD;&#xA;Available: Yes"/>
-        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="315,155,0,0" VerticalAlignment="Top" Width="225" Height="36" Background="White" FontFamily="Arial" FontSize="18.667" TabIndex="0"/>
-        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Margin="34,148,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Button x:Name="btnMainMenu" Content="MAIN MENU" HorizontalAlignment="Left" Margin="970,31,0,0" VerticalAlignment="Top" Width="183" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="8" Click="btnMainMenu_Click"/>
-        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="683,353,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Button x:Name="btnTypeCheck" Content="CHECK TYPE" HorizontalAlignment="Left" Margin="168,238,0,0" VerticalAlignment="Top" Width="238" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="1"/>
-        <TextBox x:Name="txtUpdatePrice" HorizontalAlignment="Left" Height="36" Margin="909,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="32" FontFamily="Arial" TabIndex="4"  Text="$90.00"/>
-        <Label x:Name="lblUpdateAvailablity" Content="Update Availability:" HorizontalAlignment="Left" Margin="608,432,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <ComboBox x:Name="cmbUpdateAvailability" HorizontalAlignment="Left" Margin="909,439,0,0" VerticalAlignment="Top" Width="244" Height="36" Background="White" FontFamily="Arial" FontSize="18.667" TabIndex="5"/>
-        <Button x:Name="btnUpdateType" Content="UPDATE" HorizontalAlignment="Left" Margin="740,530,0,0" VerticalAlignment="Top" Width="182" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="6"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="964,528,0,0" VerticalAlignment="Top" Width="182" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="50" FontSize="26.667" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="7"/>
-        <Label x:Name="lblUpdateType" Content="Type to Update:" HorizontalAlignment="Left" Margin="653,279,0,0" VerticalAlignment="Top" FontSize="26.667" Foreground="White" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <ComboBox x:Name="cmbUpdateType" HorizontalAlignment="Left" Margin="909,279,0,0" VerticalAlignment="Top" Width="244" Height="36" Background="White" FontFamily="Arial" FontSize="18.667" TabIndex="0"/>
+        <Label x:Name="lblPricingManagement" Content="PRICING MANAGEMENT" HorizontalAlignment="Center" Margin="40,25,526,0" VerticalAlignment="Top" Height="46" Width="310" Foreground="#FFC3B253" FontSize="24" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <ComboBox x:Name="cboMembershipTypeInfo" HorizontalAlignment="Left" Margin="180,130,0,0" VerticalAlignment="Top" Width="202" Height="29" Background="White" FontFamily="Arial" FontSize="12" TabIndex="0"/>
+        <Label x:Name="lblMembershipType" Content="Membership Type:" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="Arial" FontWeight="Bold" Height="36" Width="135"/>
+        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="488,209,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="Arial" FontWeight="Bold"/>
+        <Button x:Name="btnTypeCheck" Content="CHECK TYPE" HorizontalAlignment="Left" Margin="406,130,0,0" VerticalAlignment="Top" Width="108" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="29" FontSize="12" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="1" Click="btnTypeCheck_Click"/>
+        <TextBox x:Name="txtUpdatePrice" HorizontalAlignment="Left" Height="30" Margin="636,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontSize="12" FontFamily="Arial" TabIndex="2"/>
+        <Label x:Name="lblUpdateAvailablity" Content="Update Availability:" HorizontalAlignment="Left" Margin="488,278,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="Arial" FontWeight="Bold"/>
+        <ComboBox x:Name="cboUpdateAvailability" HorizontalAlignment="Left" Margin="638,278,0,0" VerticalAlignment="Top" Width="181" Height="26" Background="White" FontFamily="Arial" FontSize="12" TabIndex="3">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <Button x:Name="btnUpdateType" Content="UPDATE" HorizontalAlignment="Left" Margin="588,343,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="30" FontSize="12" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="4" Click="btnUpdateType_Click"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="716,343,0,0" VerticalAlignment="Top" Width="100" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Height="30" FontSize="12" FontWeight="Bold" FontFamily="Century Gothic" TabIndex="5" Click="btnClear_Click"/>
+        <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="716,25,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" MouseUp="txbMainMenu_MouseUp" RenderTransformOrigin="-1.461,-0.75"/>
+        <TextBox x:Name="txtMemberData" HorizontalAlignment="Left" Height="129" Margin="40,223,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="342" FontFamily="Courier New" FontSize="12" IsReadOnly="True" IsTabStop="False"/>
+        <Label x:Name="lblMembershipTypeData" Content="Current Membership Type Data:" HorizontalAlignment="Left" Margin="40,191,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="Arial" FontWeight="Bold" Height="36" Width="243"/>
+        <Label x:Name="lblPMInstructions" Content="Select a membership type from the drop-down menu and click &quot;CHECK TYPE&quot; to see that membership's &#xD;&#xA;current data. To update the price and availability, enter a valid price and select an availability status from the drop menu. &#xD;&#xA;To complete the membership update, press &quot;UPDATE&quot;." HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="705" Foreground="White" FontFamily="Arial" FontSize="12" Margin="35,69,0,0" />
 
     </Grid>
 </Window>

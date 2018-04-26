@@ -34,7 +34,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblCreditCardType" Content="Credit Card Type:" HorizontalAlignment="Left" Margin="48,250,0,0" VerticalAlignment="Top" Height="26" Width="114" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
+        <Label x:Name="lblCreditCardType" Content="Credit Card Type:" HorizontalAlignment="Left" Margin="48,258,0,0" VerticalAlignment="Top" Height="26" Width="114" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -65,7 +65,7 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtBillingAddress" HorizontalAlignment="Left" Height="25" Margin="550,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" FontFamily="Arial" FontSize="12" TabIndex="4" RenderTransformOrigin="0.509,-0.08"/>
-        <Label x:Name="lblCity" Content="City:" HorizontalAlignment="Left" Margin="434,240,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
+        <Label x:Name="lblCity" Content="City:" HorizontalAlignment="Left" Margin="434,238,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -75,7 +75,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="25" Margin="550,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Arial" FontSize="12" TabIndex="5" RenderTransformOrigin="0.509,-0.08"/>
+        <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="25" Margin="550,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Arial" FontSize="12" TabIndex="5" RenderTransformOrigin="0.509,-0.08"/>
         <Label x:Name="lblState" Content="State:" HorizontalAlignment="Left" Margin="433,270,0,0" VerticalAlignment="Top" Height="26" Width="106" FontFamily="Arial" Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="2.926,-1.833">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -152,8 +152,8 @@
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="730,408,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="30" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="9" RenderTransformOrigin="0.537,-1.062" Click="btnClear_Click"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="730,332,0,0" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="32" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="8" RenderTransformOrigin="0.537,-1.062" Click="btnRegister_Click"/>
         <ComboBox x:Name="cboExistingMember" HorizontalAlignment="Left" Margin="174,124,0,0" VerticalAlignment="Top" Width="160" Height="25" RenderTransformOrigin="0.524,-0.429" TabIndex="0"/>
-        <Image x:Name="imgCard" Margin="300,249,552,188" Source="mastercard_logo.png" Stretch="Fill" RenderTransformOrigin="1.338,0.614"/>
-        <Label x:Name="lblCreditType"  FontSize="12" HorizontalAlignment="Left" Margin="179,249,0,0" VerticalAlignment="Top" Width="116" Height="25" FontFamily="Arial"/>
+        <Image x:Name="imgCard" Margin="300,257,552,180" Source="mastercard_logo.png" Stretch="Fill" RenderTransformOrigin="1.338,0.614"/>
+        <Label x:Name="lblCreditType"  FontSize="12" HorizontalAlignment="Left" Margin="179,255,0,0" VerticalAlignment="Top" Width="116" Height="25" FontFamily="Arial"/>
         <ComboBox x:Name="cboMonth" HorizontalAlignment="Left" Height="25" Margin="184,297,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="-0.871,-1.12" TabIndex="2">
             <ComboBoxItem Content="01" FontFamily="Arial"/>
             <ComboBoxItem Content="02" FontFamily="Arial"/>
@@ -181,5 +181,7 @@
         </ComboBox>
         <Label x:Name="lblMM" Content="MM" HorizontalAlignment="Left" Height="32" Margin="195,324,0,0" VerticalAlignment="Top" Width="44" FontFamily="Arial" FontSize="11" FontWeight="Bold"/>
         <Label x:Name="lblYear" Content="YYYY" HorizontalAlignment="Left" Height="32" Margin="271,326,0,0" VerticalAlignment="Top" Width="44" FontFamily="Arial" FontSize="11" FontWeight="Bold"/>
+        <Label x:Name="lblZipInstructions" Content="ex: 46032"  HorizontalAlignment="Left" Height="26" Margin="550,321,0,0" VerticalAlignment="Top" Width="118" FontFamily="Arial"/>
+        <Label x:Name="lblCreditNumInstructions" Content="ex: 123456789012"  HorizontalAlignment="Left" Height="26" Margin="178,225,0,0" VerticalAlignment="Top" Width="118" FontFamily="Arial"/>
     </Grid>
 </Window>
