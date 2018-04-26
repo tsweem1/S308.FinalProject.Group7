@@ -1,0 +1,32 @@
+[{
+  
+    "MemberID": "12345678",
+    "Transaction Date": "4/6/2016",
+    "Items Purchased": "Solstice Gym Hoodie"
+},{
+
+    "MemberID": "28394038",
+    "Transaction Date": "6/3/2017",
+    "Items Purchased": "Solstice Gym Waterbotle"
+    
+ },{
+     
+     "MemberID": "34950495",
+     "Transaction Date": "8/2/2017",
+     "Items Purchased": "Solstice Gym T-Shirt"
+     
+ },{
+ 
+     "MemberID": "49302748",
+     "Transaction Date": "7/17/2017",
+     "Items Purchased": "Adidas Socks"
+ },{
+     
+     "MemberID": "39204739",
+     "Transaction Date": "7/17/2017",
+     "Items Purchased": "Nike Sweatpants"
+  
+  
+  
+  
+}]
