@@ -9,7 +9,7 @@ namespace FitnessClub
    //Add class for member
     public class Member
     {
-        public long MemberID { get; set; }
+        public string MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
