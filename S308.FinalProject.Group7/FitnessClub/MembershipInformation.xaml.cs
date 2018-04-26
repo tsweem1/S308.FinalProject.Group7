@@ -91,7 +91,7 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            List<Member> memberSearch;
+           
 
 
 
