@@ -16,18 +16,18 @@ using System.IO;
 
 namespace FitnessClub
 {
-    class PriceInformation
+    public class PriceInformation
     {
         public string Membership { get; set; }
         public string Price { get; set; }
         public string Availability { get; set; }
 
-        PriceInformation()
+        public PriceInformation()
         {
 
         }
 
-        PriceInformation(string membershipType, string membershipPrice, string avaliability)
+        public PriceInformation(string membershipType, string membershipPrice, string avaliability)
         {
             Membership = membershipType;
             Price = membershipPrice;
