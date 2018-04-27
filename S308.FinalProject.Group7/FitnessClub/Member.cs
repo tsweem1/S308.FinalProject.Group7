@@ -24,7 +24,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment)
+        public Member(string memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -34,8 +34,8 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
-            //MembershipType = payment.MembershipType;
-           // StartDate = payment.StartDate;
+            MembershipType = payment.MembershipType;
+            StartDate = payment.StartDate;
            
 
        }

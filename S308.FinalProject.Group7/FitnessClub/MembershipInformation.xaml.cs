@@ -30,14 +30,14 @@ namespace FitnessClub
             InitializeComponent();
 
             // Load Json File
-            GetDataSetFromFile();
+            memberList = GetDataSetFromFile();
         }
 
-        private void GetDataSetFromFile()
+        public List<Member> GetDataSetFromFile()
         {
             List<Member> lstMember = new List<Member>();
-            
-            string strFilePath = @"..\..\..\Data\Members.json";
+            Files calFiles = new Files();
+            string strFilePath = @"..\..\..\Data\Member.json";
 
              try
              {
@@ -56,7 +56,7 @@ namespace FitnessClub
                 MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
 
-            
+            return lstMember;
         }
  
 
