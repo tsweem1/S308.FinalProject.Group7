@@ -137,10 +137,11 @@ namespace FitnessClub
             string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
 
             //16. Set output to corresponding text boxes
-            txtPrice.Text = strMembershipPrice;
+            txtPrice.Text = dblMembershipPrice.ToString("C2");
             txtMemberQuotaOutput.Text = strOutput;
             txtEndDate.Text = strSubConvertedEndDate;
             txtMemberQuotaOutput.Text = strOutput;
+            txtTotalPrice.Text = dblTotalCost.ToString("C2");
         }
         
         //Function that adds Prices.json data to combo-box
@@ -179,11 +180,11 @@ namespace FitnessClub
 
             if(cbo2.SelectedIndex == 0 || cbo2.SelectedIndex == 2 || cbo2.SelectedIndex == 4)
             {
-                totalMonths = 1;
+                totalMonths = 12;
             }
             else
             {
-                totalMonths = 12;
+                totalMonths = 1;
             }
             totalPrice *= totalMonths;
             return totalPrice;

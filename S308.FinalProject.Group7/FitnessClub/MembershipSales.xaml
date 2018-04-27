@@ -10,7 +10,7 @@
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="2" d:IsLocked="True"/>
         <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="201,128,0,0" VerticalAlignment="Top" Width="205" Height="22" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" Background="White" TabIndex="0" Grid.Column="1"/>
         <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="263" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="24" Margin="32,32,0,0" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="34,230,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="32,169,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="366,-220,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Height="37" Width="123" FontFamily="Arial" Foreground="White" FontSize="12" RenderTransformOrigin="0.519,1.403" FontWeight="Bold" Grid.Column="1">
             <Label.RenderTransform>
@@ -23,9 +23,9 @@
             </Label.RenderTransform>
         </Label>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="734,343,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4" Grid.Column="1" Click="btnClear_Click"/>
-        <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="36,250,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952" TabIndex="1"/>
+        <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="201,169,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952" TabIndex="1"/>
         <Label x:Name="lblInstructions" Content="Fill  out the fields and proceed to Member Registration. Press &quot;SAVE&quot; to save the quota information. &#xD;&#xA;To go to Member Registration, click on the &quot;Member Registration&quot; link above." HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="615" Foreground="White" FontFamily="Arial" FontSize="12" Margin="32,75,0,0" Grid.Column="1" />
-        <Label x:Name="lblSelect" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="31,128,0,0" VerticalAlignment="Top" Height="34" Width="183" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+        <Label x:Name="lblSelect" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" Height="34" Width="183" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,16 +35,16 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ListBox x:Name="lstFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="34,328,0,0" VerticalAlignment="Top" Width="248" SelectionMode="Multiple" TabIndex="2">
+        <ListBox x:Name="lstFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="201,207,0,0" VerticalAlignment="Top" Width="248" SelectionMode="Multiple" TabIndex="2">
             <ListBoxItem Content="Personal Training Plan - $5.00 per month " FontFamily="Arial"/>
             <ListBoxItem Content="Locker Rental - $1.00 per month " FontFamily="Arial"/>
         </ListBox>
-        <Label x:Name="lblListBox" Content="Select Additional Features:" HorizontalAlignment="Left" Height="31" Margin="32,297,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblListBox" Content="Select Additional Features:" HorizontalAlignment="Left" Height="31" Margin="32,206,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <TextBox x:Name="txtMemberQuotaOutput" Grid.Column="1" HorizontalAlignment="Left" Height="143" Margin="522,157,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="305" FontFamily="Courier New" FontSize="12" IsReadOnly="True" IsTabStop="False"/>
         <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="732,25,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" Grid.Column="1" MouseUp="txbMainMenu_MouseUp"/>
         <TextBlock x:Name="txbMemberRegistration" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="548,24,0,0" TextWrapping="Wrap" Text="Member Registration" VerticalAlignment="Top" Height="20" Width="152" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" Grid.Column="1" MouseUp="txbMemReg_MouseUp"/>
         <Button x:Name="btnSaveQuota" Content="ESTIMATE" HorizontalAlignment="Left" Margin="626,343,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="3" Grid.Column="1" RenderTransformOrigin="-0.477,0.342" Click="btnSaveQuota_Click"/>
-        <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="31,180,0,0" VerticalAlignment="Top" Height="31" Width="87" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+        <Label x:Name="lblPrice" Content="Subtotal Price:" HorizontalAlignment="Left" Margin="201,297,0,0" VerticalAlignment="Top" Height="31" Width="97" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -54,9 +54,20 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txtPrice" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="201,175,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="205" IsTabStop="False" IsReadOnly="True"/>
-        <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Height="37" Margin="267,227,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
-        <TextBox x:Name="txtEndDate" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="267,250,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="205" IsReadOnly="True" IsTabStop="False"/>
+        <TextBox x:Name="txtPrice" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="201,331,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="150" IsTabStop="False" IsReadOnly="True"/>
+        <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Height="37" Margin="32,296,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="txtEndDate" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="33,331,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="150" IsReadOnly="True" IsTabStop="False"/>
+        <Label x:Name="lblTotalPrice" Content="Total Price:" HorizontalAlignment="Left" Margin="366,297,0,0" VerticalAlignment="Top" Height="31" Width="97" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtTotalPrice" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="366,331,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="150" IsTabStop="False" IsReadOnly="True"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="297*"/>

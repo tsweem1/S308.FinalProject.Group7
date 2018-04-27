@@ -56,7 +56,7 @@ namespace FitnessClub
             bool isPhoneEmpty = txtPhone.Text.Length == 0;
 
             //2.1 Validation for blank required fields
-            if (isFirstNameEmpty || isLastNameEmpty || isGenderSelected || isEmailEmpty || isPhoneEmpty )
+            if (isFirstNameEmpty || isLastNameEmpty || isGenderSelected || isEmailEmpty || isPhoneEmpty)
             {
                 MessageBox.Show("Please fill out the First Name, Last Name, Gender, Email Address, and Phone Number fields.");
                 return;
@@ -117,7 +117,7 @@ namespace FitnessClub
             //5 Check if phone number is valid
             //5.1 check if number is formatted correctly
             bool hasTwoHyphens = (strPhoneNumber.IndexOf("-") == 3) && (strPhoneNumber.LastIndexOf("-") == 7);
-            
+
             if (hasTwoHyphens)
             {
                 int intAreaCode, intMiddleNum, intLastNum;
@@ -137,7 +137,7 @@ namespace FitnessClub
                     MessageBox.Show("Please enter a valid phone number.");
                     return;
                 }
-   
+
             }
             else
             {
@@ -283,36 +283,27 @@ namespace FitnessClub
             imgCard.Visibility = Visibility.Visible;
             txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             lblCreditType.Content = strCreditCardType;
-
-            // Validate that a combobox item was selected
-            if (cboMembershipType.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a Membership Plan.");
-                return;
-            }
-
+       
             //add new member
-            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(),
-                                          txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), 
-                                          txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(),cboMembershipType.Text.Trim(), 
-                                          txtCreditCardNumber.Text.Trim(), cboMonth.Text.Trim(), cboYear.Text.Trim(),
-                                          txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), cboState.Text.Trim(), txtZip.Text.Trim());
+            //Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(),
+                                          //txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), 
+                                          //txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(),
+                                          //txtCreditCardNumber.Text.Trim(), cboMonth.Text.Trim(), cboYear.Text.Trim(),
+                                          //txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), cboState.Text.Trim(), txtZip.Text.Trim());
 
-            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
-                + Environment.NewLine + Environment.NewLine + memberNew.ToString()
-                , "Create New Member"
-                , MessageBoxButton.YesNo);
+            //MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
+              //  + Environment.NewLine + Environment.NewLine + memberNew.ToString()
+                //, "Create New Member"
+                //, MessageBoxButton.YesNo);
 
-            if (messageBoxResult == MessageBoxResult.Yes)
+           // if (messageBoxResult == MessageBoxResult.Yes)
             {
-                AppendToFile(memberNew);
+                // AppendToFile(memberNew);
 
-                Clear();
-                
-                MessageBox.Show("New Member Saved!");
+                // Clear();
+
+                // MessageBox.Show("New Member Saved!");
             }
-
-
         }
 
         #region Navigation controls
