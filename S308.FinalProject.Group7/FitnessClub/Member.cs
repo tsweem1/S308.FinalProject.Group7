@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-   //Add class for member
-    public class Member: CustomerPaymentInfo
+    //Add class for member
+    public class Member : CustomerPaymentInfo
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,7 +17,7 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
-       
+
         public Member()
         {
 

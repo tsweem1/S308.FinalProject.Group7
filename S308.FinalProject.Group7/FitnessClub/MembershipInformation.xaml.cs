@@ -23,34 +23,42 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipInformation : Window
     {
-        List<Member> memberIndex;
+        List<Member> memberList;
 
         public MembershipInformation()
         {
             InitializeComponent();
 
-            //load member list from json file
-            memberIndex = GetDataSetFromFile();
-            
+            // Load Json File
+            memberList = GetDataSetFromFile();
         }
 
         public List<Member> GetDataSetFromFile()
         {
-            List<Member> lstMember = new List<Member> ();
-            string strFilePath = @"..\..\..\Data\Members.json";
+            List<Member> lstMember = new List<Member>();
+            Files calFiles = new Files();
+            string strFilePath = @"..\..\..\Data\Member.json";
 
-            try
-            {
-                string jsonData = File.ReadAllText(strFilePath);
+             try
+             {
+
+                //3.use system.oi.file to read the entire data file
+                StreamReader reader = new StreamReader(strFilePath);
+                string jsonData = reader.ReadToEnd();
+                reader.Close();
+
+                //4.serialize the json data to a list of customers
+                
                 lstMember = JsonConvert.DeserializeObject<List<Member>>(jsonData);
             }
-
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error loading Member from file" + ex.Message);
+                MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
+
             return lstMember;
         }
+ 
 
 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
@@ -119,15 +127,15 @@ namespace FitnessClub
             lbxSearchResults.Items.Clear();
 
 
-            memberSearch = memberIndex.Where(m =>
-                m.LastName.StartsWith(strLastName) &&
-                m.FirstName.StartsWith(strLastName) &&
-                m.EmailAddress.StartsWith(strEmail) &&
+            memberSearch = memberList.Where(m =>
+                m.LastName.StartsWith(strLastName) ||
+                m.FirstName.StartsWith(strLastName) ||
+                m.EmailAddress.StartsWith(strEmail) ||
                 m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
 
             foreach (Member m in memberSearch)
             {
-                lbxSearchResults.Items.Add(m.LastName);
+                lbxSearchResults.Items.Add(m.LastName + m.FirstName);
             }
 
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
@@ -139,7 +147,7 @@ namespace FitnessClub
             {
                 string strSelectedName = lbxSearchResults.SelectedItem.ToString();
 
-                Member memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).FirstOrDefault();
+                Member memberSelected = memberList.Where(m => m.LastName + m.FirstName == strSelectedName).FirstOrDefault();
                 txtMemberDetails.Text = memberSelected.ToString();
             }
         }
