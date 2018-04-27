@@ -12,8 +12,8 @@ namespace FitnessClub
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public List<String> AdditionalFeatures { get; set; }
-        public int MembershipPrice { get; set; }
-        public int TotalPrice { get; set; }
+        public double MembershipPrice { get; set; }
+        public double TotalPrice { get; set; }
 
         public CustomerPaymentInfo()
         {
