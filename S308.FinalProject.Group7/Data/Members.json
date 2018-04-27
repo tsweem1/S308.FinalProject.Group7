@@ -1,5 +1,5 @@
 [{
-	"MemberID": "12345678",
+	
 	"FirstName": "John",
 	"LastName": "Doe",
 	"Gender": "Male",
@@ -7,10 +7,22 @@
 	"PhoneNumber": "123-123-1234",
 	"Weight": "180",
 	"Age": "45",
-	"FitnessGoal": "Weight Loss"
+	"FitnessGoal": "Weight Loss",
+	"MembershipType": "Individual 1 Month",
+	"StartDate": "7/2/2015",
+	"EndDate": "8/2/2015",
+	"MembershipCost": "$9.99",
+	"AdditionalFeatures": "Personal Training",
+	"TotalPrice": "$14.99",
+	"CreditCardNumber": "4090249764583478",
+	"CreditCardType": "Visa",
+	"BillingAddress": "1432 Main Street",
+	"City": "Bloomington",
+	"Zip":"47409"
+	
 	
 }, {
-	"MemberID": "28394038",
+	
 	"FirstName": "Jane",
 	"LastName": "Dan",
 	"Gender": "Female",
@@ -18,10 +30,21 @@
 	"PhoneNumber": "738-394-1923",
 	"Weight": "150",
 	"Age": "32",	
-	"FitnessGoal": "Weight Loss"
+	"FitnessGoal": "Weight Loss",
+	"MembershipType":"Individual 12 Month",
+	"StartDate": "6/2/2016",
+	"EndDate": "6/2/2017",
+	"MembershipCost": "$100.00",
+	"AdditionalFeatures": "Locker Rental",
+	"TotalPrice": "$101.00"
+	"CreditCardNumber": "4929411036002979",
+	"CreditCardType": "Visa",
+	"BillingAddress": "564 4th Street",
+	"City": "Bloomington",
+	"Zip":"47406"
 	
 },{
-	"MemberID": "34950495",
+	
 	"FirstName": "Ji",
 	"LastName": "Lee",
 	"Gender": "Male",
@@ -29,10 +52,21 @@
 	"PhoneNumber": "329-439-4930",
 	"Weight": "150",
 	"Age": "23",
-	"FitnessGoal": "Weight Loss"
+	"FitnessGoal": "Weight Loss",
+	"MembershipType": "Individual 12 Month",
+	"StartDate": "7/6/2017",
+	"EndDate": "7/6/2018",
+	"MembershipCost": "$100.00",
+	"AdditionalFeatures": "Locker Rental",
+	"TotalPrice": "$101.00",
+	"CreditCardNumber": "4929411036002979",
+	"CreditCardType": "Mastercard",
+	"BillingAddress": "4360 10th Street",
+	"City": "Bloomington",
+	"Zip":"47408"
 	
 },{
-	"MemberID": "49302748",
+	
 	"FirstName": "Matt",
 	"LastName": "Boothby",
 	"Gender": "Male",
@@ -40,10 +74,21 @@
 	"PhoneNumber": "438-238-4381",
 	"Weight": "135",
 	"Age": "29",
-	"FitnessGoal": "Athletic Performance"
+	"FitnessGoal": "Athletic Performance",
+	"MembershipType": "Family 12 Month",
+	"StartDate": "10/05/2017",
+	"EndDate": "10/05/2017",
+	"MembershipCost": "$200.00",
+	"AdditionalFeatures": "Personal Training Plan",
+	"TotalPrice": "$205.00",
+	"CreditCardNumber": "5342349744232650",
+	"CreditCardType": "Mastercard",
+	"BillingAddress": "540 7th Street",
+	"City": "Bloomington",
+	"Zip":"47408"
 	
 },{
-	"MemberID": "39204739",
+	
 	"FirstName": "Kim",
 	"LastName": "Smith",
 	"Gender": "Female",
@@ -51,6 +96,17 @@
 	"PhoneNumber": "430-234-0192",
 	"Weight": "128",
 	"Age": "44",
-	"FitnessGoal": "Overall Health"
+	"FitnessGoal": "Overall Health",
+	"MembershipType": "Two Person 12 Month",
+	"StartDate":
+	"EndDate":
+	"MembershipCost":
+	"AdditionalFeatures":
+	"TotalPrice":
+	"CreditCardNumber": "5459471940469321",
+	"CreditCardType": "Mastercard",
+	"BillingAddress": "76354 9th Street",
+	"City": "Bloomington",
+	"Zip":"47405"
 	
 }]
