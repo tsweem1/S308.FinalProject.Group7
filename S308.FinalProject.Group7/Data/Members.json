@@ -7,12 +7,8 @@
 	"PhoneNumber": "123-123-1234",
 	"Weight": "180",
 	"Age": "45",
-	"FitnessGoal": "Weight Loss",
-	"CaloriesBurned": "150",
-	"Miles": "10",
-	"WeightGoal": "590",
-	"Steps": "10000",
-	"FloorsClimbed": "80"
+	"FitnessGoal": "Weight Loss"
+	
 }, {
 	"MemberID": "28394038",
 	"FirstName": "Jane",
@@ -22,12 +18,8 @@
 	"PhoneNumber": "738-394-1923",
 	"Weight": "150",
 	"Age": "32",	
-	"FitnessGoal": "Weight Loss",
-	"CaloriesBurned": "430",
-	"Miles": 105,
-	"WeightGoal": "135",
-	"Steps": "10320",
-	"FloorsClimbed": "233"
+	"FitnessGoal": "Weight Loss"
+	
 },{
 	"MemberID": "34950495",
 	"FirstName": "Ji",
@@ -36,12 +28,9 @@
 	"EmailAddress": "lee943@iu.edu",
 	"PhoneNumber": "329-439-4930",
 	"Weight": "150",
-	"FitnessGoal": "Weight Loss",
-	"CaloriesBurned": "4430",
-	"Miles": "503",
-	"WeightGoal": "140",
-	"Steps": "9239",
-	"FloorsClimbed": "520"
+	"Age": "23",
+	"FitnessGoal": "Weight Loss"
+	
 },{
 	"MemberID": "49302748",
 	"FirstName": "Matt",
@@ -50,12 +39,9 @@
 	"EmailAddress": "boothby@iu.edu",
 	"PhoneNumber": "438-238-4381",
 	"Weight": "135",
-	"FitnessGoal": "Athletic Performance",
-	"CaloriesBurned": "493",
-	"Miles": "854",
-	"WeightGoal": "140",
-	"Steps": "15540",
-	"FloorsClimbed": "604"
+	"Age": "29",
+	"FitnessGoal": "Athletic Performance"
+	
 },{
 	"MemberID": "39204739",
 	"FirstName": "Kim",
@@ -64,10 +50,7 @@
 	"EmailAddress": "ksmith@iu.edu",
 	"PhoneNumber": "430-234-0192",
 	"Weight": "128",
-	"FitnessGoal": "Overall Health",
-	"CaloriesBurned": "540",
-	"Miles": "650",
-	"WeightGoal": "125",
-	"Steps": "9540",
-	"FloorClimbed": "954"
+	"Age": "44",
+	"FitnessGoal": "Overall Health"
+	
 }]
