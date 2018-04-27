@@ -28,36 +28,34 @@ namespace FitnessClub
         public MembershipInformation()
         {
             InitializeComponent();
-
-            // Load Json File
-            GetDataSetFromFile();
+             // Load Json File
+             GetDataSetFromFile();
         }
 
-        private void GetDataSetFromFile()
-        {
-            //List<Member> lstMember = new List<Member>();
-            
-            string strFilePath = @"..\..\..\Data\Member.json";
+          private void GetDataSetFromFile()
+          {
+       List<Member> lstMember = new List<Member>();
+
+        string strFilePath = @"..\..\..\Data\Members.json";
 
              try
              {
 
                 //3.use system.oi.file to read the entire data file
                 StreamReader reader = new StreamReader(strFilePath);
-                string jsonData = reader.ReadToEnd();
+               string jsonData = reader.ReadToEnd();
                 reader.Close();
-                //string jsonData = File.ReadAllText(strFilePath);
+               
 
                 //4.serialize the json data to a list of customers
-
-                memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-            }
+               memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+           }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
 
-            //return memberList;
+            
         }
  
 
