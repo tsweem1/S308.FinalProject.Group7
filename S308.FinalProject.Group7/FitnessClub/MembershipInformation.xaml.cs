@@ -30,13 +30,13 @@ namespace FitnessClub
             InitializeComponent();
 
             // Load Json File
-            memberList = GetDataSetFromFile();
+            GetDataSetFromFile();
         }
 
-        public List<Member> GetDataSetFromFile()
+        private void GetDataSetFromFile()
         {
-            List<Member> lstMember = new List<Member>();
-            Files calFiles = new Files();
+            //List<Member> lstMember = new List<Member>();
+            
             string strFilePath = @"..\..\..\Data\Member.json";
 
              try
@@ -46,17 +46,18 @@ namespace FitnessClub
                 StreamReader reader = new StreamReader(strFilePath);
                 string jsonData = reader.ReadToEnd();
                 reader.Close();
+                //string jsonData = File.ReadAllText(strFilePath);
 
                 //4.serialize the json data to a list of customers
-                
-                lstMember = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+
+                memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
 
-            return lstMember;
+            //return memberList;
         }
  
 
@@ -122,20 +123,52 @@ namespace FitnessClub
                return;
             }
 
-            //search results is cleared when member details is blank
-            txtMemberDetails.Text = "";
-            lbxSearchResults.Items.Clear();
-
-
+            //conduct member search 
             memberSearch = memberList.Where(m =>
-                m.LastName.StartsWith(strLastName) ||
-                m.FirstName.StartsWith(strLastName) ||
-                m.EmailAddress.StartsWith(strEmail) ||
-                m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
+               m.LastName.StartsWith(strLastName) &&
+               m.FirstName.StartsWith(strFirstName) &&
+               m.EmailAddress.StartsWith(strEmail) &&
+               m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
+               
 
+            //display search items and results in listbox if field is not blank
             foreach (Member m in memberSearch)
             {
-                lbxSearchResults.Items.Add(m.LastName + m.FirstName);
+                if(strLastName == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.LastName);
+                }
+
+                if (strFirstName == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.FirstName);
+                }
+                if (strEmail == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.EmailAddress);
+                }
+
+                if (strPhoneNumber == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.PhoneNumber);
+                }
+                
             }
 
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
