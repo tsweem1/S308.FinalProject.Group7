@@ -83,6 +83,9 @@
     <Compile Include="CheckOut.xaml.cs">
       <DependentUpon>CheckOut.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateLogin.xaml.cs">
+      <DependentUpon>CreateLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreditCard.cs" />
     <Compile Include="CustomerPayment.xaml.cs">
       <DependentUpon>CustomerPayment.xaml</DependentUpon>
@@ -104,6 +107,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="CheckOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
