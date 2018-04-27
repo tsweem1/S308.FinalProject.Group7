@@ -98,11 +98,11 @@
 	"Age": "44",
 	"FitnessGoal": "Overall Health",
 	"MembershipType": "Two Person 12 Month",
-	"StartDate":
-	"EndDate":
-	"MembershipCost":
-	"AdditionalFeatures":
-	"TotalPrice":
+	"StartDate": "12/29/2017",
+	"EndDate":"12/29/2018",
+	"MembershipCost": "$125.00",
+	"AdditionalFeatures": "$0.00",
+	"TotalPrice": "$125.00",
 	"CreditCardNumber": "5459471940469321",
 	"CreditCardType": "Mastercard",
 	"BillingAddress": "76354 9th Street",
