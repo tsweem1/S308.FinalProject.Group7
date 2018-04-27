@@ -9,7 +9,6 @@ namespace FitnessClub
    //Add class for member
     public class Member: CustomerPaymentInfo
     {
-        public string MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -18,15 +17,7 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
-        public int CaloriesBurned { get; set; }
-        public int Miles { get; set; }
-        public int WeightGoal { get; set; }
-        public int Steps { get; set; }
-        public int FloorsClimbed { get; set; }
-
-        public string TransactionDate { get; set; }
-        public string ItemsPurchased { get; set; }
-
+       
         public Member()
         {
 
