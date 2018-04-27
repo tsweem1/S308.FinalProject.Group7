@@ -30,7 +30,7 @@
 	"FloorsClimbed": "233"
 },{
 	"MemberID": "34950495",
-	"FirstName": "Ji"
+	"FirstName": "Ji",
 	"LastName": "Lee",
 	"Gender": "Male",
 	"EmailAddress": "lee943@iu.edu",
@@ -40,7 +40,7 @@
 	"CaloriesBurned": "4,430",
 	"Miles": "503",
 	"WeightGoal": "140",
-	"Steps": "9,239"
+	"Steps": "9,239",
 	"FloorsClimbed": "520"
 },{
 	"MemberID": "49302748",
@@ -67,7 +67,7 @@
 	"FitnessGoal": "Overall Health",
 	"CaloriesBurned": "540",
 	"Miles": "650",
-	"WeightGoal": 125",
+	"WeightGoal": "125",
 	"Steps": "9,540",
 	"FloorClimbed": "954"
 }]

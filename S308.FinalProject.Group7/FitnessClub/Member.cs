@@ -9,7 +9,7 @@ namespace FitnessClub
    //Add class for member
     public class Member: CustomerPaymentInfo
     {
-        public long MemberID { get; set; }
+        public string MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -24,13 +24,16 @@ namespace FitnessClub
         public int Steps { get; set; }
         public int FloorsClimbed { get; set; }
 
+        public string TransactionDate { get; set; }
+        public string ItemsPurchased { get; set; }
+
         public Member()
         {
 
         }
 
         //Initialize constructor
-        public Member(long memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment)
+        public Member(string memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
         {
             MemberID = memberid;
             FirstName = firstName;
@@ -48,6 +51,8 @@ namespace FitnessClub
             FloorsClimbed = floorsClimbed;
             MembershipType = payment.MembershipType;
             StartDate = payment.StartDate;
+            TransactionDate = transactiondate;
+            ItemsPurchased = itemspurchased;
 
        }
 
