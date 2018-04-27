@@ -27,63 +27,64 @@ namespace FitnessClub
         {
             InitializeComponent();
 
-            PurchaseHistory = GetDataSetFromFile();
+            //PurchaseHistory = GetDataSetFromFile();
 
         }
 
-        public List<Member> GetDataSetFromFile()
-        {
-            List<Member> lstPokemon = new List<Member>();
+        //public List<Member> GetDataSetFromFile()
+        //{
+        //    List<Member> lstPokemon = new List<Member>();
 
-           // string strFilePath = @"../../../Data/MemberPurchaseHistory.json";
+        //   // string strFilePath = @"../../../Data/MemberPurchaseHistory.json";
 
-            //try
-            //{
-             //   string jsonData = File.ReadAllText(strFilePath);
-              //  dtgPurchaseHistory = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-           // }
-           // catch (Exception ex)
-           // {
-           //     Console.WriteLine("Error loading Member Purchase History from file: " + ex.Message);
-          //  }
+        //    //try
+        //    //{
+        //     //   string jsonData = File.ReadAllText(strFilePath);
+        //      //  dtgPurchaseHistory = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+        //   // }
+        //   // catch (Exception ex)
+        //   // {
+        //   //     Console.WriteLine("Error loading Member Purchase History from file: " + ex.Message);
+        //  //  }
 
-          //  return lstPokemon;
-        }
+        //  //  return lstPokemon;
+        //}
 
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
-            Window1 winMainMenu = new Window1();
-            winMainMenu.Show();
-            this.Close();
+        //    Window1 winMainMenu = new Window1();
+        //    winMainMenu.Show();
+        //    this.Close();
         }
 
         private void btnMembershipInformation_Click(object sender, RoutedEventArgs e)
-        {
-            MembershipInformation winMemberInfo = new MembershipInformation();
-            winMemberInfo.Show();
-            this.Close();
+        //{
+        //    MembershipInformation winMemberInfo = new MembershipInformation();
+        //    winMemberInfo.Show();
+        //    this.Close();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            List<Member> purchaseSearch;
-            
+            //List<Member> purchaseSearch;
+
             //declare MemberId field
-            //string strMemberID;
+            //    //string strMemberID;
 
-            ComboBoxItem cbiMemberID = (ComboBoxItem)cboMemberID.SelectedItem;
-            string strMemberID = cbiMemberID.Content.ToString();
+            //    ComboBoxItem cbiMemberID = (ComboBoxItem)cboMemberID.SelectedItem;
+            //    string strMemberID = cbiMemberID.Content.ToString();
 
-           // purchaseSearch = purchasehistoryIndex.Where(m =>
-          //  m.MemberID.StartsWith(strMemberID).ToList());
+            //   // purchaseSearch = purchasehistoryIndex.Where(m =>
+            //  //  m.MemberID.StartsWith(strMemberID).ToList());
 
-           // foreach (Member m in purchaseSearch)
-           // {
-           //     dtgPurchaseHistory.Items.Add(m.MemberID);
-           // }
+            //   // foreach (Member m in purchaseSearch)
+            //   // {
+            //   //     dtgPurchaseHistory.Items.Add(m.MemberID);
+            //   // }
 
         }
     }
 }
+
