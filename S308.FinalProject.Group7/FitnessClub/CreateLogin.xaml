@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="CreateLogin" Height="625.09" Width="911.39">
-    <Grid>
+        Title="CreateLogin" Height="625.09" Width="911.39" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-8,-31" Height="625" VerticalAlignment="Top">
         <Image x:Name="loginPageBackground_jpg" Margin="0,0,10,38" Source="loginPageBackground.jpg" Stretch="Fill" d:IsLocked="True"/>
-        <Label x:Name="lblTitle" Content="Create User Login" HorizontalAlignment="Left" Margin="234,10,0,0" VerticalAlignment="Top" Height="64" Width="437" Foreground="#FFC3B253" FontSize="46" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <Label x:Name="lblTitle" Content="Create User Login" HorizontalAlignment="Left" Margin="239,25,0,0" VerticalAlignment="Top" Height="64" Width="437" Foreground="#FFC3B253" FontSize="46" FontFamily="Century Gothic" FontWeight="Bold"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="34" Margin="129,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" FontFamily="Century Gothic" FontSize="12" Foreground="#FF837F7F" Background="White" BorderBrush="Black" TabIndex="0" />
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="34" Margin="535,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" FontFamily="Century Gothic" FontSize="12" Foreground="#FF837F7F" Background="White" BorderBrush="Black" TabIndex="0" />
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="34" Margin="535,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" FontFamily="Century Gothic" FontSize="12" Foreground="#FF837F7F" Background="White" BorderBrush="Black" TabIndex="1" />
         <Label x:Name="lblUsername" Content="Create Username" HorizontalAlignment="Left" Margin="129,334,0,0" VerticalAlignment="Top" Height="34" Width="141" Foreground="#FFFFFF" FontSize="12" FontFamily="Century Gothic" FontWeight="Bold"/>
         <Label x:Name="lblPassword" Content="Create Password" HorizontalAlignment="Left" Margin="531,334,0,0" VerticalAlignment="Top" Height="34" Width="141" Foreground="#FFFFFF" FontSize="12" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Button x:Name="btnEnter" Content="ENTER" HorizontalAlignment="Left" Margin="129,438,0,0" VerticalAlignment="Top" Width="130" Height="38" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2" Click="btnLogin_Click"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="542,438,0,0" VerticalAlignment="Top" Width="130" Height="38" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2" Click="btnLogin_Click"/>
+        <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="535,476,0,0" VerticalAlignment="Top" Width="130" Height="38" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2" Click="btnEnter_Click"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="729,476,0,0" VerticalAlignment="Top" Width="130" Height="38" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="3" Click="btnClear_Click"/>
+        <TextBlock x:Name="txbLogin" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="751,29,0,0" TextWrapping="Wrap" Text="Back to Login" VerticalAlignment="Top" Height="22" Width="108" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" MouseUp="txbLogin_MouseUp" RenderTransformOrigin="-1.461,-0.75"/>
     </Grid>
 </Window>

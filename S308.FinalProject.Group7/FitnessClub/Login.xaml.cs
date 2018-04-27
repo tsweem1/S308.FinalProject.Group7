@@ -103,6 +103,12 @@ namespace FitnessClub
             return isValid;
         }
 
-}
+        private void btnCreateUser_Click(object sender, RoutedEventArgs e)
+        {
+            CreateLogin winCreateLogin = new CreateLogin();
+            winCreateLogin.Show();
+            this.Close();
+        }
+    }
     }
 
