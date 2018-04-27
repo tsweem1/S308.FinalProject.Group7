@@ -55,13 +55,6 @@ namespace FitnessClub
             this.Close();
         }
 
-        private void btnLogIn_Click(object sender, RoutedEventArgs e)
-        {
-            Login winLogin = new Login();
-            winLogin.Show();
-            this.Close();
-        }
-
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

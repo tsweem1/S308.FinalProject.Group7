@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Main Menu" Height="668.763" Width="948.931" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Main Menu" Height="618.377" Width="861.9" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,4,6">
         <Image x:Name="imgBackground" Margin="0,0,0,-3" Source="Fitness photo.jpg" Stretch="Fill" d:IsLocked="True"/>
         <Label x:Name="lblTitle" Content="SOLTICE FITNESS" HorizontalAlignment="Left" Margin="51,43,0,0" VerticalAlignment="Top" Height="72" Width="393" Foreground="#FFC3B253" FontSize="48" FontFamily="Century Gothic" FontWeight="Bold" RenderTransformOrigin="0.38,0.482"/>
-        <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Margin="795,557,0,0" VerticalAlignment="Top" Width="111" Height="50" FontFamily="Century Gothic" FontSize="24" Background="Black" BorderBrush="White" BorderThickness="5" FontWeight="Bold" Foreground="White" TabIndex="5" Click="btnExit_Click"/>
+        <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Margin="659,453,0,0" VerticalAlignment="Top" Width="111" Height="50" FontFamily="Century Gothic" FontSize="24" Background="Black" BorderBrush="White" BorderThickness="5" FontWeight="Bold" Foreground="White" TabIndex="5" Click="btnExit_Click"/>
         <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="51,181,0,0" VerticalAlignment="Top" Width="357" Height="60" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="0" Click="btnMembershipInformation_Click"/>
         <Button x:Name="btnMembershipSales" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Margin="51,269,0,0" VerticalAlignment="Top" Width="357" Height="60" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="1" Click="btnMembershipSales_Click"/>
         <Button x:Name="btnPricingManagement" Content="PRICING MANAGEMENT" HorizontalAlignment="Left" Margin="51,357,0,0" VerticalAlignment="Top" Width="357" Height="60" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" TabIndex="2" Click="btnPricingManagement_Click"/>
-        <Button x:Name="btnLogIn" Content="LOGIN" HorizontalAlignment="Left" Margin="51,557,0,0" VerticalAlignment="Top" Width="153" Height="50" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" Click="btnLogIn_Click" TabIndex="4"/>
         <Button x:Name="btnMerchandise" Content="MERCHANDISE" HorizontalAlignment="Left" Margin="51,443,0,0" VerticalAlignment="Top" Width="357" Height="60" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="White" BorderThickness="5" IsCancel="True" TabIndex="3" Click="btnMerchandise_Click"/>
     </Grid>
 </Window>

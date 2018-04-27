@@ -161,7 +161,6 @@ namespace FitnessClub
             txtZip.Text = "";
         }
 
-        
         //Clear contents button
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {

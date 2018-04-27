@@ -148,7 +148,7 @@ namespace FitnessClub
         { foreach (var i in priceList)
                 if(i.Availability == "Yes")
                 cboMembershipType.Items.Add(i.Membership.ToString()); }
-
+        
         //Calculates additional features (locker/personal training)
         public double GetAdditionalFeatureCost(ListBox lstbox, ComboBox cbo2)
         {

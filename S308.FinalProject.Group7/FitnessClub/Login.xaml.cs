@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace FitnessClub
 {
@@ -21,16 +13,96 @@ namespace FitnessClub
     /// </summary>
     public partial class Login : Window
     {
+        List<LoginCredentials> loginCredential;
         public Login()
         {
+            
             InitializeComponent();
+            //1. Initialize list
+            loginCredential = new List<LoginCredentials>();
+            Files calFiles = new Files();
+
+            //2. Set file location and timestamp for method
+            string strFileLocation = @"..\..\..\Data\Login";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
+
+            //4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //5. Deseralize it to a list
+            loginCredential = JsonConvert.DeserializeObject<List<LoginCredentials>>(jsonData);
+
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        public void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+
+            //6. Set Variables
+            string strUserName = txtUsername.Text;
+            string strPassWord = txtPassword.Text;
+
+           //7. Check if username is filled out
+           if(CheckUserName(strUserName) == false)
+            {
+                txtUsername.Text = "";
+                MessageBox.Show("Username not in system.");
+                return;
+            }
+           //8. Check if password matches user's password
+            var passwordQuery =
+                from c in loginCredential
+                where (c.username.Trim() == strUserName.Trim())
+                select c.password;
+
+            //9. Convert user's password to string
+            string strInputPassWord = String.Join(",", passwordQuery);
+
+            //10. Check if input user matches the actual user name
+            if(strInputPassWord != strPassWord)
+            {
+                txtPassword.Text = "";
+                MessageBox.Show("Password is incorrect.");
+                return;
+            }
+
+            //11. Send greeting message to user
+            MessageBox.Show("Welcome"+" "+strUserName+"!");
+
+            //12. Go to main menu
             Window1 winMainMenu = new Window1();
             winMainMenu.Show();
             this.Close();
         }
-    }
+
+        //13. Function to check if username is in the system
+        public bool CheckUserName(string username)
+        {
+            bool isValid = false;
+            int intCounter = 0;
+            foreach (var i in loginCredential)
+            {
+                if (i.username == username)
+                {
+                    intCounter += 1;
+                }
+            }
+            if (intCounter == 1)
+            {
+                isValid = true;
+            }
+            else
+            {
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
 }
+    }
+
