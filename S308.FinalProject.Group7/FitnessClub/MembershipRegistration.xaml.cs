@@ -31,7 +31,10 @@ namespace FitnessClub
 
             InitializeComponent();
             Clear();
+            imgCard.Visibility = Visibility.Hidden;
+            lblCreditType.Content = "";
         }
+
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             //1. Intialize variables
@@ -53,9 +56,9 @@ namespace FitnessClub
             bool isPhoneEmpty = txtPhone.Text.Length == 0;
 
             //2.1 Validation for blank required fields
-            if (isFirstNameEmpty || isLastNameEmpty || isGenderSelected || isEmailEmpty || isPhoneEmpty)
+            if (isFirstNameEmpty || isLastNameEmpty || isGenderSelected || isEmailEmpty || isPhoneEmpty )
             {
-                MessageBox.Show("Please fill out the First Name, Last Name, Gender, Emaill Address, and Phone Number fields.");
+                MessageBox.Show("Please fill out the First Name, Last Name, Gender, Email Address, and Phone Number fields.");
                 return;
             }
 
@@ -165,11 +168,149 @@ namespace FitnessClub
                 MessageBox.Show("Error in export process: " + ex.Message);
             }
 
-           // MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
+            // MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
 
-            
+            //Credid Card information
+            //1. Initalize variables and assign it to values in text boxes
+            string strCreditCardNumber = txtCreditCardNumber.Text;
+            string strCreditCardType = "";
+            string strExpYear = cboYear.Text;
+            string strExpMonth = cboMonth.Text;
+            string strBillingAddress = txtBillingAddress.Text;
+            string strCity = txtCity.Text;
+            string strState = cboState.Text;
+            string strZipCode = txtZip.Text;
+            int intZipCode = 0;
 
+            //2. Initialize isNull variables to see if all fields were filled out
+            bool isCreditNumEmpty = strCreditCardNumber.Length == 0;
+            bool isExpYear = cboYear.SelectedIndex == -1;
+            bool isExpMonth = cboMonth.SelectedIndex == -1;
+            bool isAddressEmpty = strBillingAddress.Length == 0;
+            bool isCityEmpty = strCity.Length == 0;
+            bool isStateSelected = cboState.SelectedIndex == -1;
+            bool isZipEmpty = strZipCode.Length == 0;
+            bool isZipNum = Int32.TryParse(strZipCode, out intZipCode);
 
+            //3. Test if fields are empty
+            if (isCreditNumEmpty || isExpYear || isExpMonth || isAddressEmpty || isCityEmpty || isStateSelected || isZipEmpty)
+            {
+                MessageBox.Show("Please fill all fields.");
+                return;
+            }
+
+            //4. Test Validity in Credit Card Information
+            //4.1 Set testing variables for credit card validity
+            Member calCardNum = new Member();
+
+            //4.2 Test if a number is entered
+            bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
+
+            if (isNum == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid.");
+                return;
+            }
+
+            //4.3 Test if number is a proper length
+            bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
+
+            if (isCreditLength == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid");
+                return;
+            }
+
+            //4.5 Pass credit card number through Luhn algorthim
+            bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
+
+            if (isLuhnValid == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid");
+                return;
+            }
+
+            //4.6 Check if credit card is expired
+            int intExpMonth = Convert.ToInt32(strExpMonth);
+            int intExpYear = Convert.ToInt32(strExpYear);
+
+            bool isCreditCardExpired = calCardNum.isExpired(intExpMonth, intExpYear);
+
+            if (isCreditCardExpired == false)
+            {
+                cboYear.SelectedIndex = -1;
+                cboMonth.SelectedIndex = -1;
+                MessageBox.Show("Expiration date not valid.");
+                return;
+            }
+            //4.6 Return card type
+            strCreditCardType = calCardNum.CardType(strCreditCardNumber);
+
+            //4.7 Perform logic to display proper credit card image
+            switch (strCreditCardType)
+            {
+                case "AMEX":
+                    imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/american_express_logo.png", UriKind.Relative));
+                    imgCard.Width = 40;
+                    imgCard.Height = 40;
+                    break;
+                case "Discover":
+                    imgCard.Source = new BitmapImage(new Uri(@"CardLogos/discover_logo.png", UriKind.Relative));
+                    imgCard.Width = 40;
+                    imgCard.Height = 40;
+                    break;
+                case "MasterCard":
+                    imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/mastercard_logo.png", UriKind.Relative));
+                    imgCard.Width = 40;
+                    imgCard.Height = 40;
+                    break;
+                case "Visa":
+                    imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/visa_logo.png", UriKind.Relative));
+                    imgCard.Width = 40;
+                    imgCard.Height = 40;
+                    break;
+            }
+            //Check is zipcode is valid
+            if (isZipNum == false)
+            {
+                txtZip.Text = "";
+                MessageBox.Show("Please enter a valid zipcode.");
+                return;
+            }
+            imgCard.Visibility = Visibility.Visible;
+            txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            lblCreditType.Content = strCreditCardType;
+
+            // Validate that a combobox item was selected
+            if (cboMembershipType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a Membership Plan.");
+                return;
+            }
+
+            //add new member
+            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(),
+                                          txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), 
+                                          txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(),cboMembershipType.Text.Trim(), 
+                                          txtCreditCardNumber.Text.Trim(), cboMonth.Text.Trim(), cboYear.Text.Trim(),
+                                          txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), cboState.Text.Trim(), txtZip.Text.Trim());
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
+                + Environment.NewLine + Environment.NewLine + memberNew.ToString()
+                , "Create New Member"
+                , MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                AppendToFile(memberNew);
+
+                Clear();
+                
+                MessageBox.Show("New Member Saved!");
+            }
 
 
         }
@@ -206,12 +347,48 @@ namespace FitnessClub
             txtEmail.Text = "";
             cboFitnessGoals.SelectedIndex = -1;
             cboGender.SelectedIndex = -1;
+            lblCreditType.Content = "";
+            imgCard.Visibility = Visibility.Hidden;
+            txtBillingAddress.Text = "";
+            txtCity.Text = "";
+            txtCreditCardNumber.Text = "";
+            cboYear.SelectedIndex = -1;
+            cboMonth.SelectedIndex = -1;
+            cboState.SelectedIndex = -1;
+            txtZip.Text = "";
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             Clear();
         }
+
+        private void AppendToFile(Member memberNew)
+        {
+            //define strings
+            string strFilePath = @"..\..\..\Data\Members";
+            string strLine;
+
+            //append customer to JSON file
+            try
+            {
+                StreamWriter writer = new StreamWriter(strFilePath, true);
+                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
+                                                                                                                                     memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
+                                                                                                                                     memberNew.Age, memberNew.FitnessGoal, memberNew.MembershipType, 
+                                                                                                                                     memberNew.StartDate, memberNew.EndDate, memberNew.MembershipPrice,
+                                                                                                                                     memberNew.AdditionalFeatures, memberNew.TotalPrice, memberNew.CreditCardNumber, 
+                                                                                                                                     memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
+                writer.WriteLine(strLine);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in append file: " + ex.Message);
+                return;
+            }
+        }
+
 
     }
 }
