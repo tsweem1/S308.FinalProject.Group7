@@ -21,15 +21,15 @@ namespace FitnessClub
     /// </summary>
     public partial class Member_Purchase_History : Window
     {
-        //List<Member> PurchaseHistory;
+        List<Member> PurchaseHistory;
 
-        //  public Member_Purchase_History()
-        //  {
-        //    InitializeComponent();
+          public Member_Purchase_History()
+          {
+           InitializeComponent();
 
-        //PurchaseHistory = GetDataSetFromFile();
+       // PurchaseHistory = GetDataSetFromFile();
 
-        //  }
+          }
 
         //public List<Member> GetDataSetFromFile()
         //{
