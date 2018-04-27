@@ -25,7 +25,7 @@
             </Label.RenderTransform>
         </Label>
         <Button x:Name="btnMembershipInformation" Content="MEMBERSHIP INFORMATION" HorizontalAlignment="Left" Margin="770,103,0,0" VerticalAlignment="Top" Width="394" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" Grid.ColumnSpan="2" TabIndex="4" Click="btnMembershipInformation_Click"/>
-        <DataGrid x:Name="dtgPurchaseHistory" HorizontalAlignment="Left" Margin="39,293,0,0" Padding ="10" VerticalAlignment="Top" Height="283" Width="1128" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667" Grid.ColumnSpan="2">
+        <DataGrid x:Name="dtgPurchaseHistory" HorizontalAlignment="Left" Margin="591,252,0,0" Padding ="10" VerticalAlignment="Top" Height="323" Width="576" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Visible" BorderBrush="White" BorderThickness ="5" Background="{x:Null}" Foreground="White" FontFamily="Arial" FontSize="18.667" Grid.ColumnSpan="2">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,8 +35,8 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="2,202,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="2" Grid.Column="1" Click="btnSearch_Click"/>
-        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="198,202,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" Grid.Column="1" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="3"/>
+        <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Margin="150,266,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="2" Click="btnSearch_Click"/>
+        <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="348,266,0,0" VerticalAlignment="Top" Width="158" FontFamily="Century Gothic" FontSize="24" Height="38" Foreground="White" BorderBrush="White" BorderThickness="5" Background="{x:Null}" FontWeight="Bold" TabIndex="3" Click="btnClear_Click"/>
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="33" Margin="228,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontFamily="Arial" FontSize="18.667" TabIndex="0"/>
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="40,202,0,0" VerticalAlignment="Top" Height="40" Width="256" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
@@ -49,5 +49,26 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="33" Margin="230,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontFamily="Arial" FontSize="18.667" TabIndex="1"/>
+        <Label x:Name="lblPurchaseDetails" Content="Purchase History Details:" HorizontalAlignment="Left" Margin="590,188,0,0" VerticalAlignment="Top" Height="40" Width="354" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ListBox x:Name="lbxSearchResults" HorizontalAlignment="Left" Height="166" Margin="44,403,0,0" VerticalAlignment="Top" Width="450"/>
+        <Label x:Name="lblSearchResults" Content="Search Results:" HorizontalAlignment="Left" Margin="44,346,0,0" VerticalAlignment="Top" Height="40" Width="354" FontFamily="Century Gothic" Foreground="White" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.158"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.747"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

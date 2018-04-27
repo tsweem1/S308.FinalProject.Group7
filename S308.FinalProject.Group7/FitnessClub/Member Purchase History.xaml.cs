@@ -87,6 +87,12 @@ namespace FitnessClub
             // }
             // }
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtLastName.Text = "";
+            txtFirstName.Text = "";
+        }
     }
 }
 

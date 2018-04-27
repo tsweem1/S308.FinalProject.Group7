@@ -17,6 +17,12 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
+        public long CreditCard { get; set; }
+        public string CreditCardType { get; set; }
+        public string BillingAddress { get; set; }
+        public string City { get; set; }
+        public int ZipCode { get; set; }
+
 
         public Member()
         {
@@ -24,7 +30,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
+        public Member(string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment, long creditcard, string creditcardtype, string billingadddress, string city, int zipcode)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -34,8 +40,14 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
-            MembershipType = payment.MembershipType;
-            StartDate = payment.StartDate;
+            CreditCard = creditcard;
+            CreditCardType = creditcardtype;
+            BillingAddress = billingadddress;
+            City = city;
+            ZipCode = zipcode;
+
+            //MembershipType = payment.MembershipType;
+          //  StartDate = payment.StartDate;
            
 
        }
