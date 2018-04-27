@@ -21,15 +21,15 @@ namespace FitnessClub
     /// </summary>
     public partial class Member_Purchase_History : Window
     {
-        List<Member> PurchaseHistory;
+        //List<Member> PurchaseHistory;
 
-        public Member_Purchase_History()
-        {
-            InitializeComponent();
+        //  public Member_Purchase_History()
+        //  {
+        //    InitializeComponent();
 
-            //PurchaseHistory = GetDataSetFromFile();
+        //PurchaseHistory = GetDataSetFromFile();
 
-        }
+        //  }
 
         //public List<Member> GetDataSetFromFile()
         //{
@@ -51,19 +51,19 @@ namespace FitnessClub
         //}
 
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-        //    Window1 winMainMenu = new Window1();
-        //    winMainMenu.Show();
-        //    this.Close();
-        }
+          private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+         {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+         }
 
-        private void btnMembershipInformation_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MembershipInformation winMemberInfo = new MembershipInformation();
-        //    winMemberInfo.Show();
-        //    this.Close();
-        }
+          private void btnMembershipInformation_Click(object sender, RoutedEventArgs e)
+         {
+            MembershipInformation winMemberInfo = new MembershipInformation();
+            winMemberInfo.Show();
+            this.Close();
+         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +84,8 @@ namespace FitnessClub
             //   //     dtgPurchaseHistory.Items.Add(m.MemberID);
             //   // }
 
+            // }
+            // }
         }
     }
 }

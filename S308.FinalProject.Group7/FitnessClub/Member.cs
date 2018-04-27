@@ -26,7 +26,6 @@ namespace FitnessClub
         //Initialize constructor
         public Member(string memberid, string firstName, string lastName,string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, int caloriesBurned, int miles, int weightGoal, int steps, int floorsClimbed, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
         {
-            MemberID = memberid;
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
@@ -35,35 +34,23 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
-            CaloriesBurned = caloriesBurned;
-            Miles = miles;
-            WeightGoal = weightGoal;
-            Steps = steps;
-            FloorsClimbed = floorsClimbed;
             MembershipType = payment.MembershipType;
             StartDate = payment.StartDate;
-            TransactionDate = transactiondate;
-            ItemsPurchased = itemspurchased;
+           
 
        }
 
         public override string ToString()
         {
             return
-                 "MemberID: " + MemberID + Environment.NewLine
-                + "First Name: " + FirstName + Environment.NewLine
+                "First Name: " + FirstName + Environment.NewLine
                 + "Last Name: " + LastName + Environment.NewLine
                 + "Gender: " + Gender + Environment.NewLine
                 + "Phone Number: " + PhoneNumber + Environment.NewLine
                 + "Email Address: " + EmailAddress + Environment.NewLine
                 + "Weight: " + Weight + Environment.NewLine
                 + "Age: " + Age + Environment.NewLine
-                + "Fitness Goal: " + FitnessGoal + Environment.NewLine
-                + "Calories Burned: " + CaloriesBurned + Environment.NewLine
-                + "Miles: " + Miles + Environment.NewLine
-                + "WeightGoal: " + WeightGoal + Environment.NewLine
-                + "Steps: " + Steps + Environment.NewLine
-                + "Floors Climbed" + FloorsClimbed + Environment.NewLine;
+                + "Fitness Goal: " + FitnessGoal + Environment.NewLine;
                  
         }
 
