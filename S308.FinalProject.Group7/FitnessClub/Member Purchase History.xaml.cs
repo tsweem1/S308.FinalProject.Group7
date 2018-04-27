@@ -35,19 +35,19 @@ namespace FitnessClub
         {
             List<Member> lstPokemon = new List<Member>();
 
-            string strFilePath = @"../../../Data/MemberPurchaseHistory.json";
+           // string strFilePath = @"../../../Data/MemberPurchaseHistory.json";
 
-            try
-            {
-                string jsonData = File.ReadAllText(strFilePath);
-                dtgPurchaseHistory = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error loading Member Purchase History from file: " + ex.Message);
-            }
+            //try
+            //{
+             //   string jsonData = File.ReadAllText(strFilePath);
+              //  dtgPurchaseHistory = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+           // }
+           // catch (Exception ex)
+           // {
+           //     Console.WriteLine("Error loading Member Purchase History from file: " + ex.Message);
+          //  }
 
-            return lstPokemon;
+          //  return lstPokemon;
         }
 
 
@@ -76,13 +76,13 @@ namespace FitnessClub
             ComboBoxItem cbiMemberID = (ComboBoxItem)cboMemberID.SelectedItem;
             string strMemberID = cbiMemberID.Content.ToString();
 
-            purchaseSearch = purchasehistoryIndex.Where(m =>
-            m.MemberID.StartsWith(strMemberID).ToList());
+           // purchaseSearch = purchasehistoryIndex.Where(m =>
+          //  m.MemberID.StartsWith(strMemberID).ToList());
 
-            foreach (Member m in purchaseSearch)
-            {
-                dtgPurchaseHistory.Items.Add(m.MemberID);
-            }
+           // foreach (Member m in purchaseSearch)
+           // {
+           //     dtgPurchaseHistory.Items.Add(m.MemberID);
+           // }
 
         }
     }
