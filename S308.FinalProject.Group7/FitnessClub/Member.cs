@@ -17,14 +17,7 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
-        public string CreditCardNumber { get; set; }
-        public string CreditCardType { get; set; }
-        public string ExpirationMonth { get; set; }
-        public string ExpirationYear { get; set; }
-        public string BillingAddress { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
+
 
         public Member()
         {
@@ -32,7 +25,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string firstName, string lastName, string gender, string phoneNumber,  string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment,  string strCreditCardNumber, string strCreditCardType, string strMonth, string strYear, string strBillingAddress, string strCity, string strState, string strZip)
+        public Member(string memberid, string firstName, string lastName, string gender, string phoneNumber, string email, int weight, int age, string fitnessGoal,, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -44,34 +37,8 @@ namespace FitnessClub
             FitnessGoal = fitnessGoal;
             MembershipType = payment.MembershipType;
             StartDate = payment.StartDate;
-            EndDate = payment.EndDate;
-            CreditCardNumber = strCreditCardNumber;
-            CreditCardType = strCreditCardType;
-            ExpirationYear = strYear;
-            ExpirationMonth = strMonth;
-            BillingAddress = strBillingAddress;
-            City = strCity;
-            State = strState;
-            Zip = strZip;
         }
-
-        private long lngNum;
-        private int intDigits;
-        private int intSum;
-
-        public bool CardNumValid(string CreditCardNumber)
-        {
-            if (!Int64.TryParse(CreditCardNumber, out lngNum))
-            { return false; }
-            else { return true; }
-        }
-        //Check for length
-        public bool CheckCreditLength(string CreditCardNumber)
-        {
-            if (CreditCardNumber.Length != 13 && CreditCardNumber.Length != 15 && CreditCardNumber.Length != 16)
-            { return false; } else { return true; } 
-        }
-
+           
         //Check card type
         public string CardType(string card)
         {
@@ -87,7 +54,7 @@ namespace FitnessClub
             char[] arr = card.ToCharArray();
             Array.Reverse(arr);
             return new string(arr);
-        }
+       }
 
         // Luhn algorthim
         public bool Luhn(string strCard)
