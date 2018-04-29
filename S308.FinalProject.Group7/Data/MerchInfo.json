@@ -1,31 +1,25 @@
 [{
 	"Items": "Nike Socks",
 	"ItemPrice": "7.99",
-	"Quantity": "2",
 	"Size": "One Size"
 },{
 	"Items": "Solstice Gym T-Shirt",
 	"ItemPrice": "14.99",
-	"Quantity": "1",
 	"Size": "Small"
 },{
 	"Items": "Solstice Gym Sweatshirt",
 	"ItemPrice": "24.99",
-	"Quantity": "2",
 	"Size": "Medium"
 },{
 	"Items": "Adidas Socks",
 	"ItemPrice": "9.99",
-	"Quantity": "3",
 	"Size": "One Size"
 },{
 	"Items": "Solstice Gym Sweatpants",
 	"ItemPrice": "21.99",
-	"Quantity": "4",
 	"Size": "Large"
 },{
 	"Items": "Solstice Gym Shorts",
 	"ItemPrice": "16.99",
-	"Quantity": "5",
 	"Size": "Extra Large"
 }]
