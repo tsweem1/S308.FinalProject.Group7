@@ -187,8 +187,6 @@ namespace FitnessClub
 
 
 
-
-
     }
     }
 

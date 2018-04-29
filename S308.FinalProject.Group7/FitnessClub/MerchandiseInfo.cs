@@ -8,7 +8,7 @@ namespace FitnessClub
 {
     public class MerchandiseInfo : Member
     {
-        public string Items { get; set; }
+        public string Item { get; set; }
         public double ItemPrice { get; set; }
         public int Quantity { get; set; }
         public string Size { get; set; }
@@ -18,9 +18,9 @@ namespace FitnessClub
 
         }
 
-        public MerchandiseInfo(string items, double itemprice, int quantity, string size)
+        public MerchandiseInfo(string item, double itemprice, int quantity, string size)
         {
-            Items = items;
+            Item = item;
             ItemPrice = itemprice;
             Quantity = quantity;
             Size = size;

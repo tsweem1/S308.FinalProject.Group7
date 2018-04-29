@@ -39,13 +39,13 @@ namespace FitnessClub
         }
            
         //Check card type
-        public string CardType(string card)
-        {
-            if (card.StartsWith("34") || card.StartsWith("37")) { CreditCardType = "AMEX"; } else if (card.StartsWith("6011")) {
-                CreditCardType = "Discover"; }
-            else if (card.StartsWith("51") || card.StartsWith("52") || card.StartsWith("53") || card.StartsWith("53") || card.StartsWith("54") || card.StartsWith("55")) { CreditCardType = "MasterCard"; } else if (card.StartsWith("4")) { CreditCardType = "Visa"; } else { CreditCardType = "Unknown Card Type"; }
-            return CreditCardType;
-        }
+       // public string CardType(string card)
+        //{
+        //    if (card.StartsWith("34") || card.StartsWith("37")) { CreditCardType = "AMEX"; } else if (card.StartsWith("6011")) {
+        //        CreditCardType = "Discover"; }
+         //   else if (card.StartsWith("51") || card.StartsWith("52") || card.StartsWith("53") || card.StartsWith("53") || card.StartsWith("54") || card.StartsWith("55")) { CreditCardType = "MasterCard"; } else if (card.StartsWith("4")) { CreditCardType = "Visa"; } else { CreditCardType = "Unknown Card Type"; }
+         //   return CreditCardType;
+       // }
 
         // Reverse string for Luhn
         private string ReverseString(string card)
@@ -56,22 +56,22 @@ namespace FitnessClub
        }
 
         // Luhn algorthim
-        public bool Luhn(string strCard)
-        {
-            strCard = ReverseString(strCard);
-            for (int i = 0; i < strCard.Length; i++)
-            {
-                intDigits = Convert.ToInt32(strCard.Substring(i, 1));
-                if ((i + 1) % 2 == 0)
-                {
-                    intDigits *= 2;
-                    if (intDigits > 9)
-                    { intDigits -= 9; }
-                }
-                intSum += intDigits;
-                }
-            if (intSum % 10 == 0) { return true; } else { return false; }
-            }
+       // public bool Luhn(string strCard)
+       // {
+        //    strCard = ReverseString(strCard);
+        //    for (int i = 0; i < strCard.Length; i++)
+        //    {
+             //   intDigits = Convert.ToInt32(strCard.Substring(i, 1));
+            //    if ((i + 1) % 2 == 0)
+            //    {
+             //       intDigits *= 2;
+             //       if (intDigits > 9)
+             //       { intDigits -= 9; }
+              //  }
+               // intSum += intDigits;
+               // }
+            //if (intSum % 10 == 0) { return true; } else { return false; }
+          //  }
 
        public bool isExpired(int mm, int yyyy)
         {
@@ -108,7 +108,7 @@ namespace FitnessClub
                 + "Email Address: " + EmailAddress + Environment.NewLine
                 + "Weight: " + Weight + Environment.NewLine
                 + "Age: " + Age + Environment.NewLine
-                + "Fitness Goal: " + FitnessGoal + Environment.NewLine
+                + "Fitness Goal: " + FitnessGoal + Environment.NewLine;
                  
         }
 
