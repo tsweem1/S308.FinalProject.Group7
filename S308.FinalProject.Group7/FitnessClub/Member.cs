@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FitnessClub
 {
     //Add class for member
-    public class Member : CustomerPaymentInfo
+    public class Member : CustomerPaymentInfo 
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,7 +17,13 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
-
+        public long CreditCardNumber { get; set; }
+        public byte ExpirationMonth {get;set;}
+        public byte ExpirationYear { get; set; }
+        public string BillingAddress { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int Zip { get; set; }
 
         public Member()
         {
@@ -25,7 +31,7 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string memberid, string firstName, string lastName, string gender, string phoneNumber, string email, int weight, int age, string fitnessGoal,, CustomerPaymentInfo payment, string transactiondate, string itemspurchased)
+        public Member(string memberid, string firstName, string lastName, string gender, string phoneNumber, string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment, long creditcardnumber, byte expirationmonth, byte expirationyear, string billingaddreess, string city, string state, int zip, string transactiondate, string itemspurchased)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -35,8 +41,15 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
-            MembershipType = payment.MembershipType;
-            StartDate = payment.StartDate;
+            CreditCardNumber = creditcardnumber;
+            ExpirationMonth = expirationmonth;
+            ExpirationYear = expirationyear;
+            BillingAddress = billingaddreess;
+            City = city;
+            State = state;
+            Zip = zip;
+           
+            
         }
            
         //Check card type
