@@ -1,27 +1,27 @@
 [{
-	"Items": "Nike Socks",
+	"Item": "Nike Socks",
 	"ItemPrice": "7.99"
 	
 },{
-	"Items": "Solstice Gym T-Shirt",
+	"Item": "Solstice Gym T-Shirt",
 	"ItemPrice": "14.99"
 	
 },{
-	"Items": "Solstice Gym Sweatshirt",
+	"Item": "Solstice Gym Sweatshirt",
 	"ItemPrice": "24.99"	
 },{
-	"Items": "Adidas Socks",
+	"Item": "Adidas Socks",
 	"ItemPrice": "9.99"
 	
 },{
-	"Items": "Solstice Gym Sweatpants",
+	"Item": "Solstice Gym Sweatpants",
 	"ItemPrice": "21.99"
 	
 },{
-	"Items": "Solstice Gym Shorts",
+	"Item": "Solstice Gym Shorts",
 	"ItemPrice": "16.99"
 },{
-	"Items": "Solstice Gym Waterbottle",
+	"Item": "Solstice Gym Waterbottle",
 	"ItemPrice": "9.99"
 	
 }]
