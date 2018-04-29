@@ -27,10 +27,10 @@
             </Label.RenderTransform>
         </Label>
         <ComboBox x:Name="cboMerchandise" HorizontalAlignment="Left" Margin="32,184,0,0" VerticalAlignment="Top" Width="368" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="0"/>
-        <TextBox x:Name="txtQty" HorizontalAlignment="Left" Height="51" Margin="232,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontFamily="Arial" FontSize="32" TabIndex="1" Text="4"/>
+        <TextBox x:Name="txtQty" HorizontalAlignment="Left" Height="51" Margin="232,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontFamily="Arial" FontSize="32" TabIndex="1"/>
         <Label x:Name="lblQty" Content="Quantity:" HorizontalAlignment="Left" Height="51" Margin="32,285,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
         <Label x:Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Height="37" Margin="32,365,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
-        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="51" Margin="230,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontFamily="Arial" FontSize="32" TabIndex="2" Text="$9.99"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="51" Margin="230,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontFamily="Arial" FontSize="32" TabIndex="2"/>
         <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="32,523,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontWeight="Bold" FontSize="26.667" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="0.484,1.567" TabIndex="4"/>
         <Button x:Name="btnRemove" Content="REMOVE" HorizontalAlignment="Left" Margin="192,523,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" RenderTransformOrigin="-0.357,0.67" TabIndex="5"/>
         <TextBox x:Name="txtShoppingCart" HorizontalAlignment="Left" Height="313" Margin="580,182,0,0" Padding="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="580" FontFamily="Arial" Background="{x:Null}" BorderBrush="White" BorderThickness="5" Foreground="White" FontSize="18.667" IsReadOnly="True"/>
@@ -44,7 +44,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="991,26,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7" Click="btnMainMenu1_Click"/>
+        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="987,26,0,0" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Height="54" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="7" Click="btnMainMenu1_Click"/>
 
         <Label x:Name="lblSize" Content="Size:" HorizontalAlignment="Left" Height="37" Margin="32,440,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold"/>
         <ComboBox x:Name="cboSize" HorizontalAlignment="Left" Margin="230,440,0,0" VerticalAlignment="Top" Width="162" Height="44" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="3">

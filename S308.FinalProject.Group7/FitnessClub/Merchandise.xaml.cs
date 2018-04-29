@@ -21,12 +21,41 @@ namespace FitnessClub
     /// </summary>
     public partial class Merchandise : Window
     {
+        List<Merchandise> merchList;
         public Merchandise()
         {
             InitializeComponent();
+
+            InitializeComponent();
+            //1. Initialize list
+            merchList = new List<Merchandise>();
+            Files calFiles = new Files();
+
+            //2. Set file location and timestamp for method
+            string strFileLocation = @"..\..\..\Data\MerchInfo";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
+
+            //4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //5. Deseralize it to a list
+            merchList = JsonConvert.DeserializeObject<List<PriceInformation>>(jsonData);
+
+            //6. Add membership to the combo box
+            //AddComboItems();
+
         }
 
- 
+
+
+
+
+
 
         private void btnMainMenu1_Click(object sender, RoutedEventArgs e)
         {
@@ -43,3 +72,4 @@ namespace FitnessClub
         }
     }
 }
+

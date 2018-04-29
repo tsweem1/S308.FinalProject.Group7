@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-    public class MerchandiseInfo
+    public class MerchandiseInfo : Member
     {
-        public List<string> Items { get; set; }
+        public string Items { get; set; }
         public double ItemPrice { get; set; }
         public int Quantity { get; set; }
-        public List<string> Size { get; set; }
+        public string Size { get; set; }
 
         public MerchandiseInfo()
         {
 
         }
 
-        public MerchandiseInfo(List<String> items, double itemprice, int quantity, List<String> size)
+        public MerchandiseInfo(string items, double itemprice, int quantity, string size)
         {
             Items = items;
             ItemPrice = itemprice;

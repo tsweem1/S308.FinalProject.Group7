@@ -17,21 +17,15 @@ namespace FitnessClub
         public int Weight { get; set; }
         public int Age { get; set; }
         public string FitnessGoal { get; set; }
-        public long CreditCardNumber { get; set; }
-        public byte ExpirationMonth {get;set;}
-        public byte ExpirationYear { get; set; }
-        public string BillingAddress { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public int Zip { get; set; }
-
+        
+ 
         public Member()
         {
 
         }
 
         //Initialize constructor
-        public Member(string memberid, string firstName, string lastName, string gender, string phoneNumber, string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment, long creditcardnumber, byte expirationmonth, byte expirationyear, string billingaddreess, string city, string state, int zip, string transactiondate, string itemspurchased)
+        public Member (string firstName, string lastName, string gender, string phoneNumber, string email, int weight, int age, string fitnessGoal, CustomerPaymentInfo payment)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -41,14 +35,6 @@ namespace FitnessClub
             Weight = weight;
             Age = age;
             FitnessGoal = fitnessGoal;
-            CreditCardNumber = creditcardnumber;
-            ExpirationMonth = expirationmonth;
-            ExpirationYear = expirationyear;
-            BillingAddress = billingaddreess;
-            City = city;
-            State = state;
-            Zip = zip;
-           
             
         }
            
@@ -123,16 +109,7 @@ namespace FitnessClub
                 + "Weight: " + Weight + Environment.NewLine
                 + "Age: " + Age + Environment.NewLine
                 + "Fitness Goal: " + FitnessGoal + Environment.NewLine
-                 +"Membership Type: " + MembershipType + Environment.NewLine
-                 + "Start Date: " + StartDate + Environment.NewLine
-                 + "End Date: " + EndDate + Environment.NewLine
-                 + "Credit Card Number: " + CreditCardNumber + Environment.NewLine
-                 + "Expiration Month: " + ExpirationMonth + Environment.NewLine
-                 + "Expiration Year: " + ExpirationYear + Environment.NewLine
-                 + "Billing Address: " + BillingAddress + Environment.NewLine
-                 + "City: " + City + Environment.NewLine
-                 + "State: " + State + Environment.NewLine
-                 + "Zip: " + Zip + Environment.NewLine;
+                 
         }
 
 
