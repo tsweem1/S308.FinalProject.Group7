@@ -41,13 +41,13 @@ namespace FitnessClub
              try
              {
 
-                //3.use system.oi.file to read the entire data file
+                //use system.oi.file to read the entire data file
                 StreamReader reader = new StreamReader(strFilePath);
                string jsonData = reader.ReadToEnd();
                 reader.Close();
                
 
-                //4.serialize the json data to a list of customers
+                //serialize the json data to a list of customers
                memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
            }
             catch (Exception ex)

@@ -8,22 +8,24 @@ namespace FitnessClub
 {
     public class MerchandiseInfo : Member
     {
-        public string Item { get; set; }
-        public double ItemPrice { get; set; }
-        public int Quantity { get; set; }
+        public string MerchItem { get; set; }
+        public string MerchPrice { get; set; }
+        public string Quantity { get; set; }
         public string Size { get; set; }
+        public string InStock { get; set; }
 
         public MerchandiseInfo()
         {
 
         }
 
-        public MerchandiseInfo(string item, double itemprice, int quantity, string size)
+        public MerchandiseInfo(string merchitem, string merchprice, string quantity, string size, string instock)
         {
-            Item = item;
-            ItemPrice = itemprice;
+            MerchItem = merchitem;
+            MerchPrice = merchprice;
             Quantity = quantity;
             Size = size;
+            InStock = instock;
         }
 
 

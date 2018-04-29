@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,34 +23,31 @@ namespace FitnessClub
     /// </summary>
     public partial class Merchandise : Window
     {
-        List<Merchandise> merchList;
+        List<MerchandiseInfo> merchList;
         public Merchandise()
         {
             InitializeComponent();
+            // Load Json File
+            GetDataSetFromFile();
+        }
+        private void GetDataSetFromFile()
+        {
+            List<MerchandiseInfo> lstMember = new List<MerchandiseInfo>();
+            string strFilePath = @"..\..\..\Data\MerchInfo.json";
 
-            InitializeComponent();
-            //1. Initialize list
-            merchList = new List<Merchandise>();
-            Files calFiles = new Files();
-
-            //2. Set file location and timestamp for method
-            string strFileLocation = @"..\..\..\Data\MerchInfo";
-            
-
-            //3. Grab file location with extension
-            string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
-
-            //4. Read in data
-            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
-            string jsonData = reader.ReadToEnd();
-            reader.Close();
-
-            //5. Deseralize it to a list
-            merchList = JsonConvert.DeserializeObject<List<Merchandise>>(jsonData);
-
-            //6. Add membership to the combo box
-            AddComboItems();
-
+            try
+            {
+               //use system.oi.file to read the entire data file
+                StreamReader reader = new StreamReader(strFilePath);
+                string jsonData = reader.ReadToEnd();
+                reader.Close();
+                                //serialize the json data to a list of customers
+                merchList = JsonConvert.DeserializeObject<List<MerchandiseInfo>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Merchandise from file: " + ex.Message);
+            }
         }
 
         private void btnMainMenu1_Click(object sender, RoutedEventArgs e)
@@ -76,18 +75,18 @@ namespace FitnessClub
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //declare variables and convert input
+            //declare variables
             int intQty;
             double dblPrice;
             string strShoppingCart;
+            double dblTotalPrice;
+            string strSize;
 
-            intQty = Convert.ToInt32(txtQty.Text);
-            dblPrice = Convert.ToDouble(txtPrice.Text);
-            
-            //validate user input
+    
+            //validate user enters in merch
             if (cboMerchandise.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select an Item.");
+                MessageBox.Show("Please choose an item from our merchandise selection.");
                 return;
             }
             if (cboSize.SelectedIndex == -1)
@@ -95,38 +94,64 @@ namespace FitnessClub
                 MessageBox.Show("Please select a size.");
                 return;
             }
+            //validate user enters in a valid number for quantity
+            if (!int.TryParse(txtQty.Text, out intQty))
+            {
+               
+                MessageBox.Show("Please enter a valid amount for quantity.");
+                return;
+            }
+            //validate user enters in a valid number for quantity and does not leave it blank
+            if (intQty <0 && txtQty.Text == "")
+            {
+                MessageBox.Show("Please enter a valid amount for quantity.");
+                return;
+            }
 
+            //Set selected item to string for query
             string strMerchSelection = cboMerchandise.SelectedItem.ToString();
 
-            //get merch
+            //get merch from drop down
             var merchQuery =
                 from m in merchList
-                where (m.Item.Trim() == strMerchSelection.Trim())
-                select m.Item;
+               where (m.MerchItem.Trim() == strMerchSelection.Trim())
+                select m.MerchItem;
 
-            //Convert query lists to string
+            //Convert query list to string
             string strMerchandise = String.Join(",", merchQuery);
 
-            //total price
-            dblPrice = dblPrice * intQty;
+            //convert output for total price calculation and display in shopping cart
+
+            intQty = Convert.ToInt32(txtQty.Text);
+            dblPrice = Convert.ToDouble(txtPrice.Text);
+            strSize = Convert.ToString(cboSize.Text);
+
+            //calculate total price
+            dblTotalPrice = dblPrice * intQty;
 
             //shopping cart
-            strShoppingCart = Environment.NewLine + "Item:".PadRight(20) + "Quantity:".PadRight(20) + "Price:".PadRight(20) + "Size:".PadRight(20);
+           strShoppingCart = Environment.NewLine + "Item:".PadRight(20) + strMerchSelection.ToString() +Environment.NewLine + "Quantity:".PadRight(20) + intQty.ToString()+ Environment.NewLine+ "Size:".PadRight(20) + strSize.ToString() + Environment.NewLine + "Total Price:".PadRight(20) + dblTotalPrice.ToString("C2");
 
             //16. Set output to corresponding text boxes
-            strShoppingCart = txtShoppingCart.Text;        
+            strShoppingCart = txtShoppingCart.Text;
+            txtPrice.Text = dblPrice.ToString("C2");
+            txtQty.Text = intQty.ToString();
+            cboSize.Text = strSize.ToString();
+
 
 
         }
+
+        //add merchandise to combobox
         public void AddComboItems()
         {
             foreach (var i in merchList)
-               
-                    cboMerchandise.Items.Add(i.Item.ToString());
+               if (i.InStock =="Yes")
+                  cboMerchandise.Items.Add(i.MerchItem.ToString());
+         
+         }
 
-           
-        
-    }
+
     }
 }
 

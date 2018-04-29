@@ -204,34 +204,34 @@ namespace FitnessClub
             Member calCardNum = new Member();
 
             //4.2 Test if a number is entered
-            bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
+          //  bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
 
-            if (isNum == false)
-            {
-                txtCreditCardNumber.Text = "";
-                MessageBox.Show("Credit card number not valid.");
-                return;
-            }
+          //  if (isNum == false)
+          //  {
+          //      txtCreditCardNumber.Text = "";
+          //      MessageBox.Show("Credit card number not valid.");
+          //      return;
+          //  }
 
             //4.3 Test if number is a proper length
-            bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
+           // bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
 
-            if (isCreditLength == false)
-            {
-                txtCreditCardNumber.Text = "";
-                MessageBox.Show("Credit card number not valid");
-                return;
-            }
+            //if (isCreditLength == false)
+          //  {
+          //      txtCreditCardNumber.Text = "";
+          //      MessageBox.Show("Credit card number not valid");
+          //      return;
+          //  }
 
             //4.5 Pass credit card number through Luhn algorthim
-            bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
+           // bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
 
-            if (isLuhnValid == false)
-            {
-                txtCreditCardNumber.Text = "";
-                MessageBox.Show("Credit card number not valid");
-                return;
-            }
+            //if (isLuhnValid == false)
+          //  {
+          //      txtCreditCardNumber.Text = "";
+          //      MessageBox.Show("Credit card number not valid");
+          //      return;
+         //   }
 
             //4.6 Check if credit card is expired
             int intExpMonth = Convert.ToInt32(strExpMonth);
@@ -247,7 +247,7 @@ namespace FitnessClub
                 return;
             }
             //4.6 Return card type
-            strCreditCardType = calCardNum.CardType(strCreditCardNumber);
+           // strCreditCardType = calCardNum.CardType(strCreditCardNumber);
 
             //4.7 Perform logic to display proper credit card image
             switch (strCreditCardType)
@@ -361,23 +361,23 @@ namespace FitnessClub
             string strLine;
 
             //append customer to JSON file
-            try
-            {
-                StreamWriter writer = new StreamWriter(strFilePath, true);
-                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
-                                                                                                                                     memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
-                                                                                                                                     memberNew.Age, memberNew.FitnessGoal, memberNew.MembershipType, 
-                                                                                                                                     memberNew.StartDate, memberNew.EndDate, memberNew.MembershipPrice,
-                                                                                                                                     memberNew.AdditionalFeatures, memberNew.TotalPrice, memberNew.CreditCardNumber, 
-                                                                                                                                     memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
-                writer.WriteLine(strLine);
-                writer.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in append file: " + ex.Message);
-                return;
-            }
+           // try
+         //   {
+               // StreamWriter writer = new StreamWriter(strFilePath, true);
+               // strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
+                                                                                                                                 //    memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
+                                                                                                                                  //   memberNew.Age, memberNew.FitnessGoal, memberNew.MembershipType,
+                                                                                                                                  //   memberNew.StartDate, memberNew.EndDate, memberNew.MembershipPrice,
+                                                                                                                                  //   memberNew.AdditionalFeatures, memberNew.TotalPrice, memberNew.CreditCardNumber, 
+                                                                                                                                  //   memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
+             //   writer.WriteLine(strLine);
+            //    writer.Close();
+      //      }
+        //    catch (Exception ex)
+         //   {
+           //     MessageBox.Show("Error in append file: " + ex.Message);
+           //    return;
+         //   }
         }
 
 
