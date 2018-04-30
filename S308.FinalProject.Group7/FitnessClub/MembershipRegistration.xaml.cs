@@ -265,23 +265,19 @@ namespace FitnessClub
             {
                 case "AMEX":
                     imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/american_express_logo.png", UriKind.Relative));
-                    imgCard.Width = 40;
-                    imgCard.Height = 40;
+                    imgCard.Stretch = Stretch.Fill;
                     break;
                 case "Discover":
                     imgCard.Source = new BitmapImage(new Uri(@"CardLogos/discover_logo.png", UriKind.Relative));
-                    imgCard.Width = 40;
-                    imgCard.Height = 40;
+                    imgCard.Stretch = Stretch.Fill;
                     break;
                 case "MasterCard":
                     imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/mastercard_logo.png", UriKind.Relative));
-                    imgCard.Width = 40;
-                    imgCard.Height = 40;
+                    imgCard.Stretch = Stretch.Fill;
                     break;
                 case "Visa":
                     imgCard.Source = new BitmapImage(new Uri(@"/CardLogos/visa_logo.png", UriKind.Relative));
-                    imgCard.Width = 40;
-                    imgCard.Height = 40;
+                    imgCard.Stretch = Stretch.Fill;
                     break;
             }
             //Check is zipcode is valid
