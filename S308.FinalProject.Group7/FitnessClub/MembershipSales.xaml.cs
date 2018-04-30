@@ -136,12 +136,32 @@ namespace FitnessClub
             int strSpace = strConvertedEndDate.IndexOf(" ");
             string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
 
-            //16. Set output to corresponding text boxes
+            //16. Set additional features to string
+            string strFeatures = lstFeatures.SelectedItems.ToString();
+
+            //17. Set output to corresponding text boxes
+            txtFeatures.Text = strFeatures;
             txtPrice.Text = dblMembershipPrice.ToString("C2");
             txtMemberQuotaOutput.Text = strOutput;
             txtEndDate.Text = strSubConvertedEndDate;
             txtMemberQuotaOutput.Text = strOutput;
             txtTotalPrice.Text = dblTotalCost.ToString("C2");
+
+            //create some info to send to the next window
+            CustomerPaymentInfo info = new CustomerPaymentInfo(cboMembershipType.Text.Trim(), dtStart.Text.Trim(), txtEndDate.Text.Trim(), txtFeatures.Text.Trim(), txtPrice.Text.Trim(), txtTotalPrice.Text.Trim());
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Create new member?"
+                + Environment.NewLine + Environment.NewLine + info
+                , "Membership Quota"
+                , MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                //instantiate the next window and use the overridden constructor that allows sending information in as an argument
+                MembershipSignUp next = new MembershipSignUp(info);
+                next.Show();
+                this.Close();
+            }
         }
         
         //Function that adds Prices.json data to combo-box

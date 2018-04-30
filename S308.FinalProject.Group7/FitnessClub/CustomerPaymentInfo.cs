@@ -9,18 +9,18 @@ namespace FitnessClub
     public class CustomerPaymentInfo
     {
         public string MembershipType { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public List<String> AdditionalFeatures { get; set; }
-        public double MembershipPrice { get; set; }
-        public double TotalPrice { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public string AdditionalFeatures { get; set; }
+        public string MembershipPrice { get; set; }
+        public string TotalPrice { get; set; }
 
         public CustomerPaymentInfo()
         {
 
         }
 
-        public CustomerPaymentInfo(string membershipType, DateTime startDate, DateTime endDate, List<String> addtionalFeatures, int intmembershipPrice, int totalPrice)
+        public CustomerPaymentInfo(string membershipType, string startDate, string endDate, string addtionalFeatures, string intmembershipPrice, string totalPrice)
         {
             MembershipType = membershipType;
             StartDate = startDate;

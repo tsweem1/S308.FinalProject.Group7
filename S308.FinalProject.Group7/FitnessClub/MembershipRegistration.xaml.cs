@@ -23,6 +23,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignUp : Window
     {
+        public CustomerPaymentInfo InfoFromPrevWindow { get; set; }
 
         List<Member> memberlist;
 
@@ -33,7 +34,27 @@ namespace FitnessClub
             Clear();
             imgCard.Visibility = Visibility.Hidden;
             lblCreditType.Content = "";
+            // default blank member info for the default constructor
+ 
+            InfoFromPrevWindow = new CustomerPaymentInfo();
         }
+        public MembershipSignUp(CustomerPaymentInfo info)
+        {
+            //don't forget this line when overriding the constructor for a window
+            InitializeComponent();
+
+            //assigning the property from the member info class that was passed into this overridden constructor
+            InfoFromPrevWindow = info;
+
+            //do something with the information that was passed in
+            //DoSomethingWithInfo();
+        }
+
+        //public void DoSomethingWithInfo()
+       // {
+           // txtInfo.Text = String.Format("First: {0}, Last: {1}, Email: {2}", InfoFromPrevWindow.FirstName, InfoFromPrevWindow.LastName, InfoFromPrevWindow.Email);
+        //}
+
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
