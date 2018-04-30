@@ -25,6 +25,7 @@ namespace FitnessClub
         public string Zip { get; set; }
 
 
+
         public Member()
         {
 

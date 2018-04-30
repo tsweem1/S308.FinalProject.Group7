@@ -87,6 +87,8 @@ namespace FitnessClub
             txtFirstName.Text = "";
             txtEmail.Text = "";
             txtPhoneNumber.Text = "";
+            //lbxSearchResults.te = "";
+            txtMemberDetails.Text = "";
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
