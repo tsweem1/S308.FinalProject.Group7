@@ -53,12 +53,6 @@ namespace FitnessClub
 
 
         #region navigating between windows
-        private void txbMemReg_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MembershipSignUp winMemberReg = new MembershipSignUp();
-            winMemberReg.Show();
-            this.Close();
-        }
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Window1 winMainMenu = new Window1();
