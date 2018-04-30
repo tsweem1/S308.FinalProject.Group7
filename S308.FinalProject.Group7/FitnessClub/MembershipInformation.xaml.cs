@@ -23,36 +23,41 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipInformation : Window
     {
-        List<Member> memberIndex;
+        List<Member> memberList;
 
         public MembershipInformation()
         {
             InitializeComponent();
+             // Load Json File
+             GetDataSetFromFile();
+        }
 
-            //load member list from json file
-            memberIndex = GetDataSetFromFile();
+          private void GetDataSetFromFile()
+          {
+       List<Member> lstMember = new List<Member>();
+
+        string strFilePath = @"..\..\..\Data\Members.json";
+
+             try
+             {
+
+                //use system.oi.file to read the entire data file
+                StreamReader reader = new StreamReader(strFilePath);
+               string jsonData = reader.ReadToEnd();
+                reader.Close();
+               
+
+                //serialize the json data to a list of customers
+               memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+           }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Member from file: " + ex.Message);
+            }
+
             
         }
-
-        public List<Member> GetDataSetFromFile()
-        {
-            List<Member> lstMember = new List<Member> ();
-            string strFilePath = @"..\..\..\Data\Members.json";
-
-            try
-            {
-                string jsonData = File.ReadAllText(strFilePath);
-                lstMember = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-            }
-
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error loading Member from file" + ex.Message);
-            }
-            return lstMember;
-        }
-
-
+ 
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
             Member_Purchase_History winPurchHistory = new Member_Purchase_History();
@@ -82,15 +87,14 @@ namespace FitnessClub
             txtFirstName.Text = "";
             txtEmail.Text = "";
             txtPhoneNumber.Text = "";
-
-
+            //lbxSearchResults.te = "";
+            txtMemberDetails.Text = "";
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
             List<Member> memberSearch;
-
 
             //declare variables
             string strFirstName;
@@ -114,20 +118,52 @@ namespace FitnessClub
                return;
             }
 
-            //search results is cleared when member details is blank
-            txtMemberDetails.Text = "";
-            lbxSearchResults.Items.Clear();
+            //conduct member search 
+            memberSearch = memberList.Where(m =>
+               m.LastName.StartsWith(strLastName) &&
+               m.FirstName.StartsWith(strFirstName) &&
+               m.EmailAddress.StartsWith(strEmail) &&
+               m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
+               
 
-
-            memberSearch = memberIndex.Where(m =>
-                m.LastName.StartsWith(strLastName) &&
-                m.FirstName.StartsWith(strLastName) &&
-                m.EmailAddress.StartsWith(strEmail) &&
-                m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
-
+            //display search items and results in listbox if field is not blank
             foreach (Member m in memberSearch)
             {
-                lbxSearchResults.Items.Add(m.LastName);
+                if(strLastName == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.LastName);
+                }
+
+                if (strFirstName == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.FirstName);
+                }
+                if (strEmail == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.EmailAddress);
+                }
+
+                if (strPhoneNumber == "")
+                {
+                    lbxSearchResults.Items.Add("");
+                }
+                else
+                {
+                    lbxSearchResults.Items.Add(m.PhoneNumber);
+                }
+                
             }
 
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
@@ -139,12 +175,10 @@ namespace FitnessClub
             {
                 string strSelectedName = lbxSearchResults.SelectedItem.ToString();
 
-                Member memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).FirstOrDefault();
+                Member memberSelected = memberList.Where(m => m.LastName + m.FirstName == strSelectedName).FirstOrDefault();
                 txtMemberDetails.Text = memberSelected.ToString();
             }
         }
-
-
 
 
 

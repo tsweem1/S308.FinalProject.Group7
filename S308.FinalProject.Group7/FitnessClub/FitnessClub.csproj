@@ -172,6 +172,7 @@
     <Compile Include="Merchandise.xaml.cs">
       <DependentUpon>Merchandise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MerchandiseInfo.cs" />
     <Compile Include="PriceInformation.cs" />
     <Compile Include="PricingManagement.xaml.cs">
       <DependentUpon>PricingManagement.xaml</DependentUpon>

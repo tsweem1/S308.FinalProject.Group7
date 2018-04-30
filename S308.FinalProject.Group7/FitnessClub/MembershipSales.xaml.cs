@@ -53,12 +53,6 @@ namespace FitnessClub
 
 
         #region navigating between windows
-        private void txbMemReg_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MembershipSignUp winMemberReg = new MembershipSignUp();
-            winMemberReg.Show();
-            this.Close();
-        }
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Window1 winMainMenu = new Window1();
@@ -104,11 +98,11 @@ namespace FitnessClub
             //13. Determine the end date based on the drop down selected
             if ((cboMembershipType.SelectedIndex == 1 || cboMembershipType.SelectedIndex == 3 || cboMembershipType.SelectedIndex == 5))
             {
-                dtConvertedEndDate = dtConvertStartDate.AddYears(1);
+                dtConvertedEndDate = dtConvertStartDate.AddMonths(1);
             }
             else
             {
-                dtConvertedEndDate = dtConvertStartDate.AddMonths(1);
+                dtConvertedEndDate = dtConvertStartDate.AddYears(1);
             }
 
             //9. Set selected item to string for query
@@ -136,11 +130,36 @@ namespace FitnessClub
             int strSpace = strConvertedEndDate.IndexOf(" ");
             string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
 
-            //16. Set output to corresponding text boxes
-            txtPrice.Text = strMembershipPrice;
+            //16. Set additional features to string
+            StringBuilder strFeatures = new StringBuilder();
+            foreach (ListBoxItem selectedItem in lstFeatures.SelectedItems)
+            {
+                strFeatures.AppendLine(selectedItem.Content.ToString());
+            }
+
+            //17. Set output to corresponding text boxes
+            txtFeatures.Text = strFeatures.ToString();
+            txtPrice.Text = dblMembershipPrice.ToString("C2");
             txtMemberQuotaOutput.Text = strOutput;
             txtEndDate.Text = strSubConvertedEndDate;
             txtMemberQuotaOutput.Text = strOutput;
+            txtTotalPrice.Text = dblTotalCost.ToString("C2");
+
+            //create some info to send to the next window
+            CustomerPaymentInfo info = new CustomerPaymentInfo(cboMembershipType.Text.Trim(), dtStart.Text.Trim(), txtEndDate.Text.Trim(), txtFeatures.Text.Trim(), txtPrice.Text.Trim(), txtTotalPrice.Text.Trim());
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Create new member?"
+                + Environment.NewLine + Environment.NewLine + info
+                , "Membership Quota"
+                , MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                //instantiate the next window and use the overridden constructor that allows sending information in as an argument
+                MembershipSignUp next = new MembershipSignUp(info);
+                next.Show();
+                this.Close();
+            }
         }
         
         //Function that adds Prices.json data to combo-box
@@ -179,11 +198,11 @@ namespace FitnessClub
 
             if(cbo2.SelectedIndex == 0 || cbo2.SelectedIndex == 2 || cbo2.SelectedIndex == 4)
             {
-                totalMonths = 1;
+                totalMonths = 12;
             }
             else
             {
-                totalMonths = 12;
+                totalMonths = 1;
             }
             totalPrice *= totalMonths;
             return totalPrice;
