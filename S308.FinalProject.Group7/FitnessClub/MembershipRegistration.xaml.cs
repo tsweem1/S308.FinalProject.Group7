@@ -400,8 +400,8 @@ namespace FitnessClub
             txtZip.Text = "";
 
             //Hide create customer button
-            btnCreate.Foreground = Brushes.White;
-            btnCreate.BorderBrush = Brushes.White;
+            btnCreate.Foreground = Brushes.Black;
+            btnCreate.BorderBrush = Brushes.Black;
         }
 
         #region Navigation controls
