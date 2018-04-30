@@ -34,7 +34,25 @@ namespace FitnessClub
             Clear();
             imgCard.Visibility = Visibility.Hidden;
             lblCreditType.Content = "";
+
+            //1. Initialize list
             memberlist = new List<Member>();
+            Files calFiles = new Files();
+
+            //2. Set file location and timestamp for method
+            string strFilePath = @"..\..\..\Data\Members";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFilePath, "json", false);
+
+            //4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //5. Deseralize it to a list
+            memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
 
             // default blank member info for the default constructor
             InfoFromPrevWindow = new CustomerPaymentInfo();
@@ -312,6 +330,27 @@ namespace FitnessClub
         
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            //1. Read in file again in local scope in order to update file
+
+            //1.1 Initialize list
+            memberlist = new List<Member>();
+            Files calFiles = new Files();
+
+            //1.2. Set file location and timestamp for method
+            string strFilePath = @"..\..\..\Data\Members";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //1.3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFilePath, "json", false);
+
+            //1.4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //1.5. Deseralize it to a list
+            memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+
             //add new member
             Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), InfoFromPrevWindow.MembershipType, InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice, InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, txtCreditCardNumber.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
 
@@ -322,38 +361,14 @@ namespace FitnessClub
 
             if (messageBoxResult == MessageBoxResult.Yes)
             {
+                memberlist.Add(memberNew);
+
                 AppendToFile(memberNew);
 
                 Clear();
 
-                MessageBox.Show("New Member Saved!");
-
-                DateTime datNow = DateTime.Now;
-                string strFilePath = @"..\..\..\Data\Members";
-                string strLine;
-
-                try
-                {
-                    StreamWriter writer = new StreamWriter(strFilePath, false);
-                    foreach (Member m in memberlist)
-                    {
-                        strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", m.FirstName, m.LastName, m.Gender,
-                                                                                                                                     m.EmailAddress, m.PhoneNumber, m.Weight,
-                                                                                                                                     m.Age, m.FitnessGoal, m.MembershipType,
-                                                                                                                                     m.StartDate, m.EndDate, m.MembershipPrice,
-                                                                                                                                     m.AdditionalFeatures, m.TotalPrice, m.CreditCardNumber,
-                                                                                                                                     m.CreditCardType, m.BillingAddress, m.City, m.Zip);
-                        writer.WriteLine(strLine);
-                    }
-
-                    writer.Close();
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error in write file: " + ex.Message);
-                    return;
-                }
+                string updateJsonData = JsonConvert.SerializeObject(memberlist);
+                System.IO.File.WriteAllText(LoadedFilePath, updateJsonData);
 
                 MessageBox.Show("Export completed!" + Environment.NewLine + "File Created: " + strFilePath);
 
