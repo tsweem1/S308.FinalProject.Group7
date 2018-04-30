@@ -48,7 +48,19 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error loading Merchandise from file: " + ex.Message);
             }
+
+            //add combobox items
+            AddComboItems();
         }
+        //add merchandise to combobox
+        public void AddComboItems()
+        {
+            foreach (var i in merchList)
+                if (i.InStock == "Yes")
+                    cboMerchandise.Items.Add(i.MerchItem.ToString());
+
+        }
+
 
         private void btnMainMenu1_Click(object sender, RoutedEventArgs e)
         {
@@ -77,7 +89,6 @@ namespace FitnessClub
         {
             //declare variables
             int intQty;
-            double dblPrice;
             string strShoppingCart;
             double dblTotalPrice;
             string strSize;
@@ -98,7 +109,7 @@ namespace FitnessClub
             if (!int.TryParse(txtQty.Text, out intQty))
             {
                
-                MessageBox.Show("Please enter a valid amount for quantity.");
+                MessageBox.Show("Please enter a valid number for quantity.");
                 return;
             }
             //validate user enters in a valid number for quantity and does not leave it blank
@@ -111,30 +122,30 @@ namespace FitnessClub
             //Set selected item to string for query
             string strMerchSelection = cboMerchandise.SelectedItem.ToString();
 
-            //get merch from drop down
-            var merchQuery =
-                from m in merchList
-               where (m.MerchItem.Trim() == strMerchSelection.Trim())
-                select m.MerchItem;
+            //get price from drop down
+            var priceQuery =
+                from p in merchList
+               where (p.MerchItem.Trim() == strMerchSelection.Trim())
+                select p.MerchPrice;
 
             //Convert query list to string
-            string strMerchandise = String.Join(",", merchQuery);
+            string strMerchPrice = String.Join(",", priceQuery);
 
             //convert output for total price calculation and display in shopping cart
-
+            double dblMerchPrice = Convert.ToDouble(strMerchPrice);
             intQty = Convert.ToInt32(txtQty.Text);
-            dblPrice = Convert.ToDouble(txtPrice.Text);
             strSize = Convert.ToString(cboSize.Text);
 
             //calculate total price
-            dblTotalPrice = dblPrice * intQty;
+            dblTotalPrice = dblMerchPrice * intQty;
 
             //shopping cart
-           strShoppingCart = Environment.NewLine + "Item:".PadRight(20) + strMerchSelection.ToString() +Environment.NewLine + "Quantity:".PadRight(20) + intQty.ToString()+ Environment.NewLine+ "Size:".PadRight(20) + strSize.ToString() + Environment.NewLine + "Total Price:".PadRight(20) + dblTotalPrice.ToString("C2");
+           strShoppingCart = Environment.NewLine + "Item:".PadRight(15) + strMerchSelection.ToString() +Environment.NewLine +Environment.NewLine+ "Quantity:".PadRight(15) + intQty.ToString()+ Environment.NewLine+ Environment.NewLine+ "Size:".PadRight(15) + strSize.ToString() + Environment.NewLine + "_____________________________________" + Environment.NewLine + Environment.NewLine+"Total Price:".PadRight(15) + dblTotalPrice.ToString("C2");
 
-            //16. Set output to corresponding text boxes
-            strShoppingCart = txtShoppingCart.Text;
-            txtPrice.Text = dblPrice.ToString("C2");
+            //set shopping cart output
+            txtShoppingCart.Text = strShoppingCart;
+            // Set merch output to corresponding text boxes
+            txtPrice.Text = dblMerchPrice.ToString("C2");
             txtQty.Text = intQty.ToString();
             cboSize.Text = strSize.ToString();
 
@@ -142,15 +153,7 @@ namespace FitnessClub
 
         }
 
-        //add merchandise to combobox
-        public void AddComboItems()
-        {
-            foreach (var i in merchList)
-               if (i.InStock =="Yes")
-                  cboMerchandise.Items.Add(i.MerchItem.ToString());
-         
-         }
-
+       
 
     }
 }
