@@ -34,8 +34,9 @@ namespace FitnessClub
             Clear();
             imgCard.Visibility = Visibility.Hidden;
             lblCreditType.Content = "";
+            memberlist = new List<Member>();
+
             // default blank member info for the default constructor
- 
             InfoFromPrevWindow = new CustomerPaymentInfo();
         }
         public MembershipSignUp(CustomerPaymentInfo info)
@@ -50,10 +51,6 @@ namespace FitnessClub
             //DoSomethingWithInfo();
         }
 
-        //public void DoSomethingWithInfo()
-       // {
-           // txtInfo.Text = String.Format("First: {0}, Last: {1}, Email: {2}", InfoFromPrevWindow.FirstName, InfoFromPrevWindow.LastName, InfoFromPrevWindow.Email);
-        //}
 
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -67,7 +64,6 @@ namespace FitnessClub
             string strWeight = txtWeight.Text;
             string strAge = txtAge.Text;
             string strFitnessGoal = cboGender.Text;
-            string strFilePath = @"..\..\..\Data\Members.json";
 
             //2. Check to see if required fields are filled
             bool isFirstNameEmpty = txtFirstName.Text.Length == 0;
@@ -167,30 +163,6 @@ namespace FitnessClub
                 return;
             }
 
-
-            //6.instantiate a new member from the input and add it to the list
-            //Member memberNew = new Member(txtFirstName.Text, txtLastName.Text, cboGender.Text, txtEmail.Text, txtPhone.Text, txtAge.Text, txtWeight.Text, cboFitnessGoals.Text);
-            //memberlist.Add(memberNew);
-
-            try
-            {
-                //7. serialize the new list customers to json format
-                string jsonData = JsonConvert.SerializeObject(memberlist);
-
-                //8. use System.IU.File to write over the file with the json data
-                System.IO.File.WriteAllText(strFilePath, jsonData);
-
-                MessageBox.Show(memberlist.Count + " Members have been exported.");
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in export process: " + ex.Message);
-            }
-
-            // MessageBox.Show("Member Added!" + Environment.NewLine + memberNew.ToString());
-
             //Credid Card information
             //1. Initalize variables and assign it to values in text boxes
             string strCreditCardNumber = txtCreditCardNumber.Text;
@@ -225,34 +197,34 @@ namespace FitnessClub
             Member calCardNum = new Member();
 
             //4.2 Test if a number is entered
-          //  bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
+            bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
 
-          //  if (isNum == false)
-          //  {
-          //      txtCreditCardNumber.Text = "";
-          //      MessageBox.Show("Credit card number not valid.");
-          //      return;
-          //  }
+            if (isNum == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid.");
+                return;
+            }
 
             //4.3 Test if number is a proper length
-           // bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
+            bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
 
-            //if (isCreditLength == false)
-          //  {
-          //      txtCreditCardNumber.Text = "";
-          //      MessageBox.Show("Credit card number not valid");
-          //      return;
-          //  }
+            if (isCreditLength == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid");
+                return;
+            }
 
             //4.5 Pass credit card number through Luhn algorthim
-           // bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
+            bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
 
-            //if (isLuhnValid == false)
-          //  {
-          //      txtCreditCardNumber.Text = "";
-          //      MessageBox.Show("Credit card number not valid");
-          //      return;
-         //   }
+            if (isLuhnValid == false)
+            {
+                txtCreditCardNumber.Text = "";
+                MessageBox.Show("Credit card number not valid");
+                return;
+            }
 
             //4.6 Check if credit card is expired
             int intExpMonth = Convert.ToInt32(strExpMonth);
@@ -268,7 +240,7 @@ namespace FitnessClub
                 return;
             }
             //4.6 Return card type
-           // strCreditCardType = calCardNum.CardType(strCreditCardNumber);
+            strCreditCardType = calCardNum.CardType(strCreditCardNumber);
 
             //4.7 Perform logic to display proper credit card image
             switch (strCreditCardType)
@@ -305,26 +277,6 @@ namespace FitnessClub
             txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             lblCreditType.Content = strCreditCardType;
        
-            //add new member
-            //Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(),
-                                          //txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), 
-                                          //txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(),
-                                          //txtCreditCardNumber.Text.Trim(), cboMonth.Text.Trim(), cboYear.Text.Trim(),
-                                          //txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), cboState.Text.Trim(), txtZip.Text.Trim());
-
-            //MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
-              //  + Environment.NewLine + Environment.NewLine + memberNew.ToString()
-                //, "Create New Member"
-                //, MessageBoxButton.YesNo);
-
-           // if (messageBoxResult == MessageBoxResult.Yes)
-            {
-                // AppendToFile(memberNew);
-
-                // Clear();
-
-                // MessageBox.Show("New Member Saved!");
-            }
         }
 
         #region Navigation controls
@@ -374,7 +326,8 @@ namespace FitnessClub
         {
             Clear();
         }
-
+        
+        
         private void AppendToFile(Member memberNew)
         {
             //define strings
@@ -382,25 +335,47 @@ namespace FitnessClub
             string strLine;
 
             //append customer to JSON file
-           // try
-         //   {
-               // StreamWriter writer = new StreamWriter(strFilePath, true);
-               // strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
-                                                                                                                                 //    memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
-                                                                                                                                  //   memberNew.Age, memberNew.FitnessGoal, memberNew.MembershipType,
-                                                                                                                                  //   memberNew.StartDate, memberNew.EndDate, memberNew.MembershipPrice,
-                                                                                                                                  //   memberNew.AdditionalFeatures, memberNew.TotalPrice, memberNew.CreditCardNumber, 
-                                                                                                                                  //   memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
-             //   writer.WriteLine(strLine);
-            //    writer.Close();
-      //      }
-        //    catch (Exception ex)
-         //   {
-           //     MessageBox.Show("Error in append file: " + ex.Message);
-           //    return;
-         //   }
+            try
+            {
+                StreamWriter writer = new StreamWriter(strFilePath, false);
+                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
+                                                                                                                                     memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
+                                                                                                                                     memberNew.Age, memberNew.FitnessGoal, InfoFromPrevWindow.MembershipType,
+                                                                                                                                     InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice,
+                                                                                                                                     InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, memberNew.CreditCardNumber, 
+                                                                                                                                     memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
+                writer.WriteLine(strLine);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in append file: " + ex.Message);
+               return;
+            }
         }
 
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            //Intialize variables
+            string strFilePath = @"..\..\..\Data\Members.json";
 
+            //add new member
+            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
+              + Environment.NewLine + Environment.NewLine + memberNew.ToString()
+            , "Create New Member"
+            , MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                AppendToFile(memberNew);
+              
+                Clear();
+
+                MessageBox.Show("New Member Saved!");
+            }
+
+        }
     }
 }

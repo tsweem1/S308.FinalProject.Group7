@@ -36,8 +36,8 @@
             </Label.RenderTransform>
         </Label>
         <ListBox x:Name="lstFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="201,207,0,0" VerticalAlignment="Top" Width="248" SelectionMode="Multiple" TabIndex="2">
-            <ListBoxItem Content="Personal Training Plan - $5.00 per month " FontFamily="Arial"/>
-            <ListBoxItem Content="Locker Rental - $1.00 per month " FontFamily="Arial"/>
+            <ListBoxItem Content="Personal Training Plan" FontFamily="Arial"/>
+            <ListBoxItem Content="Locker Rental" FontFamily="Arial"/>
         </ListBox>
         <Label x:Name="lblListBox" Content="Select Additional Features:" HorizontalAlignment="Left" Height="31" Margin="32,206,0,0" VerticalAlignment="Top" Width="213" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <TextBox x:Name="txtMemberQuotaOutput" Grid.Column="1" HorizontalAlignment="Left" Height="143" Margin="522,157,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="305" FontFamily="Courier New" FontSize="12" IsReadOnly="True" IsTabStop="False"/>

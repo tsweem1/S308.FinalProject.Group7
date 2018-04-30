@@ -25,9 +25,24 @@ namespace FitnessClub
             MembershipType = membershipType;
             StartDate = startDate;
             EndDate = endDate;
-            AdditionalFeatures = AdditionalFeatures;
-            MembershipPrice = MembershipPrice;
+            AdditionalFeatures = addtionalFeatures;
+            MembershipPrice = intmembershipPrice;
             TotalPrice = totalPrice;
+        }
+
+        public override string ToString()
+        {
+            string strOutput = "";
+
+            strOutput += "Membership Quote: " + Environment.NewLine;
+            strOutput += "Membership Type: " + MembershipType + Environment.NewLine;
+            strOutput += "Start Date: " + StartDate + Environment.NewLine;
+            strOutput += "End Date: " + EndDate + Environment.NewLine;
+            strOutput += "Additional Features: " + AdditionalFeatures + Environment.NewLine;
+            strOutput += "Membership Price: " + MembershipPrice + Environment.NewLine;
+            strOutput += "Total Price: " + TotalPrice + Environment.NewLine;
+
+            return strOutput;
         }
     }
 }

@@ -137,10 +137,14 @@ namespace FitnessClub
             string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
 
             //16. Set additional features to string
-            string strFeatures = lstFeatures.SelectedItems.ToString();
+            StringBuilder strFeatures = new StringBuilder();
+            foreach (ListBoxItem selectedItem in lstFeatures.SelectedItems)
+            {
+                strFeatures.AppendLine(selectedItem.Content.ToString());
+            }
 
             //17. Set output to corresponding text boxes
-            txtFeatures.Text = strFeatures;
+            txtFeatures.Text = strFeatures.ToString();
             txtPrice.Text = dblMembershipPrice.ToString("C2");
             txtMemberQuotaOutput.Text = strOutput;
             txtEndDate.Text = strSubConvertedEndDate;

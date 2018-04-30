@@ -284,6 +284,7 @@
         <Label x:Name="lblYear" Content="YYYY" HorizontalAlignment="Left" Height="32" Margin="271,487,0,0" VerticalAlignment="Top" Width="43" FontFamily="Arial" FontSize="11" FontWeight="Bold"/>
         <Label x:Name="lblZipInstructions" Content="ex: 46032"  HorizontalAlignment="Left" Height="26" Margin="545,482,0,0" VerticalAlignment="Top" Width="116" FontFamily="Arial"/>
         <Label x:Name="lblCreditNumInstructions" Content="ex: 123456789012"  HorizontalAlignment="Left" Height="26" Margin="180,386,0,0" VerticalAlignment="Top" Width="116" FontFamily="Arial"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="728,499,0,-10" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="32" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="15" RenderTransformOrigin="0.537,-1.062" Click="btnSubmit_Click"/>
+        <Button x:Name="btnSubmit" Content="Verify" HorizontalAlignment="Left" Margin="728,499,0,-10" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontWeight="Bold" FontSize="12" Height="32" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="15" RenderTransformOrigin="0.537,-1.062" Click="btnSubmit_Click"/>
+        <Button x:Name="btnCreate" Content="Create New Member" HorizontalAlignment="Left" Height="32" Margin="545,557,0,-68" VerticalAlignment="Top" Width="156" Click="btnCreate_Click" FontFamily="Century Gothic" FontWeight="Bold" Background="Black" BorderBrush="White" BorderThickness ="5" Foreground="White"/>
     </Grid>
 </Window>
