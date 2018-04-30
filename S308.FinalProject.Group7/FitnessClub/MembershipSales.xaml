@@ -68,8 +68,8 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtTotalPrice" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="366,331,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="150" IsTabStop="False" IsReadOnly="True"/>
-        <Label x:Name="lblAdditionalFeatures" Content="Additional Features Selected:" HorizontalAlignment="Left" Height="37" Margin="32,365,0,0" VerticalAlignment="Top" Width="181" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
-        <TextBox x:Name="txtFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="218,365,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="178" IsTabStop="False" IsReadOnly="True"/>
+        <Label x:Name="lblAdditionalFeatures" Content="Additional Features Selected:" HorizontalAlignment="Left" Height="37" Margin="32,365,0,0" VerticalAlignment="Top" Width="181" Foreground="Black" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="txtFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="218,365,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="178" IsTabStop="False" IsReadOnly="True" Background="Black" BorderBrush="Black"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="297*"/>

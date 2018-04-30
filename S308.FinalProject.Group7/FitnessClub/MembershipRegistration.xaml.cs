@@ -298,36 +298,13 @@ namespace FitnessClub
             //Reveal create customer button
             btnCreate.Foreground = Brushes.White;
             btnCreate.BorderBrush = Brushes.White;
-
         }
-
-        #region Navigation controls
-        private void txbMemSales_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MembershipSales winMemberSales = new MembershipSales();
-            winMemberSales.Show();
-            this.Close();
-        }
-        private void txbPaymentInfo_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            CustomerPayment winCustomerPayment = new CustomerPayment();
-            winCustomerPayment.Show();
-            this.Close();
-        }
-        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            Window1 winMainMenu = new Window1();
-            winMainMenu.Show();
-            this.Close();
-        }
-        #endregion
-
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             Clear();
         }
-        
+
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
             //1. Read in file again in local scope in order to update file
@@ -426,6 +403,25 @@ namespace FitnessClub
             btnCreate.Foreground = Brushes.White;
             btnCreate.BorderBrush = Brushes.White;
         }
+
+        #region Navigation controls
+        private void txbMemSales_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MembershipSales winMemberSales = new MembershipSales();
+            winMemberSales.Show();
+            this.Close();
+        }
+        
+        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
+        #endregion
+
+
+       
 
     }
 }
