@@ -20,13 +20,13 @@ namespace FitnessClub
 
         }
 
-        public CustomerPaymentInfo(string membershipType, string startDate, string endDate, string addtionalFeatures, string intmembershipPrice, string totalPrice)
+        public CustomerPaymentInfo(string membershipType, string startDate, string endDate, string addtionalFeatures, string membershipPrice, string totalPrice)
         {
             MembershipType = membershipType;
             StartDate = startDate;
             EndDate = endDate;
             AdditionalFeatures = addtionalFeatures;
-            MembershipPrice = intmembershipPrice;
+            MembershipPrice = membershipPrice;
             TotalPrice = totalPrice;
         }
 

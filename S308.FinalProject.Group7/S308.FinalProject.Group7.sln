@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessClub", "FitnessClub\FitnessClub.csproj", "{0F62FD75-AEF7-4007-9CEF-A7AD9286A8BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadWriteFiles", "..\..\Demo22\ReadWriteFiles\ReadWriteFiles.csproj", "{F4ADB8DE-340D-40EC-B54B-0D6B7AA73955}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0F62FD75-AEF7-4007-9CEF-A7AD9286A8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F62FD75-AEF7-4007-9CEF-A7AD9286A8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F62FD75-AEF7-4007-9CEF-A7AD9286A8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4ADB8DE-340D-40EC-B54B-0D6B7AA73955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4ADB8DE-340D-40EC-B54B-0D6B7AA73955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4ADB8DE-340D-40EC-B54B-0D6B7AA73955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4ADB8DE-340D-40EC-B54B-0D6B7AA73955}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

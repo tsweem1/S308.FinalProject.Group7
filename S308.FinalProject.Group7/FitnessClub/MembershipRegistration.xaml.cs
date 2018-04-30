@@ -276,7 +276,11 @@ namespace FitnessClub
             imgCard.Visibility = Visibility.Visible;
             txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             lblCreditType.Content = strCreditCardType;
-       
+
+            //Reveal create customer button
+            btnCreate.Foreground = Brushes.White;
+            btnCreate.BorderBrush = Brushes.White;
+
         }
 
         #region Navigation controls
@@ -301,6 +305,88 @@ namespace FitnessClub
         #endregion
 
 
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
+        
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            //add new member
+            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), InfoFromPrevWindow.MembershipType, InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice, InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, txtCreditCardNumber.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
+              + Environment.NewLine + Environment.NewLine + memberNew.ToString()
+            , "Create New Member"
+            , MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                AppendToFile(memberNew);
+
+                Clear();
+
+                MessageBox.Show("New Member Saved!");
+
+                DateTime datNow = DateTime.Now;
+                string strFilePath = @"..\..\..\Data\Members";
+                string strLine;
+
+                try
+                {
+                    StreamWriter writer = new StreamWriter(strFilePath, false);
+                    foreach (Member m in memberlist)
+                    {
+                        strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", m.FirstName, m.LastName, m.Gender,
+                                                                                                                                     m.EmailAddress, m.PhoneNumber, m.Weight,
+                                                                                                                                     m.Age, m.FitnessGoal, m.MembershipType,
+                                                                                                                                     m.StartDate, m.EndDate, m.MembershipPrice,
+                                                                                                                                     m.AdditionalFeatures, m.TotalPrice, m.CreditCardNumber,
+                                                                                                                                     m.CreditCardType, m.BillingAddress, m.City, m.Zip);
+                        writer.WriteLine(strLine);
+                    }
+
+                    writer.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error in write file: " + ex.Message);
+                    return;
+                }
+
+                MessageBox.Show("Export completed!" + Environment.NewLine + "File Created: " + strFilePath);
+
+                //Hide create customer button
+                btnCreate.Foreground = Brushes.Black;
+                btnCreate.BorderBrush = Brushes.Black;
+            }
+        }
+        private void AppendToFile(Member memberNew)
+        {
+            //define strings
+            string strFilePath = @"..\..\..\Data\Members";
+            string strLine;
+
+            //append customer to JSON file
+            try
+            {
+                StreamWriter writer = new StreamWriter(strFilePath, true);
+                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
+                                                                                                                                     memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
+                                                                                                                                     memberNew.Age, memberNew.FitnessGoal, InfoFromPrevWindow.MembershipType,
+                                                                                                                                     InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice,
+                                                                                                                                     InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, memberNew.CreditCardNumber,
+                                                                                                                                     memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
+                writer.WriteLine(strLine);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in append file: " + ex.Message);
+                return;
+            }
+        }
         private void Clear()
         {
             txtFirstName.Text = "";
@@ -320,62 +406,11 @@ namespace FitnessClub
             cboMonth.SelectedIndex = -1;
             cboState.SelectedIndex = -1;
             txtZip.Text = "";
+
+            //Hide create customer button
+            btnCreate.Foreground = Brushes.White;
+            btnCreate.BorderBrush = Brushes.White;
         }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            Clear();
-        }
-        
-        
-        private void AppendToFile(Member memberNew)
-        {
-            //define strings
-            string strFilePath = @"..\..\..\Data\Members";
-            string strLine;
-
-            //append customer to JSON file
-            try
-            {
-                StreamWriter writer = new StreamWriter(strFilePath, false);
-                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
-                                                                                                                                     memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
-                                                                                                                                     memberNew.Age, memberNew.FitnessGoal, InfoFromPrevWindow.MembershipType,
-                                                                                                                                     InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice,
-                                                                                                                                     InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, memberNew.CreditCardNumber, 
-                                                                                                                                     memberNew.CreditCardType, memberNew.BillingAddress, memberNew.City, memberNew.Zip);
-                writer.WriteLine(strLine);
-                writer.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in append file: " + ex.Message);
-               return;
-            }
-        }
-
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
-        {
-            //Intialize variables
-            string strFilePath = @"..\..\..\Data\Members.json";
-
-            //add new member
-            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtCreditCardNumber.Text.Trim(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
-
-            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
-              + Environment.NewLine + Environment.NewLine + memberNew.ToString()
-            , "Create New Member"
-            , MessageBoxButton.YesNo);
-
-            if (messageBoxResult == MessageBoxResult.Yes)
-            {
-                AppendToFile(memberNew);
-              
-                Clear();
-
-                MessageBox.Show("New Member Saved!");
-            }
-
-        }
     }
 }
