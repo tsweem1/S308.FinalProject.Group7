@@ -47,6 +47,12 @@ namespace FitnessClub
             string strPassWord = txtPassword.Text;
 
            //7. Check if username is filled out
+
+        if(strUserName.Length == 0 || strPassWord.Length == 0)
+            {
+                MessageBox.Show("Please fill out the username and password fields.");
+                return;
+            }
            if(CheckUserName(strUserName) == false)
             {
                 txtUsername.Text = "";
