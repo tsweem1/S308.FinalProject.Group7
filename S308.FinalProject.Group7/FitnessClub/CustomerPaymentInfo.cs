@@ -34,7 +34,7 @@ namespace FitnessClub
         {
             string strOutput = "";
 
-            strOutput += "Membership Quote: " + Environment.NewLine;
+            strOutput += "Membership Quote " + Environment.NewLine;
             strOutput += "Membership Type: " + MembershipType + Environment.NewLine;
             strOutput += "Start Date: " + StartDate + Environment.NewLine;
             strOutput += "End Date: " + EndDate + Environment.NewLine;

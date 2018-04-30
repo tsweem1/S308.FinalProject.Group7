@@ -141,15 +141,28 @@ namespace FitnessClub
         public override string ToString()
         {
             return
-                "First Name: " + FirstName + Environment.NewLine
+                "Personal Information" + Environment.NewLine
+                + "First Name: " + FirstName + Environment.NewLine
                 + "Last Name: " + LastName + Environment.NewLine
                 + "Gender: " + Gender + Environment.NewLine
                 + "Phone Number: " + PhoneNumber + Environment.NewLine
                 + "Email Address: " + EmailAddress + Environment.NewLine
                 + "Weight: " + Weight + Environment.NewLine
                 + "Age: " + Age + Environment.NewLine
-                + "Fitness Goal: " + FitnessGoal + Environment.NewLine;
-                 
+                + "Fitness Goal: " + FitnessGoal + Environment.NewLine + Environment.NewLine
+                + "Membership Information" + Environment.NewLine
+                + "Membership Type: " + MembershipType + Environment.NewLine
+                + "Start Date: " + StartDate + Environment.NewLine
+                + "End Date: " + EndDate + Environment.NewLine
+                + "Membership Price: " + MembershipPrice + Environment.NewLine
+                + "Additional Features: " + AdditionalFeatures + Environment.NewLine
+                + "Total Price: " + TotalPrice + Environment.NewLine + Environment.NewLine
+                + "Shipment Information" + Environment.NewLine
+                + "Credit Card Number: " + CreditCardNumber + Environment.NewLine
+                + "Credit Card Type: " + CreditCardType + Environment.NewLine
+                + "Billing Address: " + BillingAddress + Environment.NewLine
+                + "City: " + City + Environment.NewLine
+                + "Zipcode: " + Zip + Environment.NewLine;
         }
 
 
