@@ -58,8 +58,6 @@ namespace FitnessClub
             
         }
  
-
-
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
             Member_Purchase_History winPurchHistory = new Member_Purchase_History();
@@ -89,15 +87,12 @@ namespace FitnessClub
             txtFirstName.Text = "";
             txtEmail.Text = "";
             txtPhoneNumber.Text = "";
-
-
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
             List<Member> memberSearch;
-
 
             //declare variables
             string strFirstName;
