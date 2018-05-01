@@ -55,43 +55,45 @@ namespace FitnessClub
         public void btnTypeCheck_Click(object sender, RoutedEventArgs e)
 
         {
+            //7. Validate user selected membership type
             if (iscboMembershipSelected(cboMembershipTypeInfo) == false)
             {
                 MessageBox.Show("Please select a membership type from the drop down menu.");
                 return;
             }
-            //7.Write queries to get avaliability and price information for selected membership type
+            //8.Write queries to get avaliability and price information for selected membership type
             string strMembershipSelection = cboMembershipTypeInfo.SelectedItem.ToString();
 
-            //7.1 get avaliability
+            //8.1 get avaliability
             var avaliabilityQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembershipSelection.Trim())
                 select p.Availability;
 
-            //7.2 get price
+            //8.2 get price
             var priceQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembershipSelection.Trim())
                 select p.Price;
 
-            //8.Convert query lists to string
+            //9.Convert query lists to string
             string strAvaliability = String.Join(",", avaliabilityQuery);
             string strPrice = String.Join(",", priceQuery);
 
             string strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembershipSelection + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + strAvaliability + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + strPrice;
 
-            //9. Output data in text box for user's review
+            //10. Output data in text box for user's review
             txtMemberData.Text = strOutput;
         }
 
         #region Helper Functions
+        //11. Clear contents
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             Clear();
         }
 
-        //Function that clears contents
+        //12. Function that clears contents
         public void Clear()
         {
             txtMemberData.Text = "";
@@ -100,7 +102,7 @@ namespace FitnessClub
             cboUpdateAvailability.SelectedIndex = -1;
         }
 
-        // Function that checks if combobox is selected
+        //13. Function that checks if combobox is selected
         bool iscboMembershipSelected(ComboBox cbo)
         {
             if (cbo.SelectedIndex == -1)
@@ -113,10 +115,10 @@ namespace FitnessClub
             }
         }
 
-        //Function that adds Prices.json data to combo-box
+        //14. Function that adds Prices.json data to combo-box
         public void AddComboItems() { foreach (var i in priceList) cboMembershipTypeInfo.Items.Add(i.Membership.ToString()); }
 
-        //Function that navigates back to Main Menu
+        //15. Function that navigates back to Main Menu
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Window1 winMainMenu = new Window1();
@@ -127,25 +129,25 @@ namespace FitnessClub
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            //1. Read in file again in local scope in order to update file
+            //15. Read in file again in local scope in order to update file
 
-            //1.1 Initialize list
+            //15.1 Initialize list
             priceList = new List<PriceInformation>();
             Files calFiles = new Files();
 
-            //1.2. Set file location and timestamp for method
+            //15.2. Set file location and timestamp for method
             string strFileLocation = @"..\..\..\Data\Prices";
             string isTimestamp = DateTime.Now.Ticks.ToString();
 
-            //1.3. Grab file location with extension
+            //15.3. Grab file location with extension
             string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
 
-            //1.4. Read in data
+            //15.4. Read in data
             System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
             string jsonData = reader.ReadToEnd();
             reader.Close();
 
-            //1.5. Deseralize it to a list
+            //15.5. Deseralize it to a list
             priceList = JsonConvert.DeserializeObject<List<PriceInformation>>(jsonData);
             if (iscboMembershipSelected(cboMembershipTypeInfo) == false)
             {
@@ -153,14 +155,14 @@ namespace FitnessClub
                 return;
             }
 
-            //2. Declare variables to update the pricing data
+            //16. Declare variables to update the pricing data
             string strUpdatePrice = txtUpdatePrice.Text;
             string strMembership = cboMembershipTypeInfo.SelectedItem.ToString();
             bool isUpdateAvaliability = cboUpdateAvailability.SelectedIndex == -1;
             bool isUpdatePrice = strUpdatePrice.Length == 0;
             double dblUpdatePrice;
 
-            //3. Check if price has been entered
+            //17. Check if price has been entered
             if (isUpdatePrice == true)
             {
                 txtUpdatePrice.Text = "";
@@ -168,7 +170,7 @@ namespace FitnessClub
                 return;
             }
 
-            //4. Validate price is an actual number
+            //18. Validate price is an actual number
 
             if (!Double.TryParse(strUpdatePrice, out dblUpdatePrice))
             {
@@ -177,58 +179,58 @@ namespace FitnessClub
                 return;
             }
 
-            //5. Get avaliability for update
+            //19. Get avaliability for update
             var avaliabilityQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembership.Trim())
                 select p.Availability;
 
-            //6. Get price for update
+            //20. Get price for update
             var priceQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembership.Trim())
                 select p.Price;
 
-            //7.Convert query lists to string
+            //21.Convert query lists to string
             string strAvaliability = String.Join(",", avaliabilityQuery);
             string strPrice = String.Join(",", priceQuery);
 
-            //8. Set selected combobox items
+            //22. Set selected combobox items
             ComboBoxItem cbiSelected = (ComboBoxItem)cboUpdateAvailability.SelectedItem;
             string strUpdateAvaliability = cbiSelected.Content.ToString();
 
-            //9. Instanciate PriceInformation
+            //23. Instanciate PriceInformation
             PriceInformation priceUpdate = new PriceInformation(strMembership, strUpdatePrice, strUpdateAvaliability);
 
-            //10. Get the price to update to
+            //24. Get the price to update to
             PriceInformation priceUp =
                 (from p in priceList
                  where p.Membership == strMembership
                  select p).FirstOrDefault();
 
-            //11. Get avaliability to update to
+            //25. Get avaliability to update to
             PriceInformation avalUp =
                 (from p in priceList
                  where p.Membership == strMembership
                  select p).FirstOrDefault();
 
-            //12. Set query results equal to update output
+            //26. Set query results equal to update output
             priceUp.Price = strUpdatePrice;
             avalUp.Availability = strUpdateAvaliability;
 
-            //13. Confirm if user wants to continue with update
+            //27. Confirm if user wants to continue with update
             MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to update the " + " " + strMembership + " " + "membership's avaliability?"
                , "Update " + strMembership + "?"
                , MessageBoxButton.YesNo);
 
-            //14. Rewrite file to update pricing information
+            //28. Rewrite file to update pricing information
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 string updateJsonData = JsonConvert.SerializeObject(priceList);
                 System.IO.File.WriteAllText(LoadedFilePath, updateJsonData);
             }
 
-            //15. Refresh output in txtMemberData.Text
+            //29. Refresh output in txtMemberData.Text
 
             string strOutput = "";
             if (isUpdatePrice == true)
@@ -241,11 +243,13 @@ namespace FitnessClub
                 strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + priceUp.Price.ToString();
             }
 
-            //16. Refresh txtMemberData.Text
+            //30. Refresh txtMemberData.Text
             txtMemberData.Text = strOutput;
 
-            //17. Show success message
+            //31. Show success message
             MessageBox.Show("Membership update successful!");
+
+            //32. Clear Contents
             Clear();
         }
     }
