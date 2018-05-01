@@ -28,51 +28,40 @@ namespace FitnessClub
         public MembershipInformation()
         {
             InitializeComponent();
-            // Load Json File
+            //1. Load Json File
             GetDataSetFromFile();
         }
 
         private void GetDataSetFromFile()
         {
+            //2. Declare new list for all Member properties
             List<Member> lstMember = new List<Member>();
-
+            //3. Declare string for file path
             string strFilePath = @"..\..\..\Data\Members.json";
 
             try
             {
-
-                //use system.oi.file to read the entire data file
+                //4. use system.oi.file to read the entire data file
                 StreamReader reader = new StreamReader(strFilePath);
                 string jsonData = reader.ReadToEnd();
                 reader.Close();
 
-
-                //serialize the json data to a list of customers
+                //5. serialize the json data to a list of customers
                 memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
             }
             catch (Exception ex)
             {
+                //6. Show error message if failed to read Json File
                 MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
 
 
         }
   
-
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 winMainMenu = new Window1();
-            winMainMenu.Show();
-            this.Close();
-        }
-
-        private void btnFitnessGoals_Click(object sender, RoutedEventArgs e)
-        {
-            FitnessGoals winFitGoals = new FitnessGoals();
-            winFitGoals.Show();
-            this.Close();
-        }
-
+        
+     }
+        
+        //8. Clear all input output fields
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             lstMember.Items.Clear();
@@ -255,6 +244,16 @@ namespace FitnessClub
                 txtMemberDetails.Text = memberSelected.ToString();
             }
         }
+
+    //7. Go To Main Menu Window
+    private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+    {
+        Window1 winMainMenu = new Window1();
+        winMainMenu.Show();
+        this.Close();
+
     }
+
+
 }
 
