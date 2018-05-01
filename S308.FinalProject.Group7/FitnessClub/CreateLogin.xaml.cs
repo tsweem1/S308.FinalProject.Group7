@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
-using System.Linq;
+
 
 namespace FitnessClub
 {
@@ -52,7 +52,7 @@ namespace FitnessClub
                 return;
             }
 
-            //4. Instanciate a new instance
+            //4. Instantiate a new instance
             LoginCredentials loginUpdate = new LoginCredentials(strUsername.Trim(), strPassword.Trim());
 
             //5. Send message box message to allow user to continue
