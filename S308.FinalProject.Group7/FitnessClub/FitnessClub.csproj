@@ -122,10 +122,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Member Purchase History.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MembershipInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,9 +144,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Member Purchase History.xaml.cs">
-      <DependentUpon>Member Purchase History.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Member.cs" />
     <Compile Include="MembershipInformation.xaml.cs">
       <DependentUpon>MembershipInformation.xaml</DependentUpon>
