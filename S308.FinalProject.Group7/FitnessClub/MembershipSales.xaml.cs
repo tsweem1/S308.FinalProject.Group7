@@ -98,11 +98,11 @@ namespace FitnessClub
             //13. Determine the end date based on the drop down selected
             if ((cboMembershipType.SelectedIndex == 1 || cboMembershipType.SelectedIndex == 3 || cboMembershipType.SelectedIndex == 5))
             {
-                dtConvertedEndDate = dtConvertStartDate.AddMonths(1);
+                dtConvertedEndDate = dtConvertStartDate.AddYears(1);
             }
             else
             {
-                dtConvertedEndDate = dtConvertStartDate.AddYears(1);
+                dtConvertedEndDate = dtConvertStartDate.AddMonths(1);
             }
 
             //14. Set selected item to string for query
