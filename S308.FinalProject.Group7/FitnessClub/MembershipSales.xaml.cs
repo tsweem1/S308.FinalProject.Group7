@@ -105,39 +105,39 @@ namespace FitnessClub
                 dtConvertedEndDate = dtConvertStartDate.AddYears(1);
             }
 
-            //9. Set selected item to string for query
+            //14. Set selected item to string for query
             string strMembershipSelection = cboMembershipType.SelectedItem.ToString();
 
-            //10. Query corresponding price from drop down menu
+            //15. Query corresponding price from drop down menu
             var priceQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembershipSelection.Trim())
                 select p.Price;
 
-            //11. Convert list to string
+            //16. Convert list to string
             string strMembershipPrice = String.Join(",", priceQuery);
 
-            //13. Convert price to double for subtotal calculation
+            //17. Convert price to double for subtotal calculation
             double dblMembershipPrice = Convert.ToDouble(strMembershipPrice);
             double dblSubCost = GetAdditionalFeatureCost(lstFeatures, cboMembershipType);
             double dblTotalCost = dblSubCost + dblMembershipPrice;
 
-            //14. String formula for output text box
+            //18. String formula for output text box
             string strOutput = Environment.NewLine+"Membership Price:".PadRight(30) + dblMembershipPrice.ToString("C2") + Environment.NewLine + Environment.NewLine + "Addtional Feature Costs:".PadRight(30) + dblSubCost.ToString("C2") + Environment.NewLine + "________________________________________"+ Environment.NewLine + "Total Cost:".PadRight(30) + dblTotalCost.ToString("C2");
 
-            //15. Split datetime for enddate
+            //19. Split datetime for enddate
             string strConvertedEndDate = dtConvertedEndDate.ToString();
             int strSpace = strConvertedEndDate.IndexOf(" ");
             string strSubConvertedEndDate = strConvertedEndDate.Substring(0, strSpace);
 
-            //16. Set additional features to string
+            //20. Set additional features to string
             StringBuilder strFeatures = new StringBuilder();
             foreach (ListBoxItem selectedItem in lstFeatures.SelectedItems)
             {
                 strFeatures.AppendLine(selectedItem.Content.ToString());
             }
 
-            //17. Set output to corresponding text boxes
+            //21. Set output to corresponding text boxes
             txtFeatures.Text = strFeatures.ToString();
             txtPrice.Text = dblMembershipPrice.ToString("C2");
             txtMemberQuotaOutput.Text = strOutput;
@@ -145,7 +145,7 @@ namespace FitnessClub
             txtMemberQuotaOutput.Text = strOutput;
             txtTotalPrice.Text = dblTotalCost.ToString("C2");
 
-            //create some info to send to the next window
+            //22. create some info to send to the next window
             CustomerPaymentInfo info = new CustomerPaymentInfo(cboMembershipType.Text.Trim(), dtStart.Text.Trim(), txtEndDate.Text.Trim(), txtFeatures.Text.Trim(), txtPrice.Text.Trim(), txtTotalPrice.Text.Trim());
 
             MessageBoxResult messageBoxResult = MessageBox.Show("Create new member?"
@@ -162,13 +162,13 @@ namespace FitnessClub
             }
         }
         
-        //Function that adds Prices.json data to combo-box
+        //23. Function that adds Prices.json data to combo-box
         public void AddComboItems()
         { foreach (var i in priceList)
                 if(i.Availability == "Yes")
                 cboMembershipType.Items.Add(i.Membership.ToString()); }
         
-        //Calculates additional features (locker/personal training)
+        //24. Calculates additional features (locker/personal training)
         public double GetAdditionalFeatureCost(ListBox lstbox, ComboBox cbo2)
         {
             double personalTraining = 5;
@@ -207,7 +207,7 @@ namespace FitnessClub
             totalPrice *= totalMonths;
             return totalPrice;
         }
-
+        #region Helper Functions
         public DateTime ConvertPickerToDate(DatePicker dStart)
         {
             string start = Convert.ToString(dStart);
@@ -233,6 +233,7 @@ namespace FitnessClub
             return datConvertedStart;
         }
 
+        //
         bool isStartDateSelect(DatePicker dStart)
         {
             bool isSelected = false;
@@ -257,6 +258,9 @@ namespace FitnessClub
             cboMembershipType.SelectedIndex = -1;
             lstFeatures.SelectedIndex = -1;
         }
+
+        #endregion 
+
     }
 }
     
