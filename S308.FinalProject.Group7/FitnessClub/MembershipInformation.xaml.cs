@@ -57,13 +57,7 @@ namespace FitnessClub
 
 
         }
-
-        private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
-        {
-            Member_Purchase_History winPurchHistory = new Member_Purchase_History();
-            winPurchHistory.Show();
-            this.Close();
-        }
+  
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
