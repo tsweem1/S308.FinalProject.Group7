@@ -81,6 +81,7 @@ namespace FitnessClub
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            lstMember.Items.Clear();
             //clear all user input fields
 
             txtLastName.Text = "";
@@ -94,7 +95,7 @@ namespace FitnessClub
         private void btnSearchMember_Click(object sender, RoutedEventArgs e)
         {
             List<Member> memberSearch;
-
+            lstMember.Items.Clear();
             //declare variables
             string strFirstName;
             string strLastName;
@@ -174,7 +175,7 @@ namespace FitnessClub
             {
                 if (strLastName == "")
                 {
-                    lstMember.Items.Add("");
+                    
                 }
                 else
                 {
@@ -183,7 +184,7 @@ namespace FitnessClub
 
                 if (strFirstName == "")
                 {
-                    lstMember.Items.Add("");
+                    
                 }
                 else
                 {
@@ -191,7 +192,7 @@ namespace FitnessClub
                 }
                 if (strEmail == "")
                 {
-                    lstMember.Items.Add("");
+                    
                 }
                 else
                 {
@@ -200,7 +201,7 @@ namespace FitnessClub
 
                 if (strPhoneNumber == "")
                 {
-                    lstMember.Items.Add("");
+                    
                 }
                 else
                 {
@@ -208,7 +209,6 @@ namespace FitnessClub
                 }
 
             }
-
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
         }
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
@@ -216,20 +216,6 @@ namespace FitnessClub
             Window1 winMainMenu = new Window1();
             winMainMenu.Show();
             this.Close();
-        }
-
-        private void lstMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
-
-        {
-
-            if (lstMember.SelectedIndex > -1)
-            {
-                MessageBox.Show(lstMember.SelectedIndex.ToString());
-                string strSelectedName = lstMember.SelectedItem.ToString();
-
-                Member memberSelected = memberList.Where(m => m.LastName + m.FirstName == strSelectedName).FirstOrDefault();
-                txtMemberDetails.Text = memberSelected.ToString();
-            }
         }
 
         private void btnClearContents_Click(object sender, RoutedEventArgs e)
@@ -241,6 +227,29 @@ namespace FitnessClub
             txtPhoneNumber.Text = "";
             lstMember.Items.Clear();
             lblNumResults.Content = "(0)";
+        }
+
+        private void lstMember_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstMember.SelectedIndex > -1)
+            {
+                string strSelectedItem = lstMember.SelectedItem.ToString();
+
+                Member memberSelected = memberList.Where(m => m.LastName == strSelectedItem).FirstOrDefault();
+                if (memberSelected == null)
+                {
+                    memberSelected = memberList.Where(m => m.FirstName == strSelectedItem).FirstOrDefault();
+                }
+                if (memberSelected == null)
+                {
+                    memberSelected = memberList.Where(m => m.EmailAddress == strSelectedItem).FirstOrDefault();
+                }
+                if (memberSelected == null)
+                {
+                    memberSelected = memberList.Where(m => m.PhoneNumber == strSelectedItem).FirstOrDefault();
+                }
+                txtMemberDetails.Text = memberSelected.ToString();
+            }
         }
     }
 }
