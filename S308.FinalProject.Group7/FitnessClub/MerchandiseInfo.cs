@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-    public class MerchandiseInfo : Member
+    //1. Set properties
+    public class MerchandiseInfo
     {
         public string MerchItem { get; set; }
         public string MerchPrice { get; set; }
@@ -18,7 +19,7 @@ namespace FitnessClub
         {
 
         }
-
+        //2. Create constructors
         public MerchandiseInfo(string merchitem, string merchprice, string quantity, string size, string instock)
         {
             MerchItem = merchitem;

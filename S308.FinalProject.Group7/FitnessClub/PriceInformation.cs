@@ -17,7 +17,7 @@ using System.IO;
 namespace FitnessClub
 {
     public class PriceInformation
-    {
+    {   //1. Set properties
         public string Membership { get; set; }
         public string Price { get; set; }
         public string Availability { get; set; }
@@ -26,7 +26,7 @@ namespace FitnessClub
         {
 
         }
-
+        //2. Create constructors
         public PriceInformation(string membershipType, string membershipPrice, string avaliability)
         {
             Membership = membershipType;
