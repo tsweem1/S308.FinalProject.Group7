@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-    //Add class for member
+    //1. Add class for member
     public class Member : CustomerPaymentInfo 
     {
         public string Fullname { get; set; }
@@ -32,7 +32,7 @@ namespace FitnessClub
 
         }
 
-        //Initialize constructor
+        //2. Initialize constructor
         public Member(string fullName, string firstName, string lastName, string gender, string phoneNumber, string email, string weight, string age, string fitnessGoal, string membershipType, string startDate, string endDate, string membershipPrice, string addtionalFeatures, string totalPrice, string strCreditCardNumber, string strCreditCardType, string strBillingAddress, string strCity, string strZip)
         {
             Fullname = fullName;
@@ -57,12 +57,12 @@ namespace FitnessClub
             Zip = strZip;
 
         }
-
+        //3. Declare credit card variables
         private long lngNum;
         private int intDigits;
         private int intSum;
 
-        //Check for validity
+        //4. Check for validity
         public bool CardNumValid(string CreditCardNumber)
         {
             if (!Int64.TryParse(CreditCardNumber, out lngNum))
@@ -70,7 +70,7 @@ namespace FitnessClub
             else { return true; }
         }
 
-        //Check for length
+        //5. Check for length
         public bool CheckCreditLength(string CreditCardNumber)
         {
             if (CreditCardNumber.Length != 13 && CreditCardNumber.Length != 15 && CreditCardNumber.Length != 16)
@@ -78,7 +78,7 @@ namespace FitnessClub
             else { return true; }
         }
 
-        //Check card type
+        //6. Check card type
         public string CardType(string card)
         {
             if (card.StartsWith("34") || card.StartsWith("37")) { CreditCardType = "AMEX"; }
@@ -90,7 +90,7 @@ namespace FitnessClub
             return CreditCardType;
         }
 
-        // Reverse string for Luhn
+        //7. Reverse string for Luhn
         private string ReverseString(string card)
         {
             char[] arr = card.ToCharArray();
@@ -98,7 +98,7 @@ namespace FitnessClub
             return new string(arr);
        }
 
-        // Luhn algorthim
+        //8. Luhn algorthim
         public bool Luhn(string strCard)
         {
             strCard = ReverseString(strCard);
@@ -140,7 +140,7 @@ namespace FitnessClub
             return isValid;
             
         }
-        
+        //9. Override String Method
         public override string ToString()
         {
             return

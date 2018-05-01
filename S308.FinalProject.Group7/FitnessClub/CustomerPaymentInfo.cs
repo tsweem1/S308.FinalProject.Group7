@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
+    //1. Set Properties
     public class CustomerPaymentInfo
     {
         public string MembershipType { get; set; }
@@ -20,6 +21,7 @@ namespace FitnessClub
 
         }
 
+        //2. Create Constructors
         public CustomerPaymentInfo(string membershipType, string startDate, string endDate, string addtionalFeatures, string membershipPrice, string totalPrice)
         {
             MembershipType = membershipType;
@@ -30,6 +32,7 @@ namespace FitnessClub
             TotalPrice = totalPrice;
         }
 
+        //3. Override String Method
         public override string ToString()
         {
             string strOutput = "";

@@ -2,6 +2,7 @@
 {
     public class LoginCredentials
     {
+        //1. Set Properties
         public string username { get; set; }
         public string password { get; set; }
 
@@ -9,7 +10,7 @@
         {
 
         }
-
+        //2. Create Constructor
         public LoginCredentials(string strUserName, string strPassword)
         {
             username = strUserName;
