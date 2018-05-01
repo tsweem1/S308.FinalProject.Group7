@@ -28,36 +28,36 @@ namespace FitnessClub
         public MembershipInformation()
         {
             InitializeComponent();
-             // Load Json File
-             GetDataSetFromFile();
+            // Load Json File
+            GetDataSetFromFile();
         }
 
-          private void GetDataSetFromFile()
-          {
-       List<Member> lstMember = new List<Member>();
+        private void GetDataSetFromFile()
+        {
+            List<Member> lstMember = new List<Member>();
 
-        string strFilePath = @"..\..\..\Data\Members.json";
+            string strFilePath = @"..\..\..\Data\Members.json";
 
-             try
-             {
+            try
+            {
 
                 //use system.oi.file to read the entire data file
                 StreamReader reader = new StreamReader(strFilePath);
-               string jsonData = reader.ReadToEnd();
+                string jsonData = reader.ReadToEnd();
                 reader.Close();
-               
+
 
                 //serialize the json data to a list of customers
-               memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
-           }
+                memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading Member from file: " + ex.Message);
             }
 
-            
+
         }
- 
+
         private void btnPurchaseHistory_Click(object sender, RoutedEventArgs e)
         {
             Member_Purchase_History winPurchHistory = new Member_Purchase_History();
@@ -91,9 +91,8 @@ namespace FitnessClub
             txtMemberDetails.Text = "";
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        private void btnSearchMember_Click(object sender, RoutedEventArgs e)
         {
-
             List<Member> memberSearch;
 
             //declare variables
@@ -115,7 +114,7 @@ namespace FitnessClub
             if (strFirstName == "" && strLastName == "" && strPhoneNumber == "" && strEmail == "")
             {
                 MessageBox.Show("Please enter information in at least one search field.");
-               return;
+                return;
             }
 
             //conduct member search 
@@ -124,66 +123,125 @@ namespace FitnessClub
                m.FirstName.StartsWith(strFirstName) &&
                m.EmailAddress.StartsWith(strEmail) &&
                m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
-               
 
-            //display search items and results in listbox if field is not blank
-            foreach (Member m in memberSearch)
+
+            int counter = 0;
+
+            foreach (var i in memberSearch)
             {
-                if(strLastName == "")
+                if (strLastName.Length == 0 || strLastName == i.LastName)
                 {
-                    lbxSearchResults.Items.Add("");
+                    counter += 1;
                 }
                 else
                 {
-                    lbxSearchResults.Items.Add(m.LastName);
+                    counter -= 1;
+                }
+                if(strFirstName.Length == 0 || strFirstName == i.FirstName)
+                {
+                    counter += 1;
+                }
+                else
+                {
+                    counter -= 1;
+                }
+                if(strEmail.Length == 0 || strEmail == i.EmailAddress)
+                {
+                    counter += 1;
+                }
+                else
+                {
+                    counter -= 1;
+                }
+                if(strPhoneNumber.Length == 0 || strPhoneNumber == i.PhoneNumber)
+                {
+                    counter += 1;
+                }
+                else
+                {
+                    counter -= 1;
+                }
+
+            }
+            if(counter != 4)
+            {
+                MessageBox.Show("One or more of your entries is incorrect.");
+                return;
+            }
+
+                //display search items and results in listbox if field is not blank
+                foreach (Member m in memberSearch)
+            {
+                if (strLastName == "")
+                {
+                    lstMember.Items.Add("");
+                }
+                else
+                {
+                    lstMember.Items.Add(m.LastName);
                 }
 
                 if (strFirstName == "")
                 {
-                    lbxSearchResults.Items.Add("");
+                    lstMember.Items.Add("");
                 }
                 else
                 {
-                    lbxSearchResults.Items.Add(m.FirstName);
+                    lstMember.Items.Add(m.FirstName);
                 }
                 if (strEmail == "")
                 {
-                    lbxSearchResults.Items.Add("");
+                    lstMember.Items.Add("");
                 }
                 else
                 {
-                    lbxSearchResults.Items.Add(m.EmailAddress);
+                    lstMember.Items.Add(m.EmailAddress);
                 }
 
                 if (strPhoneNumber == "")
                 {
-                    lbxSearchResults.Items.Add("");
+                    lstMember.Items.Add("");
                 }
                 else
                 {
-                    lbxSearchResults.Items.Add(m.PhoneNumber);
+                    lstMember.Items.Add(m.PhoneNumber);
                 }
-                
+
             }
 
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
-
-            }
-            private void lstMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        }
+        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (lbxSearchResults.SelectedIndex > -1)
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
+
+        private void lstMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        {
+
+            if (lstMember.SelectedIndex > -1)
             {
-                string strSelectedName = lbxSearchResults.SelectedItem.ToString();
+                MessageBox.Show(lstMember.SelectedIndex.ToString());
+                string strSelectedName = lstMember.SelectedItem.ToString();
 
                 Member memberSelected = memberList.Where(m => m.LastName + m.FirstName == strSelectedName).FirstOrDefault();
                 txtMemberDetails.Text = memberSelected.ToString();
             }
         }
 
-
-
-
-
+        private void btnClearContents_Click(object sender, RoutedEventArgs e)
+        {
+            txtEmail.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtMemberDetails.Text = "";
+            txtPhoneNumber.Text = "";
+            lstMember.Items.Clear();
+            lblNumResults.Content = "(0)";
+        }
     }
-    }
+}
 
