@@ -164,7 +164,7 @@ namespace FitnessClub
                 }
 
             }
-            if(counter != 4)
+            if(counter < 4)
             {
                 MessageBox.Show("One or more of your entries is incorrect.");
                 return;
@@ -179,7 +179,7 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.LastName);
+                    lstMember.Items.Add(m.EmailAddress);
                 }
 
                 if (strFirstName == "")
@@ -188,7 +188,7 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.FirstName);
+                    lstMember.Items.Add(m.EmailAddress);
                 }
                 if (strEmail == "")
                 {
@@ -205,7 +205,7 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.PhoneNumber);
+                    lstMember.Items.Add(m.EmailAddress);
                 }
 
             }
