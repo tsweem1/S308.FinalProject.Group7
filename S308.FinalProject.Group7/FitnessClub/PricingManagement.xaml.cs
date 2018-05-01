@@ -84,8 +84,48 @@ namespace FitnessClub
             //9. Output data in text box for user's review
             txtMemberData.Text = strOutput;
         }
+        
+        #region Helper Functions
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
 
-        private void btnUpdateType_Click(object sender, RoutedEventArgs e)
+        //Function that clears contents
+        public void Clear()
+        {
+            txtMemberData.Text = "";
+            txtUpdatePrice.Text = "";
+            cboMembershipTypeInfo.SelectedIndex = -1;
+            cboUpdateAvailability.SelectedIndex = -1;
+        }
+
+        // Function that checks if combobox is selected
+        bool iscboMembershipSelected(ComboBox cbo)
+        {
+            if(cbo.SelectedIndex == -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //Function that adds Prices.json data to combo-box
+        public void AddComboItems() { foreach (var i in priceList) cboMembershipTypeInfo.Items.Add(i.Membership.ToString()); }
+
+        //Function that navigates back to Main Menu
+        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
+        #endregion
+
+        private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
             //1. Read in file again in local scope in order to update file
 
@@ -129,73 +169,66 @@ namespace FitnessClub
             }
 
             //4. Validate price is an actual number
-            
-                if (!Double.TryParse(strUpdatePrice, out dblUpdatePrice))
-                {
-                    txtUpdatePrice.Text = "";
-                    MessageBox.Show("Please enter a valid price.");
-                    return;
-                }
-            
-            //5. Validate the cboUpdateAvailability is selected
-            if (isUpdateAvaliability == true)
+
+            if (!Double.TryParse(strUpdatePrice, out dblUpdatePrice))
             {
-                MessageBox.Show("Please select an option from the Avaliability Drop-down.");
+                txtUpdatePrice.Text = "";
+                MessageBox.Show("Please enter a valid price.");
                 return;
             }
-
-            //6. Get avaliability for update
+            
+            //5. Get avaliability for update
             var avaliabilityQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembership.Trim())
                 select p.Availability;
 
-            //7. Get price for update
+            //6. Get price for update
             var priceQuery =
                 from p in priceList
                 where (p.Membership.Trim() == strMembership.Trim())
                 select p.Price;
 
-            //8.Convert query lists to string
+            //7.Convert query lists to string
             string strAvaliability = String.Join(",", avaliabilityQuery);
             string strPrice = String.Join(",", priceQuery);
 
-            //9. Set selected combobox items
+            //8. Set selected combobox items
             ComboBoxItem cbiSelected = (ComboBoxItem)cboUpdateAvailability.SelectedItem;
             string strUpdateAvaliability = cbiSelected.Content.ToString();
-            
-            //10. Instanciate PriceInformation
+
+            //9. Instanciate PriceInformation
             PriceInformation priceUpdate = new PriceInformation(strMembership, strUpdatePrice, strUpdateAvaliability);
 
-            //11. Get the price to update to
+            //10. Get the price to update to
             PriceInformation priceUp =
                 (from p in priceList
                  where p.Membership == strMembership
                  select p).FirstOrDefault();
 
-            //12. Get avaliability to update to
+            //11. Get avaliability to update to
             PriceInformation avalUp =
                 (from p in priceList
                  where p.Membership == strMembership
                  select p).FirstOrDefault();
 
-            //13. Set query results equal to update output
+            //12. Set query results equal to update output
             priceUp.Price = strUpdatePrice;
             avalUp.Availability = strUpdateAvaliability;
 
-            //14. Confirm if user wants to continue with update
-            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to update the "+" "+ strMembership + " "+"membership's avaliability?"
+            //13. Confirm if user wants to continue with update
+            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to update the " + " " + strMembership + " " + "membership's avaliability?"
                , "Update " + strMembership + "?"
                , MessageBoxButton.YesNo);
 
-            //15. Rewrite file to update pricing information
+            //14. Rewrite file to update pricing information
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 string updateJsonData = JsonConvert.SerializeObject(priceList);
                 System.IO.File.WriteAllText(LoadedFilePath, updateJsonData);
             }
 
-            //16. Refresh output in txtMemberData.Text
+            //15. Refresh output in txtMemberData.Text
 
             string strOutput = "";
             if (isUpdatePrice == true)
@@ -208,53 +241,128 @@ namespace FitnessClub
                 strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + priceUp.Price.ToString();
             }
 
-            //17. Refresh txtMemberData.Text
+            //16. Refresh txtMemberData.Text
             txtMemberData.Text = strOutput;
 
-            //18. Show success message
+            //17. Show success message
             MessageBox.Show("Membership update successful!");
             Clear();
         }
-        #region Helper Functions
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            Clear();
-        }
 
-        //Function that clears contents
-        public void Clear()
+        private void btnUpdateAvailability_Click(object sender, RoutedEventArgs e)
         {
-            txtMemberData.Text = "";
-            txtUpdatePrice.Text = "";
-            cboMembershipTypeInfo.SelectedIndex = -1;
-            cboUpdateAvailability.SelectedIndex = -1;
-        }
+            //1. Read in file again in local scope in order to update file
 
-        // Function that checks if combobox is selected
-        bool iscboMembershipSelected(ComboBox cbo)
-        {
-            if(cbo.SelectedIndex == -1)
+            //1.1 Initialize list
+            priceList = new List<PriceInformation>();
+            Files calFiles = new Files();
+
+            //1.2. Set file location and timestamp for method
+            string strFileLocation = @"..\..\..\Data\Prices";
+            string isTimestamp = DateTime.Now.Ticks.ToString();
+
+            //1.3. Grab file location with extension
+            string LoadedFilePath = calFiles.GetFilePath(strFileLocation, "json", false);
+
+            //1.4. Read in data
+            System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
+            string jsonData = reader.ReadToEnd();
+            reader.Close();
+
+            //1.5. Deseralize it to a list
+            priceList = JsonConvert.DeserializeObject<List<PriceInformation>>(jsonData);
+            if (iscboMembershipSelected(cboMembershipTypeInfo) == false)
             {
-                return false;
+                MessageBox.Show("Please select a membership type from the drop-down menu.");
+                return;
             }
+
+            //2. Declare variables to update the pricing data
+            string strUpdatePrice = txtUpdatePrice.Text;
+            string strMembership = cboMembershipTypeInfo.SelectedItem.ToString();
+            bool isUpdateAvaliability = cboUpdateAvailability.SelectedIndex == -1;
+            bool isUpdatePrice = strUpdatePrice.Length == 0;
+            double dblUpdatePrice;
+            
+
+            //3. Validate the cboUpdateAvailability is selected
+            if (isUpdateAvaliability == true)
+            {
+                MessageBox.Show("Please select an option from the Avaliability Drop-down.");
+                return;
+            }
+
+            //4. Get avaliability for update
+            var avaliabilityQuery =
+                from p in priceList
+                where (p.Membership.Trim() == strMembership.Trim())
+                select p.Availability;
+
+            //5. Get price for update
+            var priceQuery =
+                from p in priceList
+                where (p.Membership.Trim() == strMembership.Trim())
+                select p.Price;
+
+            //6.Convert query lists to string
+            string strAvaliability = String.Join(",", avaliabilityQuery);
+            string strPrice = String.Join(",", priceQuery);
+
+            //7. Set selected combobox items
+            ComboBoxItem cbiSelected = (ComboBoxItem)cboUpdateAvailability.SelectedItem;
+            string strUpdateAvaliability = cbiSelected.Content.ToString();
+
+            //8. Instanciate PriceInformation
+            PriceInformation priceUpdate = new PriceInformation(strMembership, strUpdatePrice, strUpdateAvaliability);
+
+            //9. Get the price to update to
+            PriceInformation priceUp =
+                (from p in priceList
+                 where p.Membership == strMembership
+                 select p).FirstOrDefault();
+
+            //10. Get avaliability to update to
+            PriceInformation avalUp =
+                (from p in priceList
+                 where p.Membership == strMembership
+                 select p).FirstOrDefault();
+
+            //11. Set query results equal to update output
+            priceUp.Price = strUpdatePrice;
+            avalUp.Availability = strUpdateAvaliability;
+
+            //12. Confirm if user wants to continue with update
+            MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to update the " + " " + strMembership + " " + "membership's avaliability?"
+               , "Update " + strMembership + "?"
+               , MessageBoxButton.YesNo);
+
+            //13. Rewrite file to update pricing information
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                string updateJsonData = JsonConvert.SerializeObject(priceList);
+                System.IO.File.WriteAllText(LoadedFilePath, updateJsonData);
+            }
+
+            //14. Refresh output in txtMemberData.Text
+
+            string strOutput = "";
+            if (isUpdatePrice == true)
+            {
+                strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + strPrice.ToString();
+            }
+
             else
             {
-                return true;
+                strOutput = Environment.NewLine + "Membership Type:".PadRight(25) + strMembership + Environment.NewLine + Environment.NewLine + "Avaliability:".PadRight(25) + avalUp.Availability.ToString() + Environment.NewLine + Environment.NewLine + "Price:".PadRight(25) + priceUp.Price.ToString();
             }
+
+            //15. Refresh txtMemberData.Text
+            txtMemberData.Text = strOutput;
+
+            //16. Show success message
+            MessageBox.Show("Membership update successful!");
+            Clear();
         }
-
-        //Function that adds Prices.json data to combo-box
-        public void AddComboItems() { foreach (var i in priceList) cboMembershipTypeInfo.Items.Add(i.Membership.ToString()); }
-
-        //Function that navigates back to Main Menu
-        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            Window1 winMainMenu = new Window1();
-            winMainMenu.Show();
-            this.Close();
-        }
-        #endregion
-
     }
 }
 
