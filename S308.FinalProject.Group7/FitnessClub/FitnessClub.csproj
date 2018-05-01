@@ -86,10 +86,6 @@
     <Compile Include="CreateLogin.xaml.cs">
       <DependentUpon>CreateLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreditCard.cs" />
-    <Compile Include="CustomerPayment.xaml.cs">
-      <DependentUpon>CustomerPayment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CustomerPaymentInfo.cs" />
     <Compile Include="Files.cs" />
     <Compile Include="FitnessGoals.xaml.cs">
@@ -111,10 +107,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateLogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomerPayment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Merchandise.xaml">
+    <Page Include="MerchandiseQuotation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,8 +161,8 @@
     <Compile Include="MembershipRegistration.xaml.cs">
       <DependentUpon>MembershipRegistration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Merchandise.xaml.cs">
-      <DependentUpon>Merchandise.xaml</DependentUpon>
+    <Compile Include="MerchandiseQuotation.xaml.cs">
+      <DependentUpon>MerchandiseQuotation.xaml</DependentUpon>
     </Compile>
     <Compile Include="MerchandiseInfo.cs" />
     <Compile Include="PriceInformation.cs" />

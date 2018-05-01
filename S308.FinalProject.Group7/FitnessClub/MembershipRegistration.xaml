@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Membership Registration" Height="633" Width="894" WindowStartupLocation="CenterScreen" Background="Black">
     <Grid Height="521" VerticalAlignment="Top">
@@ -20,7 +19,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="lblInstructions" Content="For a new member, fill out the at least the First Name, Last Name, Gender, Phone Number, and  Email Address &#xD;&#xA;unless more information is provided. For an existing customer, select the name from the drop down menu.  &#xD;&#xA;Once the member information is filled out, proceed to the payment information by clicking &quot;PAYMENT INFO&quot;.&#xD;&#xA;" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="655" Foreground="White" FontFamily="Arial" FontSize="12" Margin="34,68,0,0" />
+        <Label x:Name="lblInstructions" Content="For a new member, fill out the at least the First Name, Last Name, Gender, Phone Number, and  Email Address &#xA;unless more information is provided. For an existing customer, select the name from the drop down menu.  &#xA;Once the member information is filled out, press &quot;VERIFY&quot; to ensure information is entered correctly.&#xD;&#xA;Press &quot;CREATE NEW MEMBER&quot; to save information.&#xA;" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="655" Foreground="White" FontFamily="Arial" FontSize="12" Margin="34,63,0,0" />
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="206" Margin="34,134,0,0" Stroke="Black" VerticalAlignment="Top" Width="812"/>
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="49,154,0,321" Width="98" FontFamily="Arial                            " Foreground="#000000" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,-0.008">
             <Label.RenderTransform>
@@ -113,7 +112,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="cboFitnessGoals" HorizontalAlignment="Left" Margin="558,281,0,0" VerticalAlignment="Top" Width="248" Height="25" RenderTransformOrigin="0.739,1.295" FontFamily="Arial" FontSize="18.667" Background="White" TabIndex="8">
+        <ComboBox x:Name="cboFitnessGoals" HorizontalAlignment="Left" Margin="558,281,0,0" VerticalAlignment="Top" Width="248" Height="25" RenderTransformOrigin="0.739,1.295" FontFamily="Arial" Background="White" TabIndex="8">
             <ComboBoxItem Content="Athletic Performance"/>
             <ComboBoxItem Content="Overall Health"/>
             <ComboBoxItem Content="Strength Training"/>
@@ -252,7 +251,7 @@
             </Label.RenderTransform>
         </Label>
         <TextBox x:Name="txtZip" HorizontalAlignment="Left" Height="26" Margin="545,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial" FontSize="12" TabIndex="15" RenderTransformOrigin="0.509,-0.08"/>
-        <Image x:Name="imgCard" Margin="300,418,553,81" Source="mastercard_logo.png" RenderTransformOrigin="1.338,0.614"/>
+        <Image x:Name="imgCard" Margin="300,418,553,81" Source="mastercard_logo.png" RenderTransformOrigin="1.338,0.614" Visibility="Hidden"/>
         <Label x:Name="lblCreditType"  FontSize="12" HorizontalAlignment="Left" Margin="181,416,0,0" VerticalAlignment="Top" Width="114" Height="25" FontFamily="Arial"/>
         <ComboBox x:Name="cboMonth" HorizontalAlignment="Left" Height="25" Margin="186,458,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="-0.871,-1.12" TabIndex="10">
             <ComboBoxItem Content="01" FontFamily="Arial"/>

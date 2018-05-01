@@ -95,14 +95,21 @@ namespace FitnessClub
         private void btnSearchMember_Click(object sender, RoutedEventArgs e)
         {
             List<Member> memberSearch;
+
+            //clear previous content
             lstMember.Items.Clear();
+            txtMemberDetails.Text = "";
+            lblNumResults.Content = "(0)";
+
             //declare variables
+            string strFullName;
             string strFirstName;
             string strLastName;
             string strEmail;
             string strPhoneNumber;
 
             //convert input fields
+            strFullName = "";
             strFirstName = Convert.ToString(txtFirstName.Text);
             strLastName = Convert.ToString(txtLastName.Text);
             strEmail = Convert.ToString(txtEmail.Text);
@@ -120,6 +127,7 @@ namespace FitnessClub
 
             //conduct member search 
             memberSearch = memberList.Where(m =>
+               m.Fullname.StartsWith(strFullName) &&
                m.LastName.StartsWith(strLastName) &&
                m.FirstName.StartsWith(strFirstName) &&
                m.EmailAddress.StartsWith(strEmail) &&
@@ -179,9 +187,9 @@ namespace FitnessClub
                 }
                 else
                 {
-                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    if (!lstMember.Items.Contains(m.Fullname))
                     {
-                        lstMember.Items.Add(m.EmailAddress);
+                        lstMember.Items.Add(m.Fullname);
                     }
                 }
 
@@ -191,9 +199,9 @@ namespace FitnessClub
                 }
                 else
                 {
-                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    if (!lstMember.Items.Contains(m.Fullname))
                     {
-                        lstMember.Items.Add(m.EmailAddress);
+                        lstMember.Items.Add(m.Fullname);
                     }
                 }
                 if (strEmail == "")
@@ -202,9 +210,9 @@ namespace FitnessClub
                 }
                 else
                 {
-                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    if (!lstMember.Items.Contains(m.Fullname))
                     {
-                        lstMember.Items.Add(m.EmailAddress);
+                        lstMember.Items.Add(m.Fullname);
                     }
                 }
 
@@ -214,9 +222,9 @@ namespace FitnessClub
                 }
                 else
                 {
-                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    if (!lstMember.Items.Contains(m.Fullname))
                     {
-                        lstMember.Items.Add(m.EmailAddress);
+                        lstMember.Items.Add(m.Fullname);
                     }
                 }
 
@@ -248,19 +256,8 @@ namespace FitnessClub
             {
                 string strSelectedItem = lstMember.SelectedItem.ToString();
 
-                Member memberSelected = memberList.Where(m => m.LastName == strSelectedItem).FirstOrDefault();
-                if (memberSelected == null)
-                {
-                    memberSelected = memberList.Where(m => m.FirstName == strSelectedItem).FirstOrDefault();
-                }
-                if (memberSelected == null)
-                {
-                    memberSelected = memberList.Where(m => m.EmailAddress == strSelectedItem).FirstOrDefault();
-                }
-                if (memberSelected == null)
-                {
-                    memberSelected = memberList.Where(m => m.PhoneNumber == strSelectedItem).FirstOrDefault();
-                }
+                Member memberSelected = memberList.Where(m => m.Fullname == strSelectedItem).FirstOrDefault();
+                
                 txtMemberDetails.Text = memberSelected.ToString();
             }
         }

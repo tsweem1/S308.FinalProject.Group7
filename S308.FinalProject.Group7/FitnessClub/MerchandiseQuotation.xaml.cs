@@ -69,12 +69,6 @@ namespace FitnessClub
             this.Close();
         }
 
-        private void btnProceedCheckOut_Click(object sender, RoutedEventArgs e)
-        {
-            CheckOut winCheckOut = new FitnessClub.CheckOut();
-            winCheckOut.Show();
-            this.Close();
-        }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {

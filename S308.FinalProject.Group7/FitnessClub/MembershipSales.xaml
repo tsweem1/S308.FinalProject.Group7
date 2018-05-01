@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Membership Sales" Height="441" Width="883" WindowStartupLocation="CenterScreen">
     <Grid>
+        <TextBox x:Name="txtFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="551.333,207,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="178" IsTabStop="False" IsReadOnly="True" Background="Black" BorderBrush="Black"/>
         <Image x:Name="Gym_Background_jpg" Source="Gym Background.jpg" Stretch="Fill" Grid.ColumnSpan="2" d:IsLocked="True"/>
         <ComboBox x:Name="cboMembershipType" HorizontalAlignment="Left" Margin="201,128,0,0" VerticalAlignment="Top" Width="205" Height="22" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" Background="White" TabIndex="0" Grid.Column="1"/>
         <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="263" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="24" Margin="32,32,0,0" FontWeight="Bold" Grid.Column="1"/>
@@ -24,7 +25,7 @@
         </Label>
         <Button x:Name="btnClear" Content="CLEAR" HorizontalAlignment="Left" Margin="734,343,0,0" VerticalAlignment="Top" Width="88" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Height="38" Background="Black" Foreground="#FFFFFBFB" BorderThickness="5" BorderBrush="White" TabIndex="4" Grid.Column="1" Click="btnClear_Click"/>
         <DatePicker x:Name="dtStart" Grid.Column="1" HorizontalAlignment="Left" Margin="201,169,0,0" VerticalAlignment="Top" Height="22" Width="213" RenderTransformOrigin="0.498,0.952" TabIndex="1"/>
-        <Label x:Name="lblInstructions" Content="Fill  out the fields and proceed to Member Registration. Press &quot;SAVE&quot; to save the quota information. &#xD;&#xA;To go to Member Registration, click on the &quot;Member Registration&quot; link above." HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="615" Foreground="White" FontFamily="Arial" FontSize="12" Margin="32,75,0,0" Grid.Column="1" />
+        <Label x:Name="lblInstructions" Content="Fill  out the fields and proceed to Member Registration. Press &quot;ESTIMATE&quot; to produce a membership quote. &#xA;To register a new member, click &quot;YES&quot; on the quote." HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="615" Foreground="White" FontFamily="Arial" FontSize="12" Margin="32,75,0,0" Grid.Column="1" />
         <Label x:Name="lblSelect" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" Height="34" Width="183" FontFamily="Arial" Foreground="#FFF0E9E9" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -68,7 +69,6 @@
         </Label>
         <TextBox x:Name="txtTotalPrice" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="366,331,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="150" IsTabStop="False" IsReadOnly="True"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features Selected:" HorizontalAlignment="Left" Height="37" Margin="32,365,0,0" VerticalAlignment="Top" Width="181" Foreground="Black" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
-        <TextBox x:Name="txtFeatures" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="218,365,0,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="12" VerticalAlignment="Top" Width="178" IsTabStop="False" IsReadOnly="True" Background="Black" BorderBrush="Black"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="297*"/>

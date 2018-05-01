@@ -150,7 +150,7 @@ namespace FitnessClub
 
             MessageBoxResult messageBoxResult = MessageBox.Show("Create new member?"
                 + Environment.NewLine + Environment.NewLine + info
-                , "Membership Quota"
+                , "Membership Quote"
                 , MessageBoxButton.YesNo);
 
             if (messageBoxResult == MessageBoxResult.Yes)

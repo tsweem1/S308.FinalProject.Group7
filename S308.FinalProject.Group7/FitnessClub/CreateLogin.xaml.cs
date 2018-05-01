@@ -68,6 +68,9 @@ namespace FitnessClub
                 Append(loginUpdate);
                 Clear();
                 MessageBox.Show("New User Saved!");
+                Login winLogin = new Login();
+                winLogin.Show();
+                this.Close();
             }
         }
 
