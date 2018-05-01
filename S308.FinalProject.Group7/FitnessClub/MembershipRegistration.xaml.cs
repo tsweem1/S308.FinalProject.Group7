@@ -24,56 +24,55 @@ namespace FitnessClub
     public partial class MembershipSignUp : Window
     {
         public CustomerPaymentInfo InfoFromPrevWindow { get; set; }
-
+        
         List<Member> memberlist;
 
         public MembershipSignUp()
         {
 
             InitializeComponent();
+            //1. Clear Contents and set invisibility of credit card picture
             Clear();
             imgCard.Visibility = Visibility.Hidden;
             lblCreditType.Content = "";
 
-            //1. Initialize list
+            //2. Initialize list
             memberlist = new List<Member>();
             Files calFiles = new Files();
 
-            //2. Set file location and timestamp for method
+            //3. Set file location and timestamp for method
             string strFilePath = @"..\..\..\Data\Members";
             string isTimestamp = DateTime.Now.Ticks.ToString();
 
-            //3. Grab file location with extension
+            //4. Grab file location with extension
             string LoadedFilePath = calFiles.GetFilePath(strFilePath, "json", false);
 
-            //4. Read in data
+            //5. Read in data
             System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
             string jsonData = reader.ReadToEnd();
             reader.Close();
 
-            //5. Deseralize it to a list
+            //6. Deseralize it to a list
             memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
 
-            // default blank member info for the default constructor
+            //7. default blank member info for the default constructor
             InfoFromPrevWindow = new CustomerPaymentInfo();
         }
         public MembershipSignUp(CustomerPaymentInfo info)
         {
-            //don't forget this line when overriding the constructor for a window
+            //8. don't forget this line when overriding the constructor for a window
             InitializeComponent();
 
-            //assigning the property from the member info class that was passed into this overridden constructor
+            //9. assigning the property from the member info class that was passed into this overridden constructor
             InfoFromPrevWindow = info;
 
-            //do something with the information that was passed in
-            //DoSomethingWithInfo();
         }
 
 
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            //1. Intialize variables
+            //10. Intialize variables
             string strFirstName = txtFirstName.Text;
             string strLastName = txtLastName.Text;
             string strGender = cboGender.Text;
@@ -83,21 +82,21 @@ namespace FitnessClub
             string strAge = txtAge.Text;
             string strFitnessGoal = cboGender.Text;
 
-            //2. Check to see if required fields are filled
+            //11. Check to see if required fields are filled
             bool isFirstNameEmpty = txtFirstName.Text.Length == 0;
             bool isLastNameEmpty = txtLastName.Text.Length == 0;
             bool isGenderSelected = cboGender.SelectedIndex == -1;
             bool isEmailEmpty = txtEmail.Text.Length == 0;
             bool isPhoneEmpty = txtPhone.Text.Length == 0;
 
-            //2.1 Validation for blank required fields
+            //12.1 Validation for blank required fields
             if (isFirstNameEmpty || isLastNameEmpty || isGenderSelected || isEmailEmpty || isPhoneEmpty)
             {
                 MessageBox.Show("Please fill out the First Name, Last Name, Gender, Email Address, and Phone Number fields.");
                 return;
             }
 
-            //3 Check if Age and Weight are valid numbers
+            //13. Check if Age and Weight are valid numbers
             byte bytAgeNum;
             int intWeight;
 
@@ -122,8 +121,8 @@ namespace FitnessClub
                     return;
                 }
             }
-            //4 Validate email address
-            //4.1 Set variables to "@" and "." spaces for parse tests
+            //14. Validate email address
+            //14.1 Set variables to "@" and "." spaces for parse tests
             bool hasSymbol = strEmailAddress.Contains("@") == true;
             bool hasPeriod = strEmailAddress.Contains(".") == true;
 
@@ -141,7 +140,7 @@ namespace FitnessClub
             string strPeriod = strEmailAddress.Substring(intSymbol + 1, intPeriod - intSymbol - 1);
             string strDomain = strEmailAddress.Substring(intPeriod + 1);
 
-            //4.2 Test if email meets criteria based on specifications in instructions
+            //14.2 Test if email meets criteria based on specifications in instructions
             if (strUserName.Length < 1 || strPeriod.Length < 1 || strDomain.Length < 2)
             {
                 txtEmail.Text = "";
@@ -149,8 +148,8 @@ namespace FitnessClub
                 return;
             }
 
-            //5 Check if phone number is valid
-            //5.1 check if number is formatted correctly
+            //15 Check if phone number is valid
+            //15.1 check if number is formatted correctly
             bool hasTwoHyphens = (strPhoneNumber.IndexOf("-") == 3) && (strPhoneNumber.LastIndexOf("-") == 7);
 
             if (hasTwoHyphens)
@@ -181,8 +180,8 @@ namespace FitnessClub
                 return;
             }
 
-            //Credid Card information
-            //1. Initalize variables and assign it to values in text boxes
+            //16. Credid Card information
+            //16.1 Initalize variables and assign it to values in text boxes
             string strCreditCardNumber = txtCreditCardNumber.Text;
             string strCreditCardType = "";
             string strExpYear = cboYear.Text;
@@ -193,7 +192,7 @@ namespace FitnessClub
             string strZipCode = txtZip.Text;
             int intZipCode = 0;
 
-            //2. Initialize isNull variables to see if all fields were filled out
+            //16.2 Initialize isNull variables to see if all fields were filled out
             bool isCreditNumEmpty = strCreditCardNumber.Length == 0;
             bool isExpYear = cboYear.SelectedIndex == -1;
             bool isExpMonth = cboMonth.SelectedIndex == -1;
@@ -203,18 +202,18 @@ namespace FitnessClub
             bool isZipEmpty = strZipCode.Length == 0;
             bool isZipNum = Int32.TryParse(strZipCode, out intZipCode);
 
-            //3. Test if fields are empty
+            //16.3 Test if fields are empty
             if (isCreditNumEmpty || isExpYear || isExpMonth || isAddressEmpty || isCityEmpty || isStateSelected || isZipEmpty)
             {
                 MessageBox.Show("Please fill all fields.");
                 return;
             }
 
-            //4. Test Validity in Credit Card Information
-            //4.1 Set testing variables for credit card validity
+            //17. Test Validity in Credit Card Information
+            //17.1 Set testing variables for credit card validity
             Member calCardNum = new Member();
 
-            //4.2 Test if a number is entered
+            //17.2 Test if a number is entered
             bool isNum = calCardNum.CardNumValid(strCreditCardNumber);
 
             if (isNum == false)
@@ -224,7 +223,7 @@ namespace FitnessClub
                 return;
             }
 
-            //4.3 Test if number is a proper length
+            //17.3 Test if number is a proper length
             bool isCreditLength = calCardNum.CheckCreditLength(strCreditCardNumber);
 
             if (isCreditLength == false)
@@ -234,7 +233,7 @@ namespace FitnessClub
                 return;
             }
 
-            //4.5 Pass credit card number through Luhn algorthim
+            //17.4 Pass credit card number through Luhn algorthim
             bool isLuhnValid = calCardNum.Luhn(strCreditCardNumber);
 
             if (isLuhnValid == false)
@@ -244,7 +243,7 @@ namespace FitnessClub
                 return;
             }
 
-            //4.6 Check if credit card is expired
+            //17.5 Check if credit card is expired
             int intExpMonth = Convert.ToInt32(strExpMonth);
             int intExpYear = Convert.ToInt32(strExpYear);
 
@@ -257,10 +256,10 @@ namespace FitnessClub
                 MessageBox.Show("Expiration date not valid.");
                 return;
             }
-            //4.6 Return card type
+            //17.6 Return card type
             strCreditCardType = calCardNum.CardType(strCreditCardNumber);
 
-            //4.7 Perform logic to display proper credit card image
+            //17.7 Perform logic to display proper credit card image
             switch (strCreditCardType)
             {
                 case "AMEX":
@@ -284,7 +283,7 @@ namespace FitnessClub
                     imgCard.Stretch = Stretch.Fill;
                     break;
             }
-            //Check is zipcode is valid
+            //18. Check is zipcode is valid
             if (isZipNum == false)
             {
                 txtZip.Text = "";
@@ -295,11 +294,13 @@ namespace FitnessClub
             txtCreditCardNumber.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             lblCreditType.Content = strCreditCardType;
 
-            //Reveal create customer button
+            //19. Reveal create customer button
             btnCreate.Foreground = Brushes.White;
             btnCreate.BorderBrush = Brushes.White;
         }
 
+        #region Helper Functions
+        //20. Clear contents
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             Clear();
@@ -307,28 +308,28 @@ namespace FitnessClub
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //1. Read in file again in local scope in order to update file
+            //21. Read in file again in local scope in order to update file
 
-            //1.1 Initialize list
+            //21.1 Initialize list
             memberlist = new List<Member>();
             Files calFiles = new Files();
 
-            //1.2. Set file location and timestamp for method
+            //21.2. Set file location and timestamp for method
             string strFilePath = @"..\..\..\Data\Members";
             string isTimestamp = DateTime.Now.Ticks.ToString();
 
-            //1.3. Grab file location with extension
+            //21.3. Grab file location with extension
             string LoadedFilePath = calFiles.GetFilePath(strFilePath, "json", false);
 
-            //1.4. Read in data
+            //21.4. Read in data
             System.IO.StreamReader reader = new System.IO.StreamReader(LoadedFilePath);
             string jsonData = reader.ReadToEnd();
             reader.Close();
 
-            //1.5. Deseralize it to a list
+            //21.5. Deseralize it to a list
             memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
 
-            //add new member
+            //22. add new member
             Member memberNew = new Member(txtFirstName.Text.Trim() + " " + txtLastName.Text.Trim(), txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), InfoFromPrevWindow.MembershipType, InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice, InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, txtCreditCardNumber.Text.Trim(), lblCreditType.Content.ToString(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
 
             MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
@@ -349,18 +350,20 @@ namespace FitnessClub
 
                 MessageBox.Show("Export completed!" + Environment.NewLine + "File Created: " + strFilePath);
 
-                //Hide create customer button
+                //23. Hide create customer button
                 btnCreate.Foreground = Brushes.Black;
                 btnCreate.BorderBrush = Brushes.Black;
             }
         }
+
+        //24. Appending to File
         private void AppendToFile(Member memberNew)
         {
             //define strings
             string strFilePath = @"..\..\..\Data\Members";
             string strLine;
 
-            //append customer to JSON file
+            //24.1 append customer to JSON file
             try
             {
                 StreamWriter writer = new StreamWriter(strFilePath, true);
@@ -379,6 +382,10 @@ namespace FitnessClub
                 return;
             }
         }
+
+        
+
+        //24.2 Clear Contents Function
         private void Clear()
         {
             txtFirstName.Text = "";
@@ -403,6 +410,7 @@ namespace FitnessClub
             btnCreate.Foreground = Brushes.Black;
             btnCreate.BorderBrush = Brushes.Black;
         }
+        #endregion
 
         #region Navigation controls
         private void txbMemSales_MouseUp(object sender, MouseButtonEventArgs e)

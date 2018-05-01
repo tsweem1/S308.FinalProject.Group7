@@ -57,8 +57,8 @@ namespace FitnessClub
 
 
         }
-        //Helper Functions
-        #region
+
+        #region Helper Functions
         // Go To Main Menu Window
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -79,7 +79,7 @@ namespace FitnessClub
             lblNumResults.Content = "(0)";
         }
 
-        #endregion
+        #endregion 
 
         //7. Member Search Functionality
         private void btnSearchMember_Click(object sender, RoutedEventArgs e)
