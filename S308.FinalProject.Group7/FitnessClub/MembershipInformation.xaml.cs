@@ -57,41 +57,48 @@ namespace FitnessClub
 
 
         }
-  
-        
-     }
-        
-        //8. Clear all input output fields
-        private void btnClear_Click(object sender, RoutedEventArgs e)
+        //Helper Functions
+        #region
+        // Go To Main Menu Window
+        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Window1 winMainMenu = new Window1();
+            winMainMenu.Show();
+            this.Close();
+        }
+
+        //clear all user input fields
+        private void btnClearContents_Click(object sender, RoutedEventArgs e)
         {
             lstMember.Items.Clear();
-            //clear all user input fields
-
             txtLastName.Text = "";
             txtFirstName.Text = "";
             txtEmail.Text = "";
             txtPhoneNumber.Text = "";
-            //lbxSearchResults.te = "";
             txtMemberDetails.Text = "";
+            lblNumResults.Content = "(0)";
         }
 
+        #endregion
+
+        //7. Member Search Functionality
         private void btnSearchMember_Click(object sender, RoutedEventArgs e)
         {
             List<Member> memberSearch;
 
-            //clear previous content
+            //8. Clear previous search content
             lstMember.Items.Clear();
             txtMemberDetails.Text = "";
             lblNumResults.Content = "(0)";
 
-            //declare variables
+            //9. declare variables
             string strFullName;
             string strFirstName;
             string strLastName;
             string strEmail;
             string strPhoneNumber;
 
-            //convert input fields
+            //10. Convert input fields
             strFullName = "";
             strFirstName = Convert.ToString(txtFirstName.Text);
             strLastName = Convert.ToString(txtLastName.Text);
@@ -99,16 +106,16 @@ namespace FitnessClub
             strPhoneNumber = Convert.ToString(txtPhoneNumber.Text);
 
 
-            //validate user input
+            //11. Validate user input and initiate member search
 
-            //user must enter at least one search field
+            //11.1 user must enter at least one search field
             if (strFirstName == "" && strLastName == "" && strPhoneNumber == "" && strEmail == "")
             {
                 MessageBox.Show("Please enter information in at least one search field.");
                 return;
             }
 
-            //conduct member search 
+            //11.2 conduct member search 
             memberSearch = memberList.Where(m =>
                m.Fullname.StartsWith(strFullName) &&
                m.LastName.StartsWith(strLastName) &&
@@ -116,7 +123,7 @@ namespace FitnessClub
                m.EmailAddress.StartsWith(strEmail) &&
                m.PhoneNumber.StartsWith(strPhoneNumber)).ToList();
 
-
+            //11.3 Validate that info from user input are correct for existing members
             int counter = 0;
 
             foreach (var i in memberSearch)
@@ -212,27 +219,11 @@ namespace FitnessClub
                 }
 
             }
-            
+            //11.4 Updpate Search Count
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
         }
-        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            Window1 winMainMenu = new Window1();
-            winMainMenu.Show();
-            this.Close();
-        }
-
-        private void btnClearContents_Click(object sender, RoutedEventArgs e)
-        {
-            txtEmail.Text = "";
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtMemberDetails.Text = "";
-            txtPhoneNumber.Text = "";
-            lstMember.Items.Clear();
-            lblNumResults.Content = "(0)";
-        }
-
+        
+        //12. Populate Member Details Textbox according to the information selected in the search list box
         private void lstMember_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (lstMember.SelectedIndex > -1)
@@ -245,15 +236,7 @@ namespace FitnessClub
             }
         }
 
-    //7. Go To Main Menu Window
-    private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-    {
-        Window1 winMainMenu = new Window1();
-        winMainMenu.Show();
-        this.Close();
-
+        
     }
-
-
 }
 
