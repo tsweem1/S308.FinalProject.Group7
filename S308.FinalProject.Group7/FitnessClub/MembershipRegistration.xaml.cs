@@ -325,7 +325,7 @@ namespace FitnessClub
             memberlist = JsonConvert.DeserializeObject<List<Member>>(jsonData);
 
             //add new member
-            Member memberNew = new Member(txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), InfoFromPrevWindow.MembershipType, InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice, InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, txtCreditCardNumber.Text.Trim(), lblCreditType.Content.ToString(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
+            Member memberNew = new Member(txtFirstName.Text.Trim() + " " + txtLastName.Text.Trim(), txtFirstName.Text.Trim(), txtLastName.Text.Trim(), cboGender.Text.Trim(), txtPhone.Text.Trim(), txtEmail.Text.Trim(), txtWeight.Text.Trim(), txtAge.Text.Trim(), cboFitnessGoals.Text.Trim(), InfoFromPrevWindow.MembershipType, InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice, InfoFromPrevWindow.AdditionalFeatures, InfoFromPrevWindow.TotalPrice, txtCreditCardNumber.Text.Trim(), lblCreditType.Content.ToString(), txtBillingAddress.Text.Trim(), txtCity.Text.Trim(), txtZip.Text.Trim());
 
             MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to save the following member?"
               + Environment.NewLine + Environment.NewLine + memberNew.ToString()
@@ -360,7 +360,7 @@ namespace FitnessClub
             try
             {
                 StreamWriter writer = new StreamWriter(strFilePath, true);
-                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}", memberNew.FirstName, memberNew.LastName, memberNew.Gender,
+                strLine = String.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}", memberNew.Fullname, memberNew.FirstName, memberNew.LastName, memberNew.Gender,
                                                                                                                                      memberNew.EmailAddress, memberNew.PhoneNumber, memberNew.Weight,
                                                                                                                                      memberNew.Age, memberNew.FitnessGoal, InfoFromPrevWindow.MembershipType,
                                                                                                                                      InfoFromPrevWindow.StartDate, InfoFromPrevWindow.EndDate, InfoFromPrevWindow.MembershipPrice,

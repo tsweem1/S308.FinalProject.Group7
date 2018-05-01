@@ -179,7 +179,10 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.EmailAddress);
+                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    {
+                        lstMember.Items.Add(m.EmailAddress);
+                    }
                 }
 
                 if (strFirstName == "")
@@ -188,7 +191,10 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.EmailAddress);
+                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    {
+                        lstMember.Items.Add(m.EmailAddress);
+                    }
                 }
                 if (strEmail == "")
                 {
@@ -196,7 +202,10 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.EmailAddress);
+                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    {
+                        lstMember.Items.Add(m.EmailAddress);
+                    }
                 }
 
                 if (strPhoneNumber == "")
@@ -205,10 +214,14 @@ namespace FitnessClub
                 }
                 else
                 {
-                    lstMember.Items.Add(m.EmailAddress);
+                    if (!lstMember.Items.Contains(m.EmailAddress))
+                    {
+                        lstMember.Items.Add(m.EmailAddress);
+                    }
                 }
 
             }
+            
             lblNumResults.Content = "(" + memberSearch.Count.ToString() + ")";
         }
         private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)

@@ -9,6 +9,7 @@ namespace FitnessClub
     //Add class for member
     public class Member : CustomerPaymentInfo 
     {
+        public string Fullname { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -32,8 +33,9 @@ namespace FitnessClub
         }
 
         //Initialize constructor
-        public Member(string firstName, string lastName, string gender, string phoneNumber, string email, string weight, string age, string fitnessGoal, string membershipType, string startDate, string endDate, string membershipPrice, string addtionalFeatures, string totalPrice, string strCreditCardNumber, string strCreditCardType, string strBillingAddress, string strCity, string strZip)
+        public Member(string fullName, string firstName, string lastName, string gender, string phoneNumber, string email, string weight, string age, string fitnessGoal, string membershipType, string startDate, string endDate, string membershipPrice, string addtionalFeatures, string totalPrice, string strCreditCardNumber, string strCreditCardType, string strBillingAddress, string strCity, string strZip)
         {
+            Fullname = fullName;
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
