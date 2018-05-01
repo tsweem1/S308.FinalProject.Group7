@@ -65,7 +65,7 @@ namespace FitnessClub
 
         #region Helper Functions
         //8. Naviage to Main Menu Window
-        private void btnMainMenu1_Click(object sender, RoutedEventArgs e)
+        private void txbMainMenu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Window1 winMainMenu = new Window1();
             winMainMenu.Show();

@@ -13,7 +13,7 @@
         <Label x:Name="lblTitle" Content="MEMBERSHIP SALES" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="263" Foreground="#FFC3B253" FontFamily="Century Gothic" FontSize="24" Margin="32,32,0,0" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblStartDate" Content="Enter Start Date:" HorizontalAlignment="Left" Height="37" Margin="32,169,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFF7F2F2" FontFamily="Arial" FontSize="12" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="lblTo" Content="to" HorizontalAlignment="Left" Height="37" Margin="366,-220,0,0" VerticalAlignment="Top" Width="40" Foreground="#FFF7F2F2" FontFamily="Century Gothic" FontSize="26.667" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="lblQuotaEstimate" Content="Quota Estimate" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Height="37" Width="123" FontFamily="Arial" Foreground="White" FontSize="12" RenderTransformOrigin="0.519,1.403" FontWeight="Bold" Grid.Column="1">
+        <Label x:Name="lblQuotaEstimate" Content="Quote Estimate" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Height="37" Width="123" FontFamily="Arial" Foreground="White" FontSize="12" RenderTransformOrigin="0.519,1.403" FontWeight="Bold" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

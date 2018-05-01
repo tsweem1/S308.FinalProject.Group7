@@ -43,7 +43,6 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnMainMenu1" Content="MAIN MENU" HorizontalAlignment="Left" Margin="729,26,0,0" VerticalAlignment="Top" Width="114" FontFamily="Arial" FontWeight="Bold" Height="32" Background="{x:Null}" Foreground="#FFC3B253" TabIndex="6" Click="btnMainMenu1_Click" FontSize="16" BorderBrush="{x:Null}"/>
 
         <Label x:Name="lblSize" Content="Size:" HorizontalAlignment="Left" Height="37" Margin="32,307,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFF7F2F2" FontFamily="Arial" FontWeight="Bold"/>
         <ComboBox x:Name="cboSize" HorizontalAlignment="Left" Margin="230,306,0,0" VerticalAlignment="Top" Width="150" Height="25" RenderTransformOrigin="0.743,0.489" FontFamily="Arial" Background="White" TabIndex="2">
@@ -67,6 +66,7 @@
             </Label.RenderTransform>
         </Label>
         <Label x:Name="lblInstructions" Content="Select an item, and then enter a quantity and size." HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="292" Foreground="White" FontFamily="Arial" FontSize="12" Margin="30,69,0,0" />
+        <TextBlock x:Name="txbMainMenu" TextDecorations="Underline"  HorizontalAlignment="Left" Margin="734.667,25,0,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" Height="20" Width="90" FontFamily="Arial" Foreground="#FFC3B253" FontSize="16" MouseUp="txbMainMenu_MouseUp"/>
     </Grid>
 
 </Window>
