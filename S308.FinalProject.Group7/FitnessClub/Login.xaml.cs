@@ -85,6 +85,7 @@ namespace FitnessClub
             this.Close();
         }
 
+        #region Helper functions
         //13. Function to check if username is in the system
         public bool CheckUserName(string username)
         {
@@ -115,6 +116,7 @@ namespace FitnessClub
             winCreateLogin.Show();
             this.Close();
         }
+        #endregion
     }
-    }
+}
 
